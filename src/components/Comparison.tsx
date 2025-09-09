@@ -26,7 +26,7 @@ const comparisons = [
 
 const Comparison = () => {
   return (
-    <section id="why" className="py-20 bg-gradient-to-b from-muted/20 to-background">
+    <section id="why" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">

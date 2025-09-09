@@ -4,7 +4,7 @@ import { Mail, Send, Facebook, Instagram, Linkedin, Twitter } from "lucide-react
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-dark pt-20 pb-8">
+    <footer className="relative bg-muted/50 pt-20 pb-8 border-t border-border">
       {/* Contact Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">

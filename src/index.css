@@ -8,62 +8,67 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base colors */
-    --background: 249 100% 3.9%;
-    --foreground: 0 0% 95%;
+    /* Base colors - Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
     
     /* Card styles */
-    --card: 248 47% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
     
     /* Popover */
-    --popover: 248 47% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
     
     /* Primary - Purple */
-    --primary: 270 65% 60%;
+    --primary: 271 91% 65%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary - Blue */
-    --secondary: 220 70% 55%;
+    /* Secondary - Pink */
+    --secondary: 338 69% 62%;
     --secondary-foreground: 0 0% 100%;
     
     /* Muted */
-    --muted: 248 47% 15%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
     
-    /* Accent - Pink/Purple */
-    --accent: 290 60% 65%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Light Purple */
+    --accent: 280 60% 95%;
+    --accent-foreground: 271 91% 65%;
     
     /* Destructive */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
     /* Borders and inputs */
-    --border: 248 47% 20%;
-    --input: 248 47% 20%;
-    --ring: 270 65% 60%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 271 91% 65%;
     
     --radius: 1rem;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(270 65% 60%), hsl(220 70% 55%));
-    --gradient-secondary: linear-gradient(135deg, hsl(290 60% 65%), hsl(270 65% 60%));
-    --gradient-dark: linear-gradient(180deg, hsl(249 100% 3.9%), hsl(248 47% 8%));
-    --gradient-light: linear-gradient(135deg, hsl(270 65% 60% / 0.1), hsl(220 70% 55% / 0.1));
-    --gradient-hero: linear-gradient(135deg, hsl(270 65% 60% / 0.3), hsl(220 70% 55% / 0.1));
+    --gradient-primary: linear-gradient(90deg, hsl(271 91% 65%), hsl(338 69% 62%));
+    --gradient-secondary: linear-gradient(135deg, hsl(271 91% 65% / 0.8), hsl(338 69% 62% / 0.8));
+    --gradient-light: linear-gradient(135deg, hsl(271 91% 65% / 0.05), hsl(338 69% 62% / 0.05));
+    --gradient-hero: linear-gradient(135deg, hsl(271 91% 65% / 0.1), transparent);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(240 4.8% 95.9%));
+    
+    /* Section backgrounds */
+    --section-bg-primary: 0 0% 100%;
+    --section-bg-secondary: 240 4.8% 97%;
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(270 65% 60% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(270 65% 60% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(270 65% 60% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(270 65% 60% / 0.15);
-    --shadow-glow: 0 0 30px hsl(270 65% 60% / 0.3);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 50px hsl(271 91% 65% / 0.2);
+    --shadow-card: 0 10px 40px -10px hsl(271 91% 65% / 0.15);
     
     /* Glass effect */
-    --glass-bg: hsl(248 47% 8% / 0.7);
-    --glass-border: hsl(270 65% 60% / 0.2);
+    --glass-bg: hsl(0 0% 100% / 0.8);
+    --glass-border: hsl(271 91% 65% / 0.1);
     
     /* Animations */
     --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

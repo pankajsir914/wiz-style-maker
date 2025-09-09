@@ -24,8 +24,8 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="reviews" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+    <section id="reviews" className="py-20 relative overflow-hidden bg-background">
+      <div className="absolute inset-0 bg-gradient-light" />
       
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

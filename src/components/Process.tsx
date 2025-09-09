@@ -24,8 +24,8 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
+    <section id="process" className="py-20 relative overflow-hidden bg-background">
+      <div className="absolute inset-0 bg-gradient-light" />
       
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

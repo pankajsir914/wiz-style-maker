@@ -31,7 +31,7 @@ const caseStudies = [
 
 const CaseStudies = () => {
   return (
-    <section id="case-studies" className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section id="case-studies" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">

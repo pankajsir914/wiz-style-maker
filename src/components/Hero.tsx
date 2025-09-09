@@ -6,14 +6,11 @@ import ContactModal from "./ContactModal";
 const Hero = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
-      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-gradient-to-br from-background via-accent/5 to-background">
       {/* Animated Gradient Orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-float animation-delay-2000" />
+      <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-primary opacity-10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-secondary opacity-10 rounded-full blur-3xl animate-float animation-delay-2000" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-light rounded-full blur-3xl" />
       
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-up">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ContactModal from "./ContactModal";
@@ -6,87 +6,127 @@ import ContactModal from "./ContactModal";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
-    { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Clients", href: "#clients" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Contact", href: "#contact" },
+    { label: "Clients", href: "#portfolio" },
+    { label: "Why Adymize?", href: "#about" },
+    { label: "Reviews", href: "#testimonials" },
+    { label: "FAQs", href: "#faq" },
   ];
 
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-2xl font-display font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Adymize
-            </span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button 
-              className="bg-gradient-primary hover:opacity-90 transition-opacity"
-              onClick={() => setIsContactModalOpen(true)}
+    <>
+      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl">
+        <nav className={`bg-white rounded-full px-5 sm:px-8 py-3 transition-all duration-300 ${
+          isScrolled ? "shadow-xl" : "shadow-lg"
+        }`}>
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <a 
+              href="#" 
+              className="flex items-center space-x-2 group"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
             >
-              Book a Call
-            </Button>
-          </div>
+              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center transform transition-transform group-hover:scale-105">
+                <span className="text-white text-lg font-bold">✓</span>
+              </div>
+              <span className="text-xl font-bold text-gray-800">Adymize</span>
+            </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-7 lg:space-x-10">
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
+                  className="text-gray-700 hover:text-purple-600 transition-colors text-sm font-medium"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <div className="hidden md:block">
+              <Button 
+                onClick={() => setIsContactModalOpen(true)}
+                className="bg-[#2b2d42] hover:bg-[#1d1e2e] text-white rounded-full px-6 py-2 text-sm font-semibold transition-all hover:shadow-lg"
+              >
+                Chat Now
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 text-gray-700"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </nav>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-3 border-t border-border/50 mt-2">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="block py-2 text-foreground/80 hover:text-foreground transition-colors"
+          <div className="md:hidden mt-2 bg-white rounded-2xl shadow-xl p-4 animate-fade-in">
+            <div className="flex flex-col space-y-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
+                  className="text-gray-700 hover:text-purple-600 transition-colors py-2 px-3 rounded-lg hover:bg-gray-50"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <Button 
+                onClick={() => {
+                  setIsContactModalOpen(true);
+                  setIsMenuOpen(false);
+                }}
+                className="bg-[#2b2d42] hover:bg-[#1d1e2e] text-white rounded-full w-full mt-2"
               >
-                {item.label}
-              </a>
-            ))}
-            <Button 
-              className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
-              onClick={() => setIsContactModalOpen(true)}
-            >
-              Book a Call
-            </Button>
+                Chat Now
+              </Button>
+            </div>
           </div>
         )}
-      </nav>
+      </header>
       
       <ContactModal 
         isOpen={isContactModalOpen} 
         onClose={() => setIsContactModalOpen(false)} 
       />
-    </header>
+    </>
   );
 };
 

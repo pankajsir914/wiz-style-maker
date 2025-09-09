@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ContactModal from "./ContactModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const navItems = [
+    { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
+    { label: "Portfolio", href: "#portfolio" },
     { label: "Clients", href: "#clients" },
-    { label: "Why Adymize?", href: "#why" },
     { label: "Reviews", href: "#reviews" },
-    { label: "FAQs", href: "#faqs" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -39,8 +42,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-primary hover:opacity-90 transition-opacity">
-              Chat Now
+            <Button 
+              className="bg-gradient-primary hover:opacity-90 transition-opacity"
+              onClick={() => setIsContactModalOpen(true)}
+            >
+              Book a Call
             </Button>
           </div>
 
@@ -66,12 +72,20 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button className="w-full bg-gradient-primary hover:opacity-90 transition-opacity">
-              Chat Now
+            <Button 
+              className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
+              onClick={() => setIsContactModalOpen(true)}
+            >
+              Book a Call
             </Button>
           </div>
         )}
       </nav>
+      
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </header>
   );
 };

@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
+import ContactModal from "./ContactModal";
 
 const Hero = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Gradient Background */}
@@ -25,11 +28,11 @@ const Hero = () => {
           
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-6 text-sm sm:text-base">
-            <span className="text-muted-foreground">5+ years</span>
+            <span className="text-muted-foreground">3+ years</span>
             <span className="text-muted-foreground">|</span>
-            <span className="text-muted-foreground">511+ Brands</span>
+            <span className="text-muted-foreground">50+ Brands</span>
             <span className="text-muted-foreground">|</span>
-            <span className="text-muted-foreground">60+ Crore Ad spent</span>
+            <span className="text-muted-foreground">35+ Crore Ad spent</span>
           </div>
           
           {/* Subtitle */}
@@ -43,6 +46,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-primary hover:opacity-90 transition-opacity group min-w-[200px]"
+              onClick={() => setIsContactModalOpen(true)}
             >
               Book a Strategy Call
               <Calendar className="ml-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
@@ -51,6 +55,7 @@ const Hero = () => {
               size="lg" 
               variant="outline" 
               className="border-primary/50 hover:bg-primary/10 min-w-[200px] group"
+              onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Our Work
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -69,6 +74,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Send, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -88,6 +88,42 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © 2024 Adymize. All rights reserved.
           </p>
+        </div>
+        
+        {/* Social Media Links */}
+        <div className="flex justify-center gap-4 mt-6">
+          <a 
+            href="https://facebook.com/adymize" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-foreground/50 hover:text-primary transition-colors"
+          >
+            <Facebook className="h-5 w-5" />
+          </a>
+          <a 
+            href="https://instagram.com/adymize" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-foreground/50 hover:text-primary transition-colors"
+          >
+            <Instagram className="h-5 w-5" />
+          </a>
+          <a 
+            href="https://linkedin.com/company/adymize" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-foreground/50 hover:text-primary transition-colors"
+          >
+            <Linkedin className="h-5 w-5" />
+          </a>
+          <a 
+            href="https://twitter.com/adymize" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-foreground/50 hover:text-primary transition-colors"
+          >
+            <Twitter className="h-5 w-5" />
+          </a>
         </div>
       </div>
     </footer>

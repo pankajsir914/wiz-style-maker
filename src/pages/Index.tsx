@@ -4,7 +4,7 @@ import About from "@/components/About";
 import StatsCounter from "@/components/StatsCounter";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
-import CaseStudies from "@/components/CaseStudies";
+import OurClients from "@/components/OurClients";
 import Process from "@/components/Process";
 import Team from "@/components/Team";
 import Comparison from "@/components/Comparison";
@@ -25,7 +25,7 @@ const Index = () => {
         <StatsCounter />
         <Services />
         <Portfolio />
-        <CaseStudies />
+        <OurClients />
         <Process />
         <Team />
         <Comparison />

@@ -73,7 +73,7 @@ const Services = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative bg-background/80 backdrop-blur-sm rounded-2xl border border-border/50 py-12">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 mb-4">

@@ -87,12 +87,16 @@ const Services = () => {
         </div>
         
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-5xl mx-auto mb-16 border border-border/50 rounded-xl overflow-hidden bg-card/30 backdrop-blur-sm">
           {services.map((service, index) => (
             <div
               key={index}
               id={`service-${index}`}
-              className="group relative animate-fade-up"
+              className={`group relative p-8 animate-fade-up ${
+                index % 2 === 0 ? 'md:border-r border-border/50' : ''
+              } ${
+                index < 4 ? 'border-b border-border/50' : ''
+              } hover:bg-primary/5 transition-colors duration-300`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex gap-4">

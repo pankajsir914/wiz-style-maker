@@ -4,8 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Card } from "@/components/ui/card";
-import { HelpCircle } from "lucide-react";
+import { Plus } from "lucide-react";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -31,42 +31,63 @@ const faqs = [
 ];
 
 const FAQ = () => {
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+
   return (
-    <section id="faqs" className="py-20 bg-muted/30">
+    <section id="faqs" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-              <HelpCircle className="h-8 w-8 text-primary-foreground" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary mb-2 flex items-center justify-center gap-4 animate-fade-in">
               Need Help?
+              <span className="text-5xl animate-[bounce_2s_ease-in-out_infinite]">🧑‍💼</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Find answers to common questions about our services
-            </p>
           </div>
 
-          {/* FAQ Accordion */}
-          <Card className="bg-card/50 backdrop-blur-sm border-border/50 animate-fade-up">
-            <Accordion type="single" collapsible className="p-6">
+          {/* FAQ Accordion - Clean Minimal Design */}
+          <div className="bg-card rounded-3xl p-8 shadow-sm border border-border/30 animate-fade-up">
+            <Accordion 
+              type="single" 
+              collapsible 
+              value={openItem}
+              onValueChange={setOpenItem}
+              className="space-y-2"
+            >
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="border-border/50"
+                  className="border-b border-border/20 last:border-0 group transition-all duration-300 data-[state=open]:bg-muted/20 rounded-lg px-4"
                 >
-                  <AccordionTrigger className="text-left hover:text-primary transition-colors">
-                    {faq.question}
+                  <AccordionTrigger className="text-left py-6 hover:no-underline group-hover:text-primary transition-colors [&[data-state=open]>div>svg]:rotate-45">
+                    <div className="flex items-center justify-between w-full pr-4">
+                      <span className="text-base sm:text-lg font-medium text-foreground/90 leading-relaxed">
+                        {faq.question}
+                      </span>
+                      <Plus className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-all duration-300 flex-shrink-0 ml-4" />
+                    </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.answer}
+                  <AccordionContent className="text-muted-foreground pb-6 pr-12 animate-fade-in">
+                    <p className="leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
-          </Card>
+          </div>
+
+          {/* Animated Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className={`h-2 w-2 rounded-full bg-primary/30 animate-pulse`}
+                style={{ animationDelay: `${i * 200}ms` }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

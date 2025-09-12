@@ -1,4 +1,5 @@
 import { Check, Minus } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 const comparisons = [
   {
@@ -43,10 +44,10 @@ const Comparison = () => {
         </div>
 
         {/* Comparison Table */}
-        <div className="max-w-4xl mx-auto">
+        <Card className="max-w-4xl mx-auto rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Others Column */}
-            <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg overflow-hidden animate-slide-in">
+            <div className="bg-white/90 backdrop-blur rounded-2xl shadow-lg overflow-hidden animate-slide-in">
               <div className="p-6 bg-gray-50 border-b">
                 <h3 className="text-lg font-semibold text-center text-gray-600">
                   OTHERS
@@ -70,7 +71,7 @@ const Comparison = () => {
             </div>
 
             {/* Adymize Column */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden relative animate-slide-in animation-delay-200">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative animate-slide-in animation-delay-200">
               <div className="p-6 bg-primary/10 border-b border-primary/20">
                 <span className="inline-block px-4 py-1 bg-primary text-white text-sm font-semibold rounded-full">
                   ADYMIZE
@@ -106,7 +107,7 @@ const Comparison = () => {
               Chat with our experts
             </a>
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

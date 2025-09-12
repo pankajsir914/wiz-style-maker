@@ -70,125 +70,127 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/20">
-            <h3 className="text-2xl font-semibold mb-6 text-foreground">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
+        <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/20 rounded-2xl">
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">Send us a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input
+                      id="name"
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      required
+                      className="bg-background/50"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      required
+                      className="bg-background/50"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      placeholder="+91 98765 43210"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      required
+                      className="bg-background/50"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="company">Company Name</Label>
+                    <Input
+                      id="company"
+                      placeholder="Your Company"
+                      value={formData.company}
+                      onChange={(e) => setFormData({...formData, company: e.target.value})}
+                      className="bg-background/50"
+                    />
+                  </div>
+                </div>
+                
                 <div>
-                  <Label htmlFor="name">Full Name</Label>
-                  <Input
-                    id="name"
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  <Label htmlFor="message">Your Message</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="Tell us about your project..."
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
                     required
                     className="bg-background/50"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="john@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    required
-                    className="bg-background/50"
-                  />
-                </div>
-              </div>
-              
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    placeholder="+91 98765 43210"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    required
-                    className="bg-background/50"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="company">Company Name</Label>
-                  <Input
-                    id="company"
-                    placeholder="Your Company"
-                    value={formData.company}
-                    onChange={(e) => setFormData({...formData, company: e.target.value})}
-                    className="bg-background/50"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <Label htmlFor="message">Your Message</Label>
-                <Textarea
-                  id="message"
-                  placeholder="Tell us about your project..."
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  required
-                  className="bg-background/50"
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full bg-gradient-primary hover:opacity-90 transition-opacity group"
-              >
-                Send Message
-                <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </form>
-          </Card>
-
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <Card className="p-8 bg-gradient-primary text-white">
-              <h3 className="text-2xl font-semibold mb-4">Book a Free Strategy Call</h3>
-              <p className="mb-6 opacity-90">
-                Get a free 30-minute consultation with our marketing experts to discuss 
-                your business goals and how we can help you achieve them.
-              </p>
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                className="w-full bg-white text-primary hover:bg-white/90"
-              >
-                Schedule Now
-              </Button>
+                
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-gradient-primary hover:opacity-90 transition-opacity group"
+                >
+                  Send Message
+                  <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </form>
             </Card>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              {contactInfo.map((info) => (
-                <a
-                  key={info.title}
-                  href={info.link}
-                  className="block group"
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <Card className="p-8 bg-gradient-primary text-white rounded-2xl">
+                <h3 className="text-2xl font-semibold mb-4">Book a Free Strategy Call</h3>
+                <p className="mb-6 opacity-90">
+                  Get a free 30-minute consultation with our marketing experts to discuss 
+                  your business goals and how we can help you achieve them.
+                </p>
+                <Button 
+                  size="lg" 
+                  variant="secondary" 
+                  className="w-full bg-white text-primary hover:bg-white/90"
                 >
-                  <Card className="p-4 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all">
-                    <div className="flex items-start gap-3">
-                      <info.icon className="h-5 w-5 text-primary mt-1" />
-                      <div>
-                        <p className="text-sm text-foreground/70">{info.title}</p>
-                        <p className="text-foreground group-hover:text-primary transition-colors">
-                          {info.content}
-                        </p>
+                  Schedule Now
+                </Button>
+              </Card>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {contactInfo.map((info) => (
+                  <a
+                    key={info.title}
+                    href={info.link}
+                    className="block group"
+                  >
+                    <Card className="p-4 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all rounded-2xl">
+                      <div className="flex items-start gap-3">
+                        <info.icon className="h-5 w-5 text-primary mt-1" />
+                        <div>
+                          <p className="text-sm text-foreground/70">{info.title}</p>
+                          <p className="text-foreground group-hover:text-primary transition-colors">
+                            {info.content}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                </a>
-              ))}
+                    </Card>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

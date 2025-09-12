@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Card } from "@/components/ui/card";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
@@ -46,8 +47,8 @@ const FAQ = () => {
           </div>
 
           {/* FAQ Accordion - Clean Minimal Design */}
-          <div className="bg-card rounded-3xl p-8 shadow-sm border border-border/30 animate-fade-up">
-            <Accordion 
+          <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12 animate-fade-up">
+            <Accordion
               type="single" 
               collapsible 
               value={openItem}
@@ -76,7 +77,7 @@ const FAQ = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </div>
+          </Card>
 
           {/* Animated Dots */}
           <div className="flex justify-center gap-2 mt-8">

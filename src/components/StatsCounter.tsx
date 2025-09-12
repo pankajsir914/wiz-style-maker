@@ -57,15 +57,15 @@ const StatsCounter = () => {
   };
 
   return (
-    <section id="stats-counter" className="py-20 bg-gradient-light">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section id="stats-counter" className="py-24 bg-gradient-light">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 bg-card/50 backdrop-blur-sm rounded-3xl p-12 border border-border/50">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-4xl sm:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
+              <div className="text-5xl sm:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
                 <CountUp end={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-foreground/70">{stat.label}</p>
+              <p className="text-foreground/70 text-lg">{stat.label}</p>
             </div>
           ))}
         </div>

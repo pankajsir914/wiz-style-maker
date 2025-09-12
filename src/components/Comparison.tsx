@@ -1,5 +1,4 @@
-import { Check, X } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Check, Minus } from "lucide-react";
 
 const comparisons = [
   {
@@ -26,17 +25,19 @@ const comparisons = [
 
 const Comparison = () => {
   return (
-    <section id="why" className="py-20 bg-muted/30">
+    <section id="why" className="py-20 bg-gradient-to-b from-white to-primary/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <p className="text-sm font-medium text-primary mb-2 tracking-wider uppercase">
+          <span className="inline-block px-4 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
             SPECIAL • SPECIAL • SPECIAL
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
-            What makes us unique?
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              What makes us unique?
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-gray-700 font-medium">
             Adymize V/S Others
           </p>
         </div>
@@ -45,51 +46,52 @@ const Comparison = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Others Column */}
-            <Card className="bg-muted/30 border-border/50 overflow-hidden animate-slide-in">
-              <div className="p-6 bg-muted/50 border-b border-border/50">
-                <h3 className="text-xl font-display font-semibold text-center text-muted-foreground">
+            <div className="bg-white/80 backdrop-blur rounded-xl shadow-lg overflow-hidden animate-slide-in">
+              <div className="p-6 bg-gray-50 border-b">
+                <h3 className="text-lg font-semibold text-center text-gray-600">
                   OTHERS
                 </h3>
               </div>
-              <div className="p-6 space-y-4">
+              <div className="p-8 space-y-6">
                 {comparisons.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/20 transition-colors"
+                    className="flex items-center space-x-4"
                   >
-                    <X className="h-5 w-5 text-destructive flex-shrink-0" />
-                    <span className="text-muted-foreground">
+                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                      <Minus className="h-4 w-4 text-gray-400" />
+                    </div>
+                    <span className="text-gray-600">
                       {item.others.text}
                     </span>
                   </div>
                 ))}
               </div>
-            </Card>
+            </div>
 
             {/* Adymize Column */}
-            <Card className="bg-gradient-light border-primary/30 overflow-hidden relative animate-slide-in animation-delay-200">
-              <div className="absolute inset-0 bg-gradient-primary opacity-5" />
-              <div className="relative">
-                <div className="p-6 bg-primary/10 border-b border-primary/30">
-                  <h3 className="text-xl font-display font-semibold text-center text-primary">
-                    ADYMIZE
-                  </h3>
-                </div>
-                <div className="p-6 space-y-4">
-                  {comparisons.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-3 p-3 rounded-lg hover:bg-primary/5 transition-colors"
-                    >
-                      <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                      <span className="text-foreground font-medium">
-                        {item.adymize.text}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden relative animate-slide-in animation-delay-200">
+              <div className="p-6 bg-primary/10 border-b border-primary/20">
+                <span className="inline-block px-4 py-1 bg-primary text-white text-sm font-semibold rounded-full">
+                  ADYMIZE
+                </span>
               </div>
-            </Card>
+              <div className="p-8 space-y-6">
+                {comparisons.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center space-x-4"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="h-4 w-4 text-primary" strokeWidth={3} />
+                    </div>
+                    <span className="text-gray-800 font-medium">
+                      {item.adymize.text}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* CTA */}

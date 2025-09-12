@@ -62,7 +62,7 @@ const ServiceShowcase = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative bg-background/80 backdrop-blur-sm rounded-2xl border border-border/50 py-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: 3D Card with Browser Mockup */}

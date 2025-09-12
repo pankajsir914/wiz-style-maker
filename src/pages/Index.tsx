@@ -5,7 +5,6 @@ import ServiceShowcase from "@/components/ServiceShowcase";
 import DesignShowcase from "@/components/DesignShowcase";
 import AutomationShowcase from "@/components/AutomationShowcase";
 import SEOShowcase from "@/components/SEOShowcase";
-import Portfolio from "@/components/Portfolio";
 import OurClients from "@/components/OurClients";
 import OnboardingProcess from "@/components/OnboardingProcess";
 import Team from "@/components/Team";
@@ -28,7 +27,6 @@ const Index = () => {
         <DesignShowcase />
         <AutomationShowcase />
         <SEOShowcase />
-        <Portfolio />
         <OurClients />
         <OnboardingProcess />
         <Team />

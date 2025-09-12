@@ -10,6 +10,7 @@ import SEOShowcase from "@/components/SEOShowcase";
 import Portfolio from "@/components/Portfolio";
 import OurClients from "@/components/OurClients";
 import Process from "@/components/Process";
+import OnboardingProcess from "@/components/OnboardingProcess";
 import Team from "@/components/Team";
 import Comparison from "@/components/Comparison";
 import Testimonials from "@/components/Testimonials";
@@ -34,6 +35,7 @@ const Index = () => {
         <SEOShowcase />
         <Portfolio />
         <OurClients />
+        <OnboardingProcess />
         <Process />
         <Team />
         <Comparison />

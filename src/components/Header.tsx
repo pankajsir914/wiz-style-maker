@@ -55,10 +55,11 @@ const Header = () => {
             {"Adymize".split("").map((letter, index) => (
               <span
                 key={index}
-                className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-float"
+                className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent opacity-0 animate-fade-in"
                 style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animationDuration: "2s"
+                  animationDelay: `${index * 0.15}s`,
+                  animationDuration: "0.5s",
+                  animationFillMode: "forwards"
                 }}
               >
                 {letter}

@@ -51,7 +51,20 @@ const Header = () => {
               <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center transform transition-transform group-hover:scale-105">
                 <span className="text-white text-base sm:text-lg font-bold">✓</span>
               </div>
-              <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_auto]">Adymize</span>
+          <span className="text-lg sm:text-xl font-bold inline-flex">
+            {"Adymize".split("").map((letter, index) => (
+              <span
+                key={index}
+                className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-float"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animationDuration: "2s"
+                }}
+              >
+                {letter}
+              </span>
+            ))}
+          </span>
             </a>
 
             {/* Desktop Navigation */}

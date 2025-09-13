@@ -181,37 +181,32 @@ const Testimonials = () => {
             ))}
           </div>
 
-          {/* Client Logos */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
-              {clientLogos.slice(0, 6).map((client, index) => (
+          {/* Client Logos with Marquee Effect */}
+          <div className="overflow-hidden -mx-8 lg:-mx-12">
+            {/* First Row - Scrolling Right to Left */}
+            <div className="flex gap-8 mb-8 animate-marquee-left">
+              {/* Duplicate logos for seamless loop */}
+              {[...clientLogos.slice(0, 6), ...clientLogos.slice(0, 6)].map((client, index) => (
                 <div
-                  key={client.name}
-                  className={`flex justify-center items-center h-16 transition-all duration-700 cursor-pointer transform ${
-                    isVisible ? 'opacity-70 translate-y-0' : 'opacity-0 translate-y-10'
-                  } hover:opacity-100 hover:scale-110 hover:-translate-y-1`}
-                  style={{ 
-                    transitionDelay: `${(index + 6) * 100}ms`
-                  }}
+                  key={`${client.name}-${index}`}
+                  className="flex-shrink-0 flex justify-center items-center h-16 px-8 hover:scale-110 transition-transform cursor-pointer"
                 >
-                  <span className="text-lg font-semibold text-gray-700 transition-colors duration-300 hover:text-purple-600">
+                  <span className="text-lg font-semibold text-gray-700 whitespace-nowrap hover:text-purple-600 transition-colors">
                     {client.logo}
                   </span>
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-8 items-center mt-8">
-              {clientLogos.slice(6).map((client, index) => (
+            
+            {/* Second Row - Scrolling Left to Right */}
+            <div className="flex gap-8 animate-marquee-right">
+              {/* Duplicate logos for seamless loop */}
+              {[...clientLogos.slice(6), ...clientLogos.slice(6)].map((client, index) => (
                 <div
-                  key={client.name}
-                  className={`flex justify-center items-center h-16 transition-all duration-700 cursor-pointer transform ${
-                    isVisible ? 'opacity-70 translate-y-0' : 'opacity-0 translate-y-10'
-                  } hover:opacity-100 hover:scale-110 hover:-translate-y-1`}
-                  style={{ 
-                    transitionDelay: `${(index + 12) * 100}ms`
-                  }}
+                  key={`${client.name}-${index}`}
+                  className="flex-shrink-0 flex justify-center items-center h-16 px-8 hover:scale-110 transition-transform cursor-pointer"
                 >
-                  <span className="text-lg font-semibold text-gray-700 transition-colors duration-300 hover:text-purple-600">
+                  <span className="text-lg font-semibold text-gray-700 whitespace-nowrap hover:text-purple-600 transition-colors">
                     {client.logo}
                   </span>
                 </div>

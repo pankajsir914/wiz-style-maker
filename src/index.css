@@ -148,6 +148,21 @@ All colors MUST be HSL.
     }
   }
   
+  @keyframes typewriter {
+    0%, 10% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    20%, 80% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    90%, 100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  
   .animate-marquee-left {
     animation: marquee-left 30s linear infinite;
   }

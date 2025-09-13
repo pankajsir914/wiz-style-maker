@@ -6,9 +6,13 @@ import ContactModal from "./ContactModal";
 const Hero = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 bg-gradient-to-b from-background via-background/95 to-accent/10">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12">
+      {/* Multi-color gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-pink-50/30 to-blue-100/40" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-blue-400/20 to-purple-400/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 right-1/3 w-[400px] h-[400px] bg-gradient-to-bl from-pink-300/20 to-purple-300/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/3 left-1/3 w-[350px] h-[350px] bg-gradient-to-tr from-blue-300/15 to-pink-300/15 rounded-full blur-3xl" />
       
       <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12 text-center">
         <div className="max-w-5xl mx-auto space-y-8 animate-fade-up">

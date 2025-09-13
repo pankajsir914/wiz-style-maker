@@ -62,10 +62,10 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4 text-foreground">
+          <h2 className="text-[length:var(--font-h2)] font-display font-bold mb-4 text-foreground">
             Get In <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+          <p className="text-[length:var(--font-body-lg)] text-foreground/80 max-w-2xl mx-auto">
             Ready to scale your business? Let's discuss how we can help you achieve exceptional growth
           </p>
         </div>
@@ -74,7 +74,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/20 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">Send us a Message</h3>
+              <h3 className="text-[length:var(--font-h3)] font-semibold mb-6 text-foreground">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
@@ -153,8 +153,8 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-6">
               <Card className="p-8 bg-gradient-primary text-white rounded-2xl">
-                <h3 className="text-2xl font-semibold mb-4">Book a Free Strategy Call</h3>
-                <p className="mb-6 opacity-90">
+                <h3 className="text-[length:var(--font-h3)] font-semibold mb-4">Book a Free Strategy Call</h3>
+                <p className="text-[length:var(--font-body)] mb-6 opacity-90">
                   Get a free 30-minute consultation with our marketing experts to discuss 
                   your business goals and how we can help you achieve them.
                 </p>
@@ -178,8 +178,8 @@ const Contact = () => {
                       <div className="flex items-start gap-3">
                         <info.icon className="h-5 w-5 text-primary mt-1" />
                         <div>
-                          <p className="text-sm text-foreground/70">{info.title}</p>
-                          <p className="text-foreground group-hover:text-primary transition-colors">
+                          <p className="text-[length:var(--font-body-sm)] text-foreground/70">{info.title}</p>
+                          <p className="text-[length:var(--font-body)] text-foreground group-hover:text-primary transition-colors">
                             {info.content}
                           </p>
                         </div>

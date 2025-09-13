@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12 text-center">
         <div className="max-w-5xl mx-auto space-y-10 animate-fade-up">
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight">
+          <h1 className="text-[length:var(--font-h1)] font-display font-bold leading-tight">
             <span className="text-foreground">Optimize Your Ads</span>
             <br />
             <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -24,14 +24,14 @@ const Hero = () => {
           </h1>
           
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 text-base sm:text-lg">
-            <span className="text-muted-foreground px-4 py-2 bg-muted/30 rounded-full">3+ years</span>
-            <span className="text-muted-foreground px-4 py-2 bg-muted/30 rounded-full">50+ Brands</span>
-            <span className="text-muted-foreground px-4 py-2 bg-muted/30 rounded-full">35+ Crore Ad spent</span>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-[length:var(--font-body-sm)] sm:text-[length:var(--font-body)]">
+            <span className="text-muted-foreground px-3 sm:px-4 py-1.5 sm:py-2 bg-muted/30 rounded-full">3+ years</span>
+            <span className="text-muted-foreground px-3 sm:px-4 py-1.5 sm:py-2 bg-muted/30 rounded-full">50+ Brands</span>
+            <span className="text-muted-foreground px-3 sm:px-4 py-1.5 sm:py-2 bg-muted/30 rounded-full">35+ Crore Ad spent</span>
           </div>
           
           {/* Subtitle */}
-          <p className="text-xl sm:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[length:var(--font-body-lg)] text-foreground/80 max-w-3xl mx-auto leading-relaxed px-4">
             A dedicated team of specialists, delivering remarkable work
             to our clients worldwide!
           </p>
@@ -58,16 +58,16 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Partner Logos */}
-        <div className="mt-20 space-y-6">
-          <p className="text-sm text-muted-foreground uppercase tracking-wider">Our Performance Marketing Services are Certified by</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-70">
-            <div className="text-2xl font-bold text-muted-foreground px-6 py-3 bg-muted/20 rounded-2xl">Meta</div>
-            <div className="text-2xl font-bold text-muted-foreground px-6 py-3 bg-muted/20 rounded-2xl">Shopify</div>
-            <div className="text-2xl font-bold text-muted-foreground px-6 py-3 bg-muted/20 rounded-2xl">Google</div>
-            <div className="text-2xl font-bold text-muted-foreground px-6 py-3 bg-muted/20 rounded-2xl">Partner</div>
+          {/* Partner Logos */}
+          <div className="mt-20 space-y-6">
+            <p className="text-[length:var(--font-body-sm)] text-muted-foreground uppercase tracking-wider">Our Performance Marketing Services are Certified by</p>
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 lg:gap-12 opacity-70">
+              <div className="text-[length:var(--font-body)] sm:text-[length:var(--font-body-lg)] font-bold text-muted-foreground px-4 sm:px-6 py-2 sm:py-3 bg-muted/20 rounded-2xl">Meta</div>
+              <div className="text-[length:var(--font-body)] sm:text-[length:var(--font-body-lg)] font-bold text-muted-foreground px-4 sm:px-6 py-2 sm:py-3 bg-muted/20 rounded-2xl">Shopify</div>
+              <div className="text-[length:var(--font-body)] sm:text-[length:var(--font-body-lg)] font-bold text-muted-foreground px-4 sm:px-6 py-2 sm:py-3 bg-muted/20 rounded-2xl">Google</div>
+              <div className="text-[length:var(--font-body)] sm:text-[length:var(--font-body-lg)] font-bold text-muted-foreground px-4 sm:px-6 py-2 sm:py-3 bg-muted/20 rounded-2xl">Partner</div>
+            </div>
           </div>
-        </div>
       </div>
       
       <ContactModal 

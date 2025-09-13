@@ -67,7 +67,7 @@ const Services = () => {
                 NEW!
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent mb-4">
+            <h2 className="text-[length:var(--font-h2)] font-display font-bold bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent mb-4">
               Our Services
             </h2>
           </div>
@@ -91,10 +91,10 @@ const Services = () => {
                   
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-lg font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-[length:var(--font-h4)] font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-[length:var(--font-body)] text-muted-foreground leading-relaxed">
                       {service.description}
                     </p>
                   </div>
@@ -109,8 +109,8 @@ const Services = () => {
               href="#contact"
               className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors group"
             >
-              <span className="text-sm font-medium">Want to discuss</span>
-              <span className="text-sm font-semibold underline underline-offset-4">Let's Schedule a Call</span>
+              <span className="text-[length:var(--font-body)] font-medium">Want to discuss</span>
+              <span className="text-[length:var(--font-body)] font-semibold underline underline-offset-4">Let's Schedule a Call</span>
               <Phone className="h-4 w-4 group-hover:rotate-12 transition-transform" />
             </a>
           </div>

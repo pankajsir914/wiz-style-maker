@@ -40,9 +40,9 @@ const FAQ = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary mb-2 flex items-center justify-center gap-4 animate-fade-in">
+            <h2 className="text-[length:var(--font-h2)] font-display font-bold text-primary mb-2 flex items-center justify-center gap-4 animate-fade-in">
               Need Help?
-              <span className="text-5xl animate-[bounce_2s_ease-in-out_infinite]">🧑‍💼</span>
+              <span className="text-[length:var(--font-h2)] animate-[bounce_2s_ease-in-out_infinite]">🧑‍💼</span>
             </h2>
           </div>
 
@@ -63,13 +63,13 @@ const FAQ = () => {
                 >
                   <AccordionTrigger className="text-left py-6 hover:no-underline group-hover:text-primary transition-colors [&[data-state=open]>div>svg]:rotate-45">
                     <div className="flex items-center justify-between w-full pr-4">
-                      <span className="text-base sm:text-lg font-medium text-foreground/90 leading-relaxed">
+                      <span className="text-[length:var(--font-body-lg)] font-medium text-foreground/90 leading-relaxed">
                         {faq.question}
                       </span>
                       <Plus className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-all duration-300 flex-shrink-0 ml-4" />
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-6 pr-12 animate-fade-in">
+                  <AccordionContent className="text-[length:var(--font-body)] text-muted-foreground pb-6 pr-12 animate-fade-in">
                     <p className="leading-relaxed">
                       {faq.answer}
                     </p>

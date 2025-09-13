@@ -51,6 +51,15 @@ All colors MUST be HSL.
     --mobile-padding: 1rem;
     --mobile-margin: 0.75rem;
     
+    /* Fluid Typography - clamp(min, preferred, max) */
+    --font-h1: clamp(1.75rem, 4vw + 1rem, 4.5rem);
+    --font-h2: clamp(1.5rem, 3vw + 0.75rem, 3rem);
+    --font-h3: clamp(1.25rem, 2vw + 0.5rem, 2rem);
+    --font-h4: clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem);
+    --font-body-lg: clamp(1rem, 1vw + 0.75rem, 1.25rem);
+    --font-body: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+    --font-body-sm: clamp(0.75rem, 0.25vw + 0.65rem, 0.875rem);
+    
     /* Gradients */
     --gradient-primary: linear-gradient(90deg, hsl(271 91% 65%), hsl(338 69% 62%));
     --gradient-secondary: linear-gradient(135deg, hsl(271 91% 65% / 0.8), hsl(338 69% 62% / 0.8));

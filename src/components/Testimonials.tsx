@@ -83,7 +83,7 @@ const Testimonials = () => {
           </div>
 
           {/* Title with emoji */}
-          <h2 className={`text-4xl md:text-5xl font-bold text-center mb-12 transition-all duration-1000 transform ${
+          <h2 className={`text-[length:var(--font-h2)] font-bold text-center mb-12 transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
           style={{ transitionDelay: '200ms' }}>
@@ -121,12 +121,12 @@ const Testimonials = () => {
                       }`}
                     />
                     <div className="flex-1">
-                      <div className={`text-xs text-gray-500 mb-2 font-semibold transition-all duration-300 ${
+                      <div className={`text-[length:var(--font-body-sm)] text-gray-500 mb-2 font-semibold transition-all duration-300 ${
                         hoveredCard === testimonial.id ? 'text-purple-600' : ''
                       }`}>
                         "TO {testimonial.rating}"
                       </div>
-                      <p className={`text-gray-700 text-sm leading-relaxed font-medium transition-all duration-300 ${
+                      <p className={`text-gray-700 text-[length:var(--font-body)] leading-relaxed font-medium transition-all duration-300 ${
                         hoveredCard === testimonial.id ? 'text-gray-900' : ''
                       }`}>
                         {testimonial.quote}
@@ -173,7 +173,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* Company Logo */}
-                  <div className="absolute bottom-4 right-4 text-xs font-bold text-gray-600/50">
+                  <div className="absolute bottom-4 right-4 text-[length:var(--font-body-sm)] font-bold text-gray-600/50">
                     {testimonial.company}
                   </div>
                 </div>
@@ -191,7 +191,7 @@ const Testimonials = () => {
                   key={`${client.name}-${index}`}
                   className="flex-shrink-0 flex justify-center items-center h-16 px-8 hover:scale-110 transition-transform cursor-pointer"
                 >
-                  <span className="text-lg font-semibold text-gray-700 whitespace-nowrap hover:text-purple-600 transition-colors">
+                  <span className="text-[length:var(--font-body)] sm:text-[length:var(--font-body-lg)] font-semibold text-gray-700 whitespace-nowrap hover:text-purple-600 transition-colors">
                     {client.logo}
                   </span>
                 </div>
@@ -206,7 +206,7 @@ const Testimonials = () => {
                   key={`${client.name}-${index}`}
                   className="flex-shrink-0 flex justify-center items-center h-16 px-8 hover:scale-110 transition-transform cursor-pointer"
                 >
-                  <span className="text-lg font-semibold text-gray-700 whitespace-nowrap hover:text-purple-600 transition-colors">
+                  <span className="text-[length:var(--font-body)] sm:text-[length:var(--font-body-lg)] font-semibold text-gray-700 whitespace-nowrap hover:text-purple-600 transition-colors">
                     {client.logo}
                   </span>
                 </div>

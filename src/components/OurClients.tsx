@@ -104,7 +104,7 @@ const OurClients = () => {
         {/* Dark Header */}
         <div className="absolute top-0 left-0 right-0 bg-background z-10 border-b border-border/20">
           <div className="container mx-auto px-4 py-4">
-            <h2 className="text-2xl font-display font-bold text-foreground">
+            <h2 className="text-[length:var(--font-h3)] font-display font-bold text-foreground">
               Our Clients
             </h2>
           </div>
@@ -139,12 +139,12 @@ const OurClients = () => {
                       activeIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
                     }`}
                   >
-                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-md animate-float">
-                      <client.icon className="h-12 w-12 text-white mb-4" />
-                      <h3 className="text-3xl font-bold text-white mb-2">
+                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-4 sm:p-6 lg:p-8 max-w-md animate-float">
+                      <client.icon className="h-8 sm:h-10 lg:h-12 w-8 sm:w-10 lg:w-12 text-white mb-4" />
+                      <h3 className="text-[length:var(--font-h3)] font-bold text-white mb-2">
                         {client.metric}
                       </h3>
-                      <p className="text-white/80">
+                      <p className="text-[length:var(--font-body)] text-white/80">
                         {client.metricLabel}
                       </p>
                     </div>
@@ -166,10 +166,10 @@ const OurClients = () => {
                     }`}
                   >
                     <div className="mb-6">
-                      <h3 className="text-4xl font-display font-bold text-foreground mb-2">
+                      <h3 className="text-[length:var(--font-h2)] font-display font-bold text-foreground mb-2">
                         {client.name}
                       </h3>
-                      <p className="text-lg text-muted-foreground">
+                      <p className="text-[length:var(--font-body-lg)] text-muted-foreground">
                         {client.company}
                       </p>
                     </div>
@@ -180,15 +180,15 @@ const OurClients = () => {
                           <client.icon className="h-6 w-6 text-white" />
                         </div>
                         <div>
-                          <p className="text-2xl font-bold text-foreground">
+                          <p className="text-[length:var(--font-h3)] font-bold text-foreground">
                             {client.metric}
                           </p>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="text-[length:var(--font-body)] text-muted-foreground">
                             {client.metricLabel}
                           </p>
                         </div>
                       </div>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-[length:var(--font-body)] text-muted-foreground leading-relaxed">
                         {client.description}
                       </p>
                     </Card>

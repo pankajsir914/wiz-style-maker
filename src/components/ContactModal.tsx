@@ -53,10 +53,10 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[500px] bg-background/95 backdrop-blur-xl border-primary/20">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-display">
+          <DialogTitle className="text-[length:var(--font-h3)] font-display">
             Book Your <span className="bg-gradient-primary bg-clip-text text-transparent">Strategy Call</span>
           </DialogTitle>
-          <DialogDescription className="text-foreground/70">
+          <DialogDescription className="text-[length:var(--font-body)] text-foreground/70">
             Get a free consultation with our marketing experts
           </DialogDescription>
         </DialogHeader>

@@ -47,6 +47,10 @@ All colors MUST be HSL.
     
     --radius: 1rem;
     
+    /* Mobile-specific spacing */
+    --mobile-padding: 1rem;
+    --mobile-margin: 0.75rem;
+    
     /* Gradients */
     --gradient-primary: linear-gradient(90deg, hsl(271 91% 65%), hsl(338 69% 62%));
     --gradient-secondary: linear-gradient(135deg, hsl(271 91% 65% / 0.8), hsl(338 69% 62% / 0.8));

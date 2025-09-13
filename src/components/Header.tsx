@@ -34,8 +34,8 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl">
-        <nav className={`bg-white rounded-full px-5 sm:px-8 py-3 transition-all duration-300 ${
+      <header className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] max-w-6xl">
+        <nav className={`bg-white rounded-full px-4 sm:px-8 py-2.5 sm:py-3 transition-all duration-300 ${
           isScrolled ? "shadow-xl" : "shadow-lg"
         }`}>
           <div className="flex items-center justify-between">
@@ -48,10 +48,10 @@ const Header = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center transform transition-transform group-hover:scale-105">
-                <span className="text-white text-lg font-bold">✓</span>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center transform transition-transform group-hover:scale-105">
+                <span className="text-white text-base sm:text-lg font-bold">✓</span>
               </div>
-              <span className="text-xl font-bold text-gray-800">Adymize</span>
+              <span className="text-lg sm:text-xl font-bold text-gray-800">Adymize</span>
             </a>
 
             {/* Desktop Navigation */}
@@ -84,17 +84,17 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-700"
+              className="md:hidden p-2 text-gray-700 min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </nav>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-2 bg-white rounded-2xl shadow-xl p-4 animate-fade-in">
-            <div className="flex flex-col space-y-2">
+          <div className="md:hidden fixed inset-x-0 top-16 sm:top-20 mx-2 sm:mx-4 bg-white rounded-2xl shadow-xl p-4 sm:p-6 animate-fade-in max-h-[calc(100vh-5rem)] overflow-y-auto">
+            <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.label}
@@ -103,7 +103,7 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="text-gray-700 hover:text-purple-600 transition-colors py-2 px-3 rounded-lg hover:bg-gray-50"
+                  className="text-gray-700 hover:text-purple-600 transition-colors py-3 px-4 rounded-lg hover:bg-gray-50 text-base font-medium"
                 >
                   {item.label}
                 </a>
@@ -113,7 +113,7 @@ const Header = () => {
                   setIsContactModalOpen(true);
                   setIsMenuOpen(false);
                 }}
-                className="bg-[#2b2d42] hover:bg-[#1d1e2e] text-white rounded-full w-full mt-2"
+                className="bg-[#2b2d42] hover:bg-[#1d1e2e] text-white rounded-full w-full mt-4 h-12 text-base font-semibold"
               >
                 Chat Now
               </Button>

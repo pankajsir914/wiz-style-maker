@@ -57,22 +57,6 @@ const Services = () => {
     <section id="services" className="py-20 relative overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-pink-100/40 via-purple-100/30 to-blue-100/40" />
-      
-      {/* Navigation Dots */}
-      <div className="fixed right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col gap-3">
-        {Array.from({ length: 6 }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToSection(index)}
-            className={`transition-all duration-300 ${
-              activeIndex === index
-                ? 'w-2 h-2 bg-primary'
-                : 'w-1.5 h-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-            } rounded-full`}
-            aria-label={`Go to service ${index + 1}`}
-          />
-        ))}
-      </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12">

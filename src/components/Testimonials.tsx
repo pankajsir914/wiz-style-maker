@@ -214,25 +214,6 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Navigation Dots */}
-          <div className="fixed right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-2 z-40">
-            {[...Array(5)].map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  const sections = ['hero', 'about', 'services', 'portfolio', 'testimonials'];
-                  const element = document.getElementById(sections[index]);
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className={`rounded-full transition-all duration-300 transform hover:scale-150 ${
-                  index === 4 
-                    ? 'bg-purple-600 w-2 h-6 animate-pulse shadow-lg shadow-purple-600/50' 
-                    : 'bg-gray-300 hover:bg-gray-400 w-2 h-2'
-                }`}
-                aria-label={`Navigate to section ${index + 1}`}
-              />
-            ))}
-          </div>
         </Card>
       </div>
     </section>

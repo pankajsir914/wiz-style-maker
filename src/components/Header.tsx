@@ -19,7 +19,7 @@ const Header = () => {
   const navItems = [
     { label: "Services", href: "#services" },
     { label: "Clients", href: "#portfolio" },
-    { label: "Why Adymize?", href: "#about" },
+    { label: "Why Editorzhub?", href: "#about" },
     { label: "Reviews", href: "#testimonials" },
     { label: "FAQs", href: "#faq" },
   ];
@@ -52,7 +52,7 @@ const Header = () => {
                 <span className="text-white text-base sm:text-lg font-bold">✓</span>
               </div>
           <span className="text-lg sm:text-xl font-bold inline-flex">
-            {"Adymize".split("").map((letter, index) => (
+            {"Editorzhub.com".split("").map((letter, index) => (
               <span
                 key={index}
                 className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"

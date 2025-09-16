@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
                 <span className="text-white text-lg">✓</span>
               </div>
-              <span className="text-[length:var(--font-h3)] font-bold text-gray-800">Adymize</span>
+              <span className="text-[length:var(--font-h3)] font-bold text-gray-800">Editorzhub.com</span>
             </div>
           </div>
           
@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-[length:var(--font-body-sm)] text-gray-600 text-center md:text-left">
-              © 2025 Adymize Private Limited | <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>
+              © 2025 Editorzhub.com Private Limited | <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>
             </div>
             
             {/* Social Icons */}

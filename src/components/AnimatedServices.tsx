@@ -1,0 +1,170 @@
+import { 
+  TrendingUp, 
+  Users, 
+  Search, 
+  Palette, 
+  Code2, 
+  Zap,
+  Phone,
+  CircleDot
+} from "lucide-react";
+import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { useScrollAnimation, fadeInUp, staggerContainer, staggerItem } from "@/hooks/useScrollAnimation";
+
+const services = [
+  {
+    icon: TrendingUp,
+    title: "Strategic Marketing",
+    description: "Catapult your brand into the spotlight with our genius strategies – it's like magic, but for marketing.",
+  },
+  {
+    icon: Users,
+    title: "Social Media Management",
+    description: "Hands-free social success! While you focus on your cat videos, we'll make sure your brand shines across all social platforms.",
+  },
+  {
+    icon: Search,
+    title: "Search Engine Optimization (SEO)",
+    description: "Boost your online swagger! We'll spruce up your website so Google has no choice but to be your biggest fan.",
+  },
+  {
+    icon: Palette,
+    title: "Creative Design",
+    description: "Picture-perfect branding and graphics – we make your competitors jealous, and your audience adore you.",
+  },
+  {
+    icon: Code2,
+    title: "Technical Solutions",
+    description: "From tech wizardry to seamless online experiences, we turn digital hiccups into high-fives for your users.",
+  },
+  {
+    icon: Zap,
+    title: "Automation Services",
+    description: "Automagically enhance efficiency! Our automation tricks make your processes smoother than a freshly buttered slide.",
+  },
+];
+
+const Services = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { ref, controls } = useScrollAnimation();
+
+  const scrollToSection = (index: number) => {
+    setActiveIndex(index);
+    const element = document.getElementById(`service-${index}`);
+    element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  return (
+    <section id="services" className="py-20 relative overflow-hidden">
+      {/* Animated Gradient Background */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0 bg-gradient-to-br from-pink-100/40 via-purple-100/30 to-blue-100/40"
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={fadeInUp}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12">
+            {/* Section Header */}
+            <motion.div 
+              initial={{ opacity: 0, y: -30 }}
+              animate={controls}
+              variants={fadeInUp}
+              className="text-center mb-16"
+            >
+              <motion.div 
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+                className="inline-flex items-center gap-2 mb-4"
+              >
+                <span className="text-sm font-medium text-primary tracking-wider uppercase bg-primary/10 px-3 py-1 rounded-full">
+                  NEW!
+                </span>
+              </motion.div>
+              <h2 className="text-[length:var(--font-h2)] font-display font-bold bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent mb-4">
+                Our Services
+              </h2>
+            </motion.div>
+            
+            {/* Services Grid */}
+            <motion.div 
+              variants={staggerContainer}
+              initial="hidden"
+              animate={controls}
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16"
+            >
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  id={`service-${index}`}
+                  variants={staggerItem}
+                  whileHover={{ 
+                    scale: 1.02,
+                    transition: { duration: 0.2 }
+                  }}
+                  className="group relative"
+                >
+                  <div className="flex gap-4">
+                    {/* Icon Container */}
+                    <div className="flex-shrink-0">
+                      <motion.div 
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                        className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center"
+                      >
+                        <service.icon className="h-7 w-7 text-primary" />
+                      </motion.div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h3 className="text-[length:var(--font-h4)] font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-[length:var(--font-body)] text-muted-foreground leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+            
+            {/* CTA Section */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={controls}
+              variants={fadeInUp}
+              transition={{ delay: 0.8 }}
+              className="text-center"
+            >
+              <motion.a 
+                href="#contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors group"
+              >
+                <span className="text-[length:var(--font-body)] font-medium">Want to discuss</span>
+                <span className="text-[length:var(--font-body)] font-semibold underline underline-offset-4">Let's Schedule a Call</span>
+                <Phone className="h-4 w-4 group-hover:rotate-12 transition-transform" />
+              </motion.a>
+            </motion.div>
+          </Card>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;

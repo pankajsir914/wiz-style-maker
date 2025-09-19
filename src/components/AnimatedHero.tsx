@@ -79,17 +79,7 @@ const Hero = () => {
             className="text-[length:var(--font-h1)] font-display font-bold leading-tight"
           >
             <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-              Optimize Your Ads
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent relative inline-block">
-              For More Profit
-              <motion.span 
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 1 }}
-                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full origin-left"
-              />
+              Transforming Videos. Elevating Brands
             </span>
           </motion.h1>
           
@@ -104,7 +94,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1.2 }}
               className="font-semibold"
             >
-              5+ years
+              4+ years
             </motion.span>
             <span className="text-muted-foreground/50">|</span>
             <motion.span 
@@ -113,7 +103,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1.4 }}
               className="font-semibold"
             >
-              511+ Brands
+              237+ Clients
             </motion.span>
             <span className="text-muted-foreground/50">|</span>
             <motion.span 
@@ -122,7 +112,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1.6 }}
               className="font-semibold"
             >
-              60+ Crore Ad spent
+              4357+ Videos Edited
             </motion.span>
           </motion.div>
           
@@ -131,8 +121,8 @@ const Hero = () => {
             variants={itemVariants}
             className="text-[length:var(--font-body-lg)] text-foreground/70 max-w-3xl mx-auto leading-relaxed px-4"
           >
-            A dedicated team of specialists, delivering remarkable work
-            to our clients worldwide!
+            We help creators, coaches & businesses turn raw footage into scroll-stopping content
+            that drives real growth.
           </motion.p>
           
           {/* CTA Button */}
@@ -149,7 +139,7 @@ const Hero = () => {
                 className="bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white transition-all group min-w-[240px] rounded-full px-8 py-7 shadow-lg"
                 onClick={() => setIsContactModalOpen(true)}
               >
-                Book a Strategy Call
+                Book Your Free Strategy Call
                 <Calendar className="ml-3 h-5 w-5 group-hover:rotate-12 transition-transform" />
               </Button>
             </motion.div>

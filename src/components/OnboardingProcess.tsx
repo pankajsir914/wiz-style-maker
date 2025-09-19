@@ -35,9 +35,9 @@ const OnboardingProcess = () => {
                     <span className="text-purple-600 font-semibold">1</span>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">Plan Your Growth</h3>
+                    <h3 className="text-xl font-semibold">Upload Your Raw Footage</h3>
                     <p className="text-muted-foreground">
-                      Dream big, strategize with us, and turn plans into profits.
+                      Simple cloud-based upload system. Share your footage via Google Drive, Dropbox, or WeTransfer.
                     </p>
                   </div>
                 </div>
@@ -48,9 +48,9 @@ const OnboardingProcess = () => {
                     <span className="text-purple-600 font-semibold">2</span>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">Handover the project</h3>
+                    <h3 className="text-xl font-semibold">We Edit Your Content</h3>
                     <p className="text-muted-foreground">
-                      We're your project navigators, turning plans into reality. Smooth sailing guaranteed.
+                      Professional editing with your style guide. 24-48 hour turnaround with unlimited revisions.
                     </p>
                   </div>
                 </div>
@@ -61,9 +61,9 @@ const OnboardingProcess = () => {
                     <span className="text-purple-600 font-semibold">3</span>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">Count the profit</h3>
+                    <h3 className="text-xl font-semibold">Receive & Publish</h3>
                     <p className="text-muted-foreground">
-                      Sit back, relax, and let the profits set sail. Your success story starts with us!
+                      Get edited videos ready for all platforms. YouTube, Instagram, TikTok - optimized for each.
                     </p>
                   </div>
                 </div>

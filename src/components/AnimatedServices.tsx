@@ -1,10 +1,10 @@
 import { 
-  TrendingUp, 
-  Users, 
-  Search, 
+  Video, 
+  Film, 
+  Sparkles, 
   Palette, 
-  Code2, 
-  Zap,
+  Headphones, 
+  Image,
   Phone,
   CircleDot
 } from "lucide-react";
@@ -15,34 +15,34 @@ import { useScrollAnimation, fadeInUp, staggerContainer, staggerItem } from "@/h
 
 const services = [
   {
-    icon: TrendingUp,
-    title: "Strategic Marketing",
-    description: "Catapult your brand into the spotlight with our genius strategies – it's like magic, but for marketing.",
+    icon: Video,
+    title: "Short Form Content",
+    description: "YouTube Shorts, Instagram Reels, TikTok videos - we create thumb-stopping content that keeps viewers hooked from the first frame.",
   },
   {
-    icon: Users,
-    title: "Social Media Management",
-    description: "Hands-free social success! While you focus on your cat videos, we'll make sure your brand shines across all social platforms.",
+    icon: Film,
+    title: "Long Form Editing",
+    description: "YouTube videos, podcasts, documentaries - professional editing that maintains viewer retention throughout your content.",
   },
   {
-    icon: Search,
-    title: "Search Engine Optimization (SEO)",
-    description: "Boost your online swagger! We'll spruce up your website so Google has no choice but to be your biggest fan.",
+    icon: Sparkles,
+    title: "Motion Graphics",
+    description: "Animated intros, lower thirds, transitions - eye-catching graphics that elevate your production value instantly.",
   },
   {
     icon: Palette,
-    title: "Creative Design",
-    description: "Picture-perfect branding and graphics – we make your competitors jealous, and your audience adore you.",
+    title: "Color Grading",
+    description: "Professional color correction and grading - we transform raw footage into cinematic masterpieces with perfect mood and tone.",
   },
   {
-    icon: Code2,
-    title: "Technical Solutions",
-    description: "From tech wizardry to seamless online experiences, we turn digital hiccups into high-fives for your users.",
+    icon: Headphones,
+    title: "Sound Design",
+    description: "Audio mixing, sound effects, background music - crystal clear audio that enhances your story and keeps viewers engaged.",
   },
   {
-    icon: Zap,
-    title: "Automation Services",
-    description: "Automagically enhance efficiency! Our automation tricks make your processes smoother than a freshly buttered slide.",
+    icon: Image,
+    title: "Thumbnail Design",
+    description: "Eye-catching thumbnails optimized for maximum CTR - because great content deserves to be clicked and watched.",
   },
 ];
 

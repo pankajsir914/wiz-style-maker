@@ -4,23 +4,23 @@ import { Card } from "@/components/ui/card";
 const comparisons = [
   {
     feature: "Turnaround Time",
-    others: { text: "Longer turnaround time", hasFeature: false },
-    adymize: { text: "Faster and quick responses", hasFeature: true },
+    others: { text: "5-7 days delivery", hasFeature: false },
+    editorzhub: { text: "24-48 hour delivery", hasFeature: true },
   },
   {
-    feature: "Approach",
-    others: { text: "Mediocre methods", hasFeature: false },
-    adymize: { text: "Ethical Approach", hasFeature: true },
+    feature: "Quality",
+    others: { text: "Freelancer quality varies", hasFeature: false },
+    editorzhub: { text: "Professional editors only", hasFeature: true },
   },
   {
-    feature: "Reporting",
-    others: { text: "Lack of timely reporting", hasFeature: false },
-    adymize: { text: "Accurate Reporting", hasFeature: true },
+    feature: "Revisions",
+    others: { text: "Limited revisions", hasFeature: false },
+    editorzhub: { text: "Unlimited revisions", hasFeature: true },
   },
   {
-    feature: "Support",
-    others: { text: "No prompt answers", hasFeature: false },
-    adymize: { text: "Precise Resolutions", hasFeature: true },
+    feature: "Platform Optimization",
+    others: { text: "Single format export", hasFeature: false },
+    editorzhub: { text: "Multi-platform exports", hasFeature: true },
   },
 ];
 
@@ -40,7 +40,7 @@ const Comparison = () => {
               </span>
             </h2>
             <p className="text-lg text-gray-700 font-medium">
-              Adymize V/S Others
+              Editorzhub.com V/S Others
             </p>
           </div>
 
@@ -71,11 +71,11 @@ const Comparison = () => {
                 </div>
               </div>
 
-              {/* Adymize Column */}
+              {/* Editorzhub Column */}
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative animate-slide-in animation-delay-200">
                 <div className="p-6 bg-primary/10 border-b border-primary/20">
                   <span className="inline-block px-4 py-1 bg-primary text-white text-sm font-semibold rounded-full">
-                    ADYMIZE
+                    EDITORZHUB
                   </span>
                 </div>
                 <div className="p-8 space-y-6">
@@ -88,7 +88,7 @@ const Comparison = () => {
                         <Check className="h-4 w-4 text-primary" strokeWidth={3} />
                       </div>
                       <span className="text-gray-800 font-medium">
-                        {item.adymize.text}
+                        {item.editorzhub.text}
                       </span>
                     </div>
                   ))}

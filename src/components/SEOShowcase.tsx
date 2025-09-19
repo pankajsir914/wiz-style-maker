@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Youtube, TrendingUp, Hash } from "lucide-react";
 
 const SEOShowcase = () => {
   return (
@@ -9,25 +10,24 @@ const SEOShowcase = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left Content Section */}
             <div className="w-full lg:w-5/12 space-y-6 animate-fade-up">
-              {/* SEO Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-full text-sm font-medium">
-                <span>SEO</span>
+              {/* YouTube Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-full text-sm font-medium">
+                <Youtube className="h-4 w-4" />
+                <span>YOUTUBE</span>
                 <span className="opacity-60">•</span>
-                <span>SEO</span>
-                <span className="opacity-60">•</span>
-                <span>SEO</span>
+                <span>OPTIMIZATION</span>
               </div>
 
               {/* Heading */}
               <h2 className="text-4xl lg:text-5xl font-bold">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Robust SEO
+                <span className="bg-gradient-to-r from-red-600 to-purple-600 bg-clip-text text-transparent">
+                  YouTube SEO
                 </span>
               </h2>
 
               {/* Description */}
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Elevate your online presence, automate workflows, and define digital brilliance with hassle-free SEO
+                Optimize your videos for maximum reach. We handle titles, descriptions, tags, and thumbnails to boost your discoverability.
               </p>
 
               {/* Buttons */}
@@ -37,21 +37,21 @@ const SEOShowcase = () => {
                   size="lg"
                   className="bg-white border-gray-200 text-foreground hover:bg-gray-50 rounded-full px-6"
                 >
-                  Social Media
+                  Keyword Research
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
                   className="bg-white border-gray-200 text-foreground hover:bg-gray-50 rounded-full px-6"
                 >
-                  Ads
+                  Tags & Titles
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
                   className="bg-white border-gray-200 text-foreground hover:bg-gray-50 rounded-full px-6"
                 >
-                  Videos
+                  Analytics
                 </Button>
               </div>
             </div>
@@ -72,27 +72,37 @@ const SEOShowcase = () => {
                 {/* Screen Content */}
                 <div className="bg-gradient-to-br from-cyan-100 via-blue-50 to-pink-100 rounded-b-lg shadow-2xl p-8">
                   <div className="space-y-6">
-                    {/* First Website Card */}
+                    {/* YouTube Analytics Card */}
                     <div className="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                      <div className="mb-4">
-                        <div className="text-sm font-semibold text-gray-600 mb-2">YOUR WEBSITE</div>
-                        <div className="h-32 bg-gradient-to-r from-pink-200 to-purple-200 rounded-lg"></div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <Youtube className="h-6 w-6 text-red-600" />
+                        <span className="text-sm font-semibold text-gray-600">YOUR CHANNEL</span>
                       </div>
-                      <div className="space-y-2">
-                        <div className="h-2 bg-gray-200 rounded w-3/4"></div>
-                        <div className="h-2 bg-gray-200 rounded w-1/2"></div>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-gray-600">Views</span>
+                          <div className="flex items-center gap-2">
+                            <TrendingUp className="h-4 w-4 text-green-500" />
+                            <span className="font-bold text-green-600">+245%</span>
+                          </div>
+                        </div>
+                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div className="h-full w-4/5 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Second Website Card */}
+                    {/* Keywords Card */}
                     <div className="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform">
-                      <div className="mb-4">
-                        <div className="text-sm font-semibold text-gray-600 mb-2">YOUR WEBSITE</div>
-                        <div className="h-32 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-lg"></div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <Hash className="h-6 w-6 text-purple-600" />
+                        <span className="text-sm font-semibold text-gray-600">TOP KEYWORDS</span>
                       </div>
-                      <div className="space-y-2">
-                        <div className="h-2 bg-gray-200 rounded w-2/3"></div>
-                        <div className="h-2 bg-gray-200 rounded w-1/3"></div>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">video editing</span>
+                        <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">tutorial</span>
+                        <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-medium">how to edit</span>
+                        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">premiere pro</span>
                       </div>
                     </div>
                   </div>

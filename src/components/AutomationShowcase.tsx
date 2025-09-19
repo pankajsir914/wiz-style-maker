@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { Upload, Zap, Download } from "lucide-react";
 
 const AutomationShowcase = () => {
   return (
@@ -12,16 +13,16 @@ const AutomationShowcase = () => {
             <div className="space-y-6">
               <Badge className="bg-purple-100 text-purple-600 border-purple-200 px-3 py-1.5 rounded-full">
                 <span className="text-xs font-medium tracking-wider">
-                  AUTOMATE • AUTOMATE • AUTOMATE
+                  WORKFLOW • WORKFLOW • WORKFLOW
                 </span>
               </Badge>
               
               <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Automation
+                Workflow Automation
               </h2>
               
               <p className="text-lg text-muted-foreground max-w-md">
-                Automate the manual task, Save the time and energy, Only focus on delivering quality
+                Streamlined editing workflow from upload to delivery. Fast turnaround times without compromising quality.
               </p>
               
               <div className="flex flex-wrap gap-3">
@@ -29,19 +30,19 @@ const AutomationShowcase = () => {
                   variant="outline" 
                   className="bg-white border-gray-200 text-gray-700 hover:bg-gray-50 px-6 py-2 rounded-full"
                 >
-                  CRM
+                  Cloud Storage
                 </Button>
                 <Button 
                   variant="outline" 
                   className="bg-white border-gray-200 text-gray-700 hover:bg-gray-50 px-6 py-2 rounded-full"
                 >
-                  Lead Gen
+                  Auto-Export
                 </Button>
                 <Button 
                   variant="outline" 
                   className="bg-white border-gray-200 text-gray-700 hover:bg-gray-50 px-6 py-2 rounded-full"
                 >
-                  Business Flows
+                  Multi-Platform
                 </Button>
               </div>
             </div>
@@ -64,10 +65,11 @@ const AutomationShowcase = () => {
                   
                   {/* Workflow Diagram */}
                   <div className="relative z-10 space-y-12">
-                    {/* Lead on Ad Node */}
+                    {/* Upload Node */}
                     <div className="flex justify-center">
-                      <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 rounded-full shadow-lg">
-                        <span className="text-purple-700 font-medium">Lead on Ad</span>
+                      <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 rounded-full shadow-lg flex items-center gap-2">
+                        <Upload className="h-4 w-4 text-purple-700" />
+                        <span className="text-purple-700 font-medium">Upload Raw Footage</span>
                       </div>
                     </div>
                     
@@ -95,24 +97,26 @@ const AutomationShowcase = () => {
                     
                     {/* Action Nodes */}
                     <div className="grid grid-cols-3 gap-8 relative z-10">
-                      {/* Add to Sheet */}
+                      {/* Edit Video */}
                       <div className="flex justify-center">
-                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                          <span className="text-sm font-medium">Add to Sheet</span>
+                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2">
+                          <Zap className="h-4 w-4" />
+                          <span className="text-sm font-medium">Edit Video</span>
                         </button>
                       </div>
                       
-                      {/* Add to CRM */}
+                      {/* Color Grade */}
                       <div className="flex justify-center">
                         <button className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                          <span className="text-sm font-medium">Add to CRM</span>
+                          <span className="text-sm font-medium">Color Grade</span>
                         </button>
                       </div>
                       
-                      {/* Send Message */}
+                      {/* Export & Deliver */}
                       <div className="flex justify-center">
-                        <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                          <span className="text-sm font-medium">Send Message</span>
+                        <button className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2">
+                          <Download className="h-4 w-4" />
+                          <span className="text-sm font-medium">Deliver</span>
                         </button>
                       </div>
                     </div>

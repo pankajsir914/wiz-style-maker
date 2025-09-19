@@ -1,4 +1,4 @@
-import { Heart, MessageCircle, Share2 } from "lucide-react";
+import { Sparkles, Palette, Wand2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const DesignShowcase = () => {
@@ -11,66 +11,41 @@ const DesignShowcase = () => {
         <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left side - Phone mockup with gradient background */}
+              {/* Left side - Motion Graphics showcase */}
               <div className="relative">
                 <div className="bg-gradient-to-br from-pink-400 to-purple-600 rounded-3xl p-8 lg:p-12">
-                  {/* Phone mockup */}
-                  <div className="bg-white rounded-[2.5rem] p-4 shadow-2xl max-w-sm mx-auto">
-                    {/* Phone screen content */}
-                    <div className="bg-gray-50 rounded-[2rem] p-6 space-y-4">
-                      {/* Post 1 */}
-                      <div className="bg-white rounded-xl p-4 shadow-sm">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full" />
-                          <div>
-                            <p className="text-sm font-semibold text-gray-800">Cargo Jeans Store</p>
-                            <p className="text-xs text-gray-500">2 hours ago</p>
+                  {/* Video preview mockup */}
+                  <div className="bg-gray-900 rounded-2xl p-4 shadow-2xl">
+                    <div className="bg-gradient-to-br from-purple-600 via-pink-500 to-blue-500 rounded-lg aspect-video relative overflow-hidden">
+                      {/* Animated elements preview */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="mb-4 relative">
+                            <div className="absolute inset-0 bg-white/20 blur-xl animate-pulse"></div>
+                            <h3 className="text-3xl font-bold text-white relative z-10">MOTION</h3>
                           </div>
-                        </div>
-                        <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg h-48 mb-3 flex items-center justify-center">
-                          <p className="text-2xl font-bold text-gray-700">CARGO</p>
-                        </div>
-                        <div className="flex items-center justify-between text-gray-600">
-                          <button className="flex items-center gap-1 text-sm hover:text-pink-500 transition-colors">
-                            <Heart className="w-4 h-4" />
-                            <span>234</span>
-                          </button>
-                          <button className="flex items-center gap-1 text-sm hover:text-blue-500 transition-colors">
-                            <MessageCircle className="w-4 h-4" />
-                            <span>45</span>
-                          </button>
-                          <button className="flex items-center gap-1 text-sm hover:text-purple-500 transition-colors">
-                            <Share2 className="w-4 h-4" />
-                            <span>12</span>
-                          </button>
+                          <div className="flex justify-center gap-3">
+                            <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center animate-float">
+                              <Sparkles className="h-8 w-8 text-white" />
+                            </div>
+                            <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center animate-float animation-delay-200">
+                              <Palette className="h-8 w-8 text-white" />
+                            </div>
+                            <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center animate-float animation-delay-400">
+                              <Wand2 className="h-8 w-8 text-white" />
+                            </div>
+                          </div>
                         </div>
                       </div>
-
-                      {/* Post 2 */}
-                      <div className="bg-white rounded-xl p-4 shadow-sm">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full" />
-                          <div>
-                            <p className="text-sm font-semibold text-gray-800">Denim Collection</p>
-                            <p className="text-xs text-gray-500">5 hours ago</p>
+                      
+                      {/* Timeline indicator */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs text-white">00:00</span>
+                          <div className="flex-1 bg-gray-700 rounded-full h-1.5">
+                            <div className="h-full w-2/3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
                           </div>
-                        </div>
-                        <div className="bg-gradient-to-r from-cyan-100 to-blue-100 rounded-lg h-32 mb-3 flex items-center justify-center">
-                          <p className="text-xl font-bold text-gray-700">JEANS</p>
-                        </div>
-                        <div className="flex items-center justify-between text-gray-600">
-                          <button className="flex items-center gap-1 text-sm hover:text-pink-500 transition-colors">
-                            <Heart className="w-4 h-4" />
-                            <span>567</span>
-                          </button>
-                          <button className="flex items-center gap-1 text-sm hover:text-blue-500 transition-colors">
-                            <MessageCircle className="w-4 h-4" />
-                            <span>89</span>
-                          </button>
-                          <button className="flex items-center gap-1 text-sm hover:text-purple-500 transition-colors">
-                            <Share2 className="w-4 h-4" />
-                            <span>34</span>
-                          </button>
+                          <span className="text-xs text-white">00:15</span>
                         </div>
                       </div>
                     </div>
@@ -80,32 +55,32 @@ const DesignShowcase = () => {
 
               {/* Right side - Content */}
               <div className="lg:pl-8">
-                {/* Purple badge */}
+                {/* Badge */}
                 <div className="flex justify-start mb-6">
                   <span className="inline-block text-xs font-semibold text-purple-700 bg-purple-100 px-4 py-2 rounded-full uppercase tracking-wider">
-                    SOCIAL • SOCIAL • SOCIAL
+                    GRAPHICS • GRAPHICS • GRAPHICS
                   </span>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-5xl sm:text-6xl font-bold mb-6">
                   <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-purple-600 bg-clip-text text-transparent">
-                    Social Media
+                    Motion Graphics
                   </span>
                 </h2>
 
                 {/* Description text */}
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Elevate your brand with eye-catching social media posts that drive engagement and conversions. We create content that resonates with your audience and builds lasting connections.
+                  Eye-catching animations, dynamic transitions, and stunning visual effects that make your videos stand out and keep viewers watching till the end.
                 </p>
 
-                {/* Ad platform buttons */}
+                {/* Service buttons */}
                 <div className="flex flex-wrap gap-4">
                   <button className="px-8 py-3 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition-colors">
-                    Facebook Ads
+                    Animated Intros
                   </button>
                   <button className="px-8 py-3 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition-colors">
-                    Google Ads
+                    Visual Effects
                   </button>
                 </div>
               </div>

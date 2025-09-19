@@ -39,8 +39,8 @@ const Hero = () => {
           
           {/* Subtitle */}
           <p className="text-[length:var(--font-body-lg)] text-foreground/70 max-w-3xl mx-auto leading-relaxed px-4">
-            A dedicated team of specialists, delivering remarkable work
-            to our clients worldwide!
+            We help creators, coaches & businesses turn raw footage into scroll-stopping content
+that drives real growth.
           </p>
           
           {/* CTA Button */}
@@ -50,7 +50,7 @@ const Hero = () => {
               className="bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white transition-all group min-w-[240px] rounded-full px-8 py-7 shadow-lg"
               onClick={() => setIsContactModalOpen(true)}
             >
-              Book a Strategy Call
+              Book Your Free Strategy Call
               <Calendar className="ml-3 h-5 w-5 group-hover:rotate-12 transition-transform" />
             </Button>
           </div>

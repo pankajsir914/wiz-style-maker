@@ -19,22 +19,22 @@ const Hero = () => {
           {/* Headline */}
           <h1 className="text-[length:var(--font-h1)] font-display font-bold leading-tight">
             <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-              Optimize Your Ads
+              Transforming Videos. Elevating Brands
             </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent relative inline-block">
+{/*             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent relative inline-block">
               For More Profit
               <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></span>
-            </span>
+            </span> */}
           </h1>
           
           {/* Stats - Single line with separators */}
           <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-[length:var(--font-body)] text-muted-foreground">
-            <span className="font-semibold">5+ years</span>
+            <span className="font-semibold">4+ years</span>
             <span className="text-muted-foreground/50">|</span>
-            <span className="font-semibold">511+ Brands</span>
+            <span className="font-semibold">230+ Clients</span>
             <span className="text-muted-foreground/50">|</span>
-            <span className="font-semibold">60+ Crore Ad spent</span>
+            <span className="font-semibold">4357+ Videos Edited</span>
           </div>
           
           {/* Subtitle */}

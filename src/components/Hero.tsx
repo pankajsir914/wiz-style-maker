@@ -14,65 +14,61 @@ const Hero = () => {
       <div className="absolute top-1/3 right-1/3 w-[400px] h-[400px] bg-gradient-to-bl from-pink-300/20 to-purple-300/20 rounded-full blur-3xl" />
       <div className="absolute bottom-1/3 left-1/3 w-[350px] h-[350px] bg-gradient-to-tr from-blue-300/15 to-pink-300/15 rounded-full blur-3xl" />
       
-      <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12 text-center">
-        <div className="max-w-5xl mx-auto space-y-8 animate-fade-up">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 text-center">
+        <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 animate-fade-up">
           {/* Headline */}
-          <h1 className="text-[length:var(--font-h1)] font-display font-bold leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
             <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
               Transforming Videos. Elevating Brands
             </span>
-            <br />
-{/*             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent relative inline-block">
-              For More Profit
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></span>
-            </span> */}
           </h1>
           
-          {/* Stats - Single line with separators */}
-          <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-[length:var(--font-body)] text-muted-foreground">
+          {/* Stats - Responsive layout */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2 sm:gap-4 text-sm sm:text-base text-muted-foreground">
             <span className="font-semibold">4+ years</span>
-            <span className="text-muted-foreground/50">|</span>
+            <span className="hidden sm:inline text-muted-foreground/50">|</span>
             <span className="font-semibold">230+ Clients</span>
-            <span className="text-muted-foreground/50">|</span>
-            <span className="font-semibold">4357+ Videos Edited</span>
+            <span className="hidden sm:inline text-muted-foreground/50">|</span>
+            <span className="font-semibold">4357+ Videos</span>
           </div>
           
           {/* Subtitle */}
-          <p className="text-[length:var(--font-body-lg)] text-foreground/70 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4">
             We help creators, coaches & businesses turn raw footage into scroll-stopping content
 that drives real growth.
           </p>
           
           {/* CTA Button */}
-          <div className="flex justify-center items-center pt-6">
+          <div className="flex justify-center items-center pt-4 sm:pt-6">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white transition-all group min-w-[240px] rounded-full px-8 py-7 shadow-lg"
+              className="bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white transition-all group rounded-full px-6 sm:px-8 py-5 sm:py-7 shadow-lg text-sm sm:text-base"
               onClick={() => setIsContactModalOpen(true)}
             >
-              Book Your Free Strategy Call
-              <Calendar className="ml-3 h-5 w-5 group-hover:rotate-12 transition-transform" />
+              <span className="hidden sm:inline">Book Your Free Strategy Call</span>
+              <span className="sm:hidden">Book Free Call</span>
+              <Calendar className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:rotate-12 transition-transform" />
             </Button>
           </div>
         </div>
         
         {/* Partner Logos */}
-        <div className="mt-20 space-y-6">
-          <p className="text-[length:var(--font-body-sm)] text-muted-foreground uppercase tracking-wider">
+        <div className="mt-12 sm:mt-16 lg:mt-20 space-y-4 sm:space-y-6">
+          <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider px-4">
             Our Performance Marketing Services are Certified by
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 lg:gap-14">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <span className="text-[length:var(--font-body-lg)] font-bold">Meta</span>
-              <span className="text-[length:var(--font-body)]">Business Partner</span>
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-10">
+            <div className="flex items-center gap-1 sm:gap-2 text-muted-foreground">
+              <span className="text-base sm:text-lg font-bold">Meta</span>
+              <span className="text-xs sm:text-sm">Business Partner</span>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <span className="text-[length:var(--font-body-lg)] font-bold">Shopify</span>
-              <span className="text-[length:var(--font-body)]">Partners</span>
+            <div className="flex items-center gap-1 sm:gap-2 text-muted-foreground">
+              <span className="text-base sm:text-lg font-bold">Shopify</span>
+              <span className="text-xs sm:text-sm">Partners</span>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <span className="text-[length:var(--font-body-lg)] font-bold">Google</span>
-              <span className="text-[length:var(--font-body)]">Partner</span>
+            <div className="flex items-center gap-1 sm:gap-2 text-muted-foreground">
+              <span className="text-base sm:text-lg font-bold">Google</span>
+              <span className="text-xs sm:text-sm">Partner</span>
             </div>
           </div>
         </div>

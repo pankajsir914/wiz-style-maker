@@ -81,23 +81,23 @@ const Testimonials = () => {
           animate={controls}
           variants={fadeInUp}
         >
-          <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12">
+          <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-4 sm:p-6 lg:p-12">
             {/* Header */}
             <motion.div 
               initial={{ opacity: 0, y: -30 }}
               animate={controls}
               variants={fadeInUp}
-              className="text-center mb-12"
+              className="text-center mb-8 sm:mb-12"
             >
               <motion.span 
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="inline-block text-sm font-medium text-primary tracking-wider uppercase bg-primary/10 px-3 py-1 rounded-full mb-4"
+                className="inline-block text-xs sm:text-sm font-medium text-primary tracking-wider uppercase bg-primary/10 px-3 py-1 rounded-full mb-4"
               >
                 TESTIMONIALS
               </motion.span>
-              <h2 className="text-[length:var(--font-h2)] font-display font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
                 <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
                   What Our Clients Say
                 </span>
@@ -122,7 +122,7 @@ const Testimonials = () => {
               variants={staggerContainer}
               initial="hidden"
               animate={controls}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 lg:mb-16"
             >
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -139,9 +139,9 @@ const Testimonials = () => {
                   className="relative group"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${testimonial.bgColor} opacity-10 rounded-2xl`} />
-                  <Card className="relative bg-white/90 backdrop-blur-sm border-0 p-6 h-full">
+                  <Card className="relative bg-white/90 backdrop-blur-sm border-0 p-4 sm:p-6 h-full">
                     {/* Avatar and Info */}
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4">
                       <motion.div 
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         className="relative"
@@ -149,7 +149,7 @@ const Testimonials = () => {
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-16 h-16 rounded-full object-cover"
+                          className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
                         />
                         {testimonial.video && (
                           <motion.button
@@ -167,8 +167,8 @@ const Testimonials = () => {
                         )}
                       </motion.div>
                       <div>
-                        <h3 className="font-semibold text-foreground">{testimonial.name}</h3>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                        <h3 className="text-sm sm:text-base font-semibold text-foreground">{testimonial.name}</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</p>
                       </div>
                     </div>
 
@@ -187,7 +187,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Quote */}
-                    <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+                    <p className="text-sm sm:text-base text-muted-foreground italic">"{testimonial.quote}"</p>
 
                     {/* Video Progress Bar */}
                     {testimonial.video && playingVideo === index && (
@@ -211,7 +211,7 @@ const Testimonials = () => {
               transition={{ delay: 0.6 }}
               className="space-y-8"
             >
-              <h3 className="text-center text-[length:var(--font-h4)] font-display font-semibold text-foreground mb-8">
+              <h3 className="text-center text-lg sm:text-xl md:text-2xl font-display font-semibold text-foreground mb-6 sm:mb-8">
                 Trusted by Leading Brands
               </h3>
               
@@ -233,9 +233,9 @@ const Testimonials = () => {
                     <motion.div
                       key={index}
                       whileHover={{ scale: 1.1 }}
-                      className="flex items-center justify-center px-8 py-4 bg-white/60 backdrop-blur-sm rounded-lg shadow-sm"
+                      className="flex items-center justify-center px-4 sm:px-8 py-2 sm:py-4 bg-white/60 backdrop-blur-sm rounded-lg shadow-sm"
                     >
-                      <span className="text-lg font-bold text-muted-foreground">{client.logo}</span>
+                      <span className="text-sm sm:text-lg font-bold text-muted-foreground">{client.logo}</span>
                     </motion.div>
                   ))}
                 </motion.div>

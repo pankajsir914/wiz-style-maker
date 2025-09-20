@@ -74,13 +74,13 @@ const Services = () => {
           variants={fadeInUp}
           transition={{ duration: 0.6 }}
         >
-          <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12">
+          <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-4 sm:p-6 lg:p-12">
             {/* Section Header */}
             <motion.div 
               initial={{ opacity: 0, y: -30 }}
               animate={controls}
               variants={fadeInUp}
-              className="text-center mb-16"
+              className="text-center mb-8 sm:mb-12 lg:mb-16"
             >
               <motion.div 
                 initial={{ scale: 0 }}
@@ -88,11 +88,11 @@ const Services = () => {
                 transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
                 className="inline-flex items-center gap-2 mb-4"
               >
-                <span className="text-sm font-medium text-primary tracking-wider uppercase bg-primary/10 px-3 py-1 rounded-full">
+                <span className="text-xs sm:text-sm font-medium text-primary tracking-wider uppercase bg-primary/10 px-3 py-1 rounded-full">
                   NEW!
                 </span>
               </motion.div>
-              <h2 className="text-[length:var(--font-h2)] font-display font-bold bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent mb-4">
                 Our Services
               </h2>
             </motion.div>
@@ -102,7 +102,7 @@ const Services = () => {
               variants={staggerContainer}
               initial="hidden"
               animate={controls}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto mb-8 sm:mb-12 lg:mb-16"
             >
               {services.map((service, index) => (
                 <motion.div
@@ -115,24 +115,24 @@ const Services = () => {
                   }}
                   className="group relative"
                 >
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 sm:gap-4">
                     {/* Icon Container */}
                     <div className="flex-shrink-0">
                       <motion.div 
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.5 }}
-                        className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center"
+                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center"
                       >
-                        <service.icon className="h-7 w-7 text-primary" />
+                        <service.icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                       </motion.div>
                     </div>
                     
                     {/* Content */}
                     <div className="flex-1">
-                      <h3 className="text-[length:var(--font-h4)] font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-base sm:text-lg md:text-xl font-display font-semibold text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-[length:var(--font-body)] text-muted-foreground leading-relaxed">
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         {service.description}
                       </p>
                     </div>
@@ -155,8 +155,8 @@ const Services = () => {
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors group"
               >
-                <span className="text-[length:var(--font-body)] font-medium">Want to discuss</span>
-                <span className="text-[length:var(--font-body)] font-semibold underline underline-offset-4">Let's Schedule a Call</span>
+                <span className="text-sm sm:text-base font-medium">Want to discuss</span>
+                <span className="text-sm sm:text-base font-semibold underline underline-offset-4">Let's Schedule a Call</span>
                 <Phone className="h-4 w-4 group-hover:rotate-12 transition-transform" />
               </motion.a>
             </motion.div>

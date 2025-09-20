@@ -3,9 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import ContactModal from "./ContactModal";
 import { motion } from "framer-motion";
+import TypewriterText from './TypewriterText';
+import CounterAnimation from './CounterAnimation';
+import MagneticButton from './MagneticButton';
+import { useParallax } from '@/hooks/useParallax';
 
 const Hero = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const parallaxOffset = useParallax({ speed: 0.3 });
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -41,29 +46,24 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12">
-      {/* Animated gradient background */}
+      {/* Animated gradient background with parallax */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
+        style={{ y: parallaxOffset }}
         className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-pink-50/30 to-blue-100/40"
       />
       
       <motion.div 
         animate={floatingAnimation}
+        style={{ y: parallaxOffset * 0.5 }}
         className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
       />
       <motion.div 
         animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } }}
+        style={{ y: parallaxOffset * 0.8 }}
         className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
-      />
-      <motion.div 
-        animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } }}
-        className="absolute top-1/3 right-1/3 w-[400px] h-[400px] bg-gradient-to-bl from-pink-300/20 to-purple-300/20 rounded-full blur-3xl"
-      />
-      <motion.div 
-        animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1.5 } }}
-        className="absolute bottom-1/3 left-1/3 w-[350px] h-[350px] bg-gradient-to-tr from-blue-300/15 to-pink-300/15 rounded-full blur-3xl"
       />
       
       <motion.div 
@@ -73,17 +73,17 @@ const Hero = () => {
         className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12 text-center"
       >
         <div className="max-w-5xl mx-auto space-y-8">
-          {/* Headline */}
+          {/* Headline with Typewriter */}
           <motion.h1 
             variants={itemVariants}
             className="text-[length:var(--font-h1)] font-display font-bold leading-tight"
           >
             <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-              Transforming Videos. Elevating Brands
+              <TypewriterText text="Transforming Videos. Elevating Brands" speed={60} />
             </span>
           </motion.h1>
           
-          {/* Stats */}
+          {/* Stats with Counter Animation */}
           <motion.div 
             variants={itemVariants}
             className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-[length:var(--font-body)] text-muted-foreground"
@@ -94,7 +94,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1.2 }}
               className="font-semibold"
             >
-              4+ years
+              <CounterAnimation end={4} suffix="+" /> years
             </motion.span>
             <span className="text-muted-foreground/50">|</span>
             <motion.span 
@@ -103,7 +103,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1.4 }}
               className="font-semibold"
             >
-              237+ Clients
+              <CounterAnimation end={237} suffix="+" /> Clients
             </motion.span>
             <span className="text-muted-foreground/50">|</span>
             <motion.span 
@@ -112,7 +112,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 1.6 }}
               className="font-semibold"
             >
-              4357+ Videos Edited
+              <CounterAnimation end={4357} suffix="+" /> Videos Edited
             </motion.span>
           </motion.div>
           
@@ -125,24 +125,19 @@ const Hero = () => {
             that drives real growth.
           </motion.p>
           
-          {/* CTA Button */}
+          {/* CTA Button with Magnetic Effect */}
           <motion.div 
             variants={itemVariants}
             className="flex justify-center items-center pt-6"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <MagneticButton
+              className="bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white transition-all group min-w-[240px] rounded-full px-8 py-7 shadow-lg"
+              onClick={() => setIsContactModalOpen(true)}
+              strength={0.3}
             >
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white transition-all group min-w-[240px] rounded-full px-8 py-7 shadow-lg"
-                onClick={() => setIsContactModalOpen(true)}
-              >
-                Book Your Free Strategy Call
-                <Calendar className="ml-3 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              </Button>
-            </motion.div>
+              Book Your Free Strategy Call
+              <Calendar className="inline-block ml-3 h-5 w-5 group-hover:rotate-12 transition-transform" />
+            </MagneticButton>
           </motion.div>
         </div>
         

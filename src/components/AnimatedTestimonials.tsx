@@ -209,37 +209,111 @@ const Testimonials = () => {
               animate={controls}
               variants={fadeInUp}
               transition={{ delay: 0.6 }}
-              className="space-y-8"
+              className="relative"
             >
-              <h3 className="text-center text-lg sm:text-xl md:text-2xl font-display font-semibold text-foreground mb-6 sm:mb-8">
-                Trusted by Leading Brands
-              </h3>
+              {/* Section Header */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={controls}
+                transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
+                className="text-center mb-10 sm:mb-12"
+              >
+                <div className="inline-flex items-center gap-3 mb-4">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    className="w-8 h-8 bg-gradient-to-r from-primary to-purple-600 rounded-full opacity-20"
+                  />
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
+                    Trusted by Industry Leaders
+                  </h3>
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    className="w-8 h-8 bg-gradient-to-r from-purple-600 to-primary rounded-full opacity-20"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground">Powering success for top brands worldwide</p>
+              </motion.div>
               
-              {/* Marquee Container */}
-              <div className="relative overflow-hidden">
+              {/* 3D Marquee Container */}
+              <div className="relative h-24 sm:h-32 overflow-hidden rounded-2xl bg-gradient-to-r from-purple-50/50 via-pink-50/30 to-blue-50/40 backdrop-blur-sm">
+                {/* Gradient Overlays */}
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+                
+                {/* Marquee Track */}
                 <motion.div 
-                  animate={{ x: [0, -1000] }}
+                  animate={{ x: [0, -1500] }}
                   transition={{
                     x: {
                       repeat: Infinity,
                       repeatType: "loop",
-                      duration: 20,
+                      duration: 30,
                       ease: "linear",
                     },
                   }}
-                  className="flex gap-12 whitespace-nowrap"
+                  className="absolute inset-y-0 flex items-center gap-8 sm:gap-16"
                 >
-                  {[...clientLogos, ...clientLogos].map((client, index) => (
+                  {[...clientLogos, ...clientLogos, ...clientLogos].map((client, index) => (
                     <motion.div
                       key={index}
-                      whileHover={{ scale: 1.1 }}
-                      className="flex items-center justify-center px-4 sm:px-8 py-2 sm:py-4 bg-white/60 backdrop-blur-sm rounded-lg shadow-sm"
+                      whileHover={{ 
+                        scale: 1.15,
+                        rotateY: 15,
+                        z: 50,
+                      }}
+                      initial={{ rotateX: -15 }}
+                      className="flex-shrink-0 group perspective-1000"
+                      style={{ transformStyle: "preserve-3d" }}
                     >
-                      <span className="text-sm sm:text-lg font-bold text-muted-foreground">{client.logo}</span>
+                      <div className="relative px-6 sm:px-10 py-4 sm:py-6 bg-white/80 backdrop-blur-md rounded-xl shadow-lg border border-white/50 transform transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white">
+                        {/* Glow Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        
+                        {/* Logo Text */}
+                        <span className="relative text-base sm:text-xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent group-hover:from-primary group-hover:to-purple-600 transition-all duration-300">
+                          {client.logo}
+                        </span>
+                        
+                        {/* Floating Badge */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          whileHover={{ opacity: 1, y: -5 }}
+                          className="absolute -top-2 -right-2 bg-gradient-to-r from-primary to-purple-600 text-white text-xs px-2 py-0.5 rounded-full shadow-lg"
+                        >
+                          Partner
+                        </motion.div>
+                      </div>
                     </motion.div>
                   ))}
                 </motion.div>
               </div>
+              
+              {/* Stats Row */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={controls}
+                transition={{ delay: 0.9 }}
+                className="grid grid-cols-3 gap-4 mt-8 max-w-2xl mx-auto"
+              >
+                {[
+                  { value: "500+", label: "Happy Clients" },
+                  { value: "98%", label: "Satisfaction" },
+                  { value: "24/7", label: "Support" }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    className="text-center p-3 bg-white/50 backdrop-blur-sm rounded-lg"
+                  >
+                    <div className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
           </Card>
         </motion.div>

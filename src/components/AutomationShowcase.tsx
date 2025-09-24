@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Upload, Zap, Download } from "lucide-react";
+import { motion } from "framer-motion";
+import workflowAutomation from "@/assets/workflow-automation.jpg";
 
 const AutomationShowcase = () => {
   return (
@@ -47,94 +49,114 @@ const AutomationShowcase = () => {
               </div>
             </div>
 
-            {/* Right Visual - Laptop Mockup */}
-            <div className="relative">
-              {/* Laptop Frame */}
-              <div className="relative bg-gray-900 rounded-t-2xl p-2">
-                <div className="flex items-center gap-1.5 mb-2">
-                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                </div>
+            {/* Right Visual - Animated Workflow Image */}
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.div 
+                className="relative rounded-2xl overflow-hidden shadow-2xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Workflow Image */}
+                <motion.img 
+                  src={workflowAutomation}
+                  alt="Automated workflow dashboard"
+                  className="w-full h-full object-cover rounded-2xl"
+                  initial={{ scale: 1.1 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                />
                 
-                {/* Screen Content */}
-                <div className="bg-white rounded-lg p-8 min-h-[400px] relative overflow-hidden">
-                  {/* Cyan Gradient Background Elements */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-full blur-3xl opacity-50"></div>
-                  <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-cyan-100 to-blue-100 rounded-full blur-3xl opacity-50"></div>
+                {/* Animated Overlay */}
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-t from-purple-900/70 via-transparent to-transparent"
+                  animate={{ 
+                    opacity: [0.3, 0.5, 0.3]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
+                />
+                
+                {/* Floating Action Buttons */}
+                <motion.div 
+                  className="absolute bottom-6 left-6 right-6 flex justify-between items-center"
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                >
+                  <motion.div 
+                    className="bg-white/20 backdrop-blur-md rounded-lg px-4 py-3 flex items-center gap-2"
+                    animate={{ 
+                      y: [-5, 5, -5],
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    <Upload className="h-5 w-5 text-white" />
+                    <span className="text-white font-medium">Upload</span>
+                  </motion.div>
                   
-                  {/* Workflow Diagram */}
-                  <div className="relative z-10 space-y-12">
-                    {/* Upload Node */}
-                    <div className="flex justify-center">
-                      <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 rounded-full shadow-lg flex items-center gap-2">
-                        <Upload className="h-4 w-4 text-purple-700" />
-                        <span className="text-purple-700 font-medium">Upload Raw Footage</span>
-                      </div>
-                    </div>
-                    
-                    {/* Connection Lines */}
-                    <svg className="absolute top-16 left-1/2 -translate-x-1/2 w-64 h-48" style={{ zIndex: 1 }}>
-                      <path
-                        d="M 128 0 L 128 40 L 64 80"
-                        stroke="#e5e7eb"
-                        strokeWidth="2"
-                        fill="none"
-                      />
-                      <path
-                        d="M 128 0 L 128 40"
-                        stroke="#e5e7eb"
-                        strokeWidth="2"
-                        fill="none"
-                      />
-                      <path
-                        d="M 128 0 L 128 40 L 192 80"
-                        stroke="#e5e7eb"
-                        strokeWidth="2"
-                        fill="none"
-                      />
-                    </svg>
-                    
-                    {/* Action Nodes */}
-                    <div className="grid grid-cols-3 gap-8 relative z-10">
-                      {/* Edit Video */}
-                      <div className="flex justify-center">
-                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2">
-                          <Zap className="h-4 w-4" />
-                          <span className="text-sm font-medium">Edit Video</span>
-                        </button>
-                      </div>
-                      
-                      {/* Color Grade */}
-                      <div className="flex justify-center">
-                        <button className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                          <span className="text-sm font-medium">Color Grade</span>
-                        </button>
-                      </div>
-                      
-                      {/* Export & Deliver */}
-                      <div className="flex justify-center">
-                        <button className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2">
-                          <Download className="h-4 w-4" />
-                          <span className="text-sm font-medium">Deliver</span>
-                        </button>
-                      </div>
-                    </div>
-                    
-                    {/* Additional UI Elements */}
-                    <div className="flex justify-center gap-2 mt-8">
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
+                  <motion.div 
+                    className="bg-white/20 backdrop-blur-md rounded-lg px-4 py-3 flex items-center gap-2"
+                    animate={{ 
+                      y: [5, -5, 5],
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                  >
+                    <Zap className="h-5 w-5 text-white" />
+                    <span className="text-white font-medium">Process</span>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="bg-white/20 backdrop-blur-md rounded-lg px-4 py-3 flex items-center gap-2"
+                    animate={{ 
+                      y: [-5, 5, -5],
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 2
+                    }}
+                  >
+                    <Download className="h-5 w-5 text-white" />
+                    <span className="text-white font-medium">Deliver</span>
+                  </motion.div>
+                </motion.div>
+                
+                {/* Progress Indicator */}
+                <motion.div 
+                  className="absolute top-6 left-6 right-6"
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                >
+                  <div className="h-2 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
+                    <motion.div 
+                      className="h-full bg-gradient-to-r from-purple-400 to-pink-400"
+                      initial={{ width: 0 }}
+                      animate={{ width: "75%" }}
+                      transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
+                    />
                   </div>
-                </div>
-              </div>
-              
-              {/* Laptop Base */}
-              <div className="bg-gray-800 h-4 rounded-b-2xl"></div>
-              <div className="bg-gray-700 h-2 mx-8 rounded-b-lg"></div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </Card>
       </div>

@@ -2,6 +2,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Play, Film, Video } from "lucide-react";
+import { motion } from "framer-motion";
+import videoEditingInterface from "@/assets/video-editing-interface.jpg";
 
 const ServiceShowcase = () => {
   return (
@@ -95,12 +97,38 @@ const ServiceShowcase = () => {
                     </div>
                   </div>
                   
-                  {/* Center play overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
-                      <Play className="h-10 w-10 text-white fill-white ml-1" />
-                    </div>
-                  </div>
+                  {/* Animated video editing interface */}
+                  <motion.div 
+                    className="absolute inset-0 flex items-center justify-center"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    <motion.img 
+                      src={videoEditingInterface}
+                      alt="Professional video editing interface"
+                      className="w-full h-full object-cover rounded-lg"
+                      animate={{ 
+                        scale: [1, 1.02, 1],
+                      }}
+                      transition={{ 
+                        duration: 4,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                      }}
+                    />
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+                      animate={{ 
+                        opacity: [0.5, 0.7, 0.5]
+                      }}
+                      transition={{ 
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                      }}
+                    />
+                  </motion.div>
                 </div>
               </div>
             </div>

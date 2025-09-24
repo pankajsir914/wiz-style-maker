@@ -1,5 +1,7 @@
 import { Sparkles, Palette, Wand2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import motionGraphicsWorkspace from "@/assets/motion-graphics-workspace.jpg";
 
 const DesignShowcase = () => {
   return (
@@ -12,46 +14,102 @@ const DesignShowcase = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left side - Motion Graphics showcase */}
-              <div className="relative">
-                <div className="bg-gradient-to-br from-pink-400 to-purple-600 rounded-3xl p-8 lg:p-12">
-                  {/* Video preview mockup */}
-                  <div className="bg-gray-900 rounded-2xl p-4 shadow-2xl">
-                    <div className="bg-gradient-to-br from-purple-600 via-pink-500 to-blue-500 rounded-lg aspect-video relative overflow-hidden">
-                      {/* Animated elements preview */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="mb-4 relative">
-                            <div className="absolute inset-0 bg-white/20 blur-xl animate-pulse"></div>
-                            <h3 className="text-3xl font-bold text-white relative z-10">MOTION</h3>
-                          </div>
-                          <div className="flex justify-center gap-3">
-                            <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center animate-float">
-                              <Sparkles className="h-8 w-8 text-white" />
-                            </div>
-                            <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center animate-float animation-delay-200">
-                              <Palette className="h-8 w-8 text-white" />
-                            </div>
-                            <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-lg flex items-center justify-center animate-float animation-delay-400">
-                              <Wand2 className="h-8 w-8 text-white" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Timeline indicator */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-3">
-                        <div className="flex items-center gap-3">
-                          <span className="text-xs text-white">00:00</span>
-                          <div className="flex-1 bg-gray-700 rounded-full h-1.5">
-                            <div className="h-full w-2/3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
-                          </div>
-                          <span className="text-xs text-white">00:15</span>
-                        </div>
-                      </div>
-                    </div>
+              <motion.div 
+                className="relative"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <motion.div 
+                  className="relative rounded-3xl overflow-hidden shadow-2xl"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {/* Animated background image */}
+                  <motion.img 
+                    src={motionGraphicsWorkspace}
+                    alt="Motion graphics workspace"
+                    className="w-full h-full object-cover rounded-3xl"
+                    animate={{ 
+                      scale: [1, 1.05, 1],
+                    }}
+                    transition={{ 
+                      duration: 8,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  {/* Animated overlay */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-t from-purple-900/70 via-pink-600/30 to-transparent"
+                    animate={{ 
+                      opacity: [0.4, 0.6, 0.4]
+                    }}
+                    transition={{ 
+                      duration: 4,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    }}
+                  />
+                  
+                  {/* Floating elements */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div 
+                      className="flex gap-4"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3, duration: 0.5 }}
+                    >
+                      <motion.div 
+                        className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center"
+                        animate={{ 
+                          y: [-10, 10, -10],
+                          rotate: [0, 5, 0]
+                        }}
+                        transition={{ 
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
+                        <Sparkles className="h-8 w-8 text-white" />
+                      </motion.div>
+                      <motion.div 
+                        className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center"
+                        animate={{ 
+                          y: [10, -10, 10],
+                          rotate: [0, -5, 0]
+                        }}
+                        transition={{ 
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 1
+                        }}
+                      >
+                        <Palette className="h-8 w-8 text-white" />
+                      </motion.div>
+                      <motion.div 
+                        className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center"
+                        animate={{ 
+                          y: [-10, 10, -10],
+                          rotate: [0, 5, 0]
+                        }}
+                        transition={{ 
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 2
+                        }}
+                      >
+                        <Wand2 className="h-8 w-8 text-white" />
+                      </motion.div>
+                    </motion.div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Right side - Content */}
               <div className="lg:pl-8">

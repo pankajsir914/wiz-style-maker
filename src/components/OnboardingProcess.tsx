@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
 
 const OnboardingProcess = () => {
   return (
@@ -70,50 +72,111 @@ const OnboardingProcess = () => {
               </div>
 
               {/* Right Side - Analytics Visual */}
-              <div className="relative">
-                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-xl border border-gray-100">
-                  {/* Header */}
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-sm font-medium text-muted-foreground">Daily Payments</span>
-                    <div className="px-3 py-1 bg-gray-900 text-white text-xs font-medium rounded">
-                      Publish
-                    </div>
-                  </div>
-
-                  {/* Average Display */}
-                  <div className="mb-8">
-                    <div className="px-4 py-2 bg-gray-900 text-white rounded-lg inline-flex items-center gap-2">
-                      <span className="text-xs opacity-80">Avg:</span>
-                      <span className="text-lg font-bold">3K</span>
-                      <span className="text-xs opacity-80">Date: Jul 18</span>
-                    </div>
-                  </div>
-
-                  {/* Bar Chart */}
-                  <div className="flex items-end justify-between gap-3 h-32">
-                    <div className="flex-1 bg-gradient-to-t from-purple-400 to-purple-300 rounded-t-lg animate-scale-in" style={{ height: '45%' }}></div>
-                    <div className="flex-1 bg-gradient-to-t from-purple-400 to-purple-300 rounded-t-lg animate-scale-in animation-delay-100" style={{ height: '60%' }}></div>
-                    <div className="flex-1 bg-gradient-to-t from-purple-400 to-purple-300 rounded-t-lg animate-scale-in animation-delay-200" style={{ height: '80%' }}></div>
-                    <div className="flex-1 bg-gradient-to-t from-purple-400 to-purple-300 rounded-t-lg animate-scale-in animation-delay-300" style={{ height: '55%' }}></div>
-                    <div className="flex-1 bg-gradient-to-t from-purple-400 to-purple-300 rounded-t-lg animate-scale-in animation-delay-400" style={{ height: '90%' }}></div>
-                    <div className="flex-1 bg-gradient-to-t from-purple-400 to-purple-300 rounded-t-lg animate-scale-in animation-delay-500" style={{ height: '70%' }}></div>
-                  </div>
-
-                  {/* X-axis labels */}
-                  <div className="flex justify-between mt-3 text-xs text-muted-foreground">
-                    <span>20</span>
-                    <span>30</span>
-                    <span>35</span>
-                    <span>40</span>
-                    <span>45</span>
-                    <span>50+</span>
-                  </div>
-                </div>
+              <motion.div 
+                className="relative"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <motion.div 
+                  className="relative rounded-2xl overflow-hidden shadow-xl"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {/* Dashboard Image */}
+                  <motion.img 
+                    src={analyticsDashboard}
+                    alt="Analytics dashboard showing video performance"
+                    className="w-full h-full object-cover rounded-2xl"
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  />
+                  
+                  {/* Overlay with animated stats */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-purple-600/40 to-transparent p-6 flex flex-col justify-end"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                  >
+                    <motion.div 
+                      className="space-y-4"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.6, duration: 0.5 }}
+                    >
+                      {/* Animated Stats */}
+                      <div className="flex items-center gap-4">
+                        <motion.div 
+                          className="bg-white/20 backdrop-blur-md rounded-lg px-4 py-2"
+                          animate={{ 
+                            scale: [1, 1.05, 1],
+                          }}
+                          transition={{ 
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                          }}
+                        >
+                          <span className="text-white text-sm font-medium">Views</span>
+                          <p className="text-white text-xl font-bold">2.4M</p>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="bg-white/20 backdrop-blur-md rounded-lg px-4 py-2"
+                          animate={{ 
+                            scale: [1, 1.05, 1],
+                          }}
+                          transition={{ 
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            delay: 0.5
+                          }}
+                        >
+                          <span className="text-white text-sm font-medium">Growth</span>
+                          <p className="text-white text-xl font-bold">+42%</p>
+                        </motion.div>
+                      </div>
+                      
+                      {/* Progress bars */}
+                      <div className="space-y-2">
+                        <motion.div 
+                          className="h-2 bg-white/20 rounded-full overflow-hidden"
+                          initial={{ width: 0 }}
+                          animate={{ width: "100%" }}
+                          transition={{ delay: 0.8, duration: 0.6 }}
+                        >
+                          <motion.div 
+                            className="h-full bg-gradient-to-r from-purple-400 to-pink-400"
+                            initial={{ width: 0 }}
+                            animate={{ width: "75%" }}
+                            transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+                          />
+                        </motion.div>
+                        <motion.div 
+                          className="h-2 bg-white/20 rounded-full overflow-hidden"
+                          initial={{ width: 0 }}
+                          animate={{ width: "100%" }}
+                          transition={{ delay: 0.9, duration: 0.6 }}
+                        >
+                          <motion.div 
+                            className="h-full bg-gradient-to-r from-blue-400 to-purple-400"
+                            initial={{ width: 0 }}
+                            animate={{ width: "90%" }}
+                            transition={{ delay: 1.1, duration: 0.8, ease: "easeOut" }}
+                          />
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
 
                 {/* Decorative Elements */}
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-purple-200 rounded-full blur-3xl opacity-30"></div>
                 <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
-              </div>
+              </motion.div>
             </div>
           </Card>
         </div>

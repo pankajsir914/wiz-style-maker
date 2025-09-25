@@ -35,14 +35,15 @@ const videoData: VideoItem[] = [
   },
   {
     id: 2,
-    videoUrl: 'https://cdn.pixabay.com/video/2022/03/24/111763-693178935_large.mp4',
+    isWistia: true,
+    wistiaMediaId: 'hg15v9veq2',
     creator: {
-      name: 'Mike Chen',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mike',
-      handle: '@mikechen'
+      name: 'Editorzhub Creative',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Creative',
+      handle: '@editorzhub_creative'
     },
-    views: '1.8M',
-    caption: 'E-commerce website redesign showcase'
+    views: '2.3M',
+    caption: 'Cutting-edge digital solutions and creative excellence'
   },
   {
     id: 3,

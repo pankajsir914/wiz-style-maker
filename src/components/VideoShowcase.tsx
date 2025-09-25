@@ -59,14 +59,15 @@ const videoData: VideoItem[] = [
   },
   {
     id: 4,
-    videoUrl: 'https://cdn.pixabay.com/video/2023/10/22/185990-877449262_large.mp4',
+    isWistia: true,
+    wistiaMediaId: '63ylvwno2q',
     creator: {
-      name: 'Alex Kumar',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex',
-      handle: '@alexk'
+      name: 'Editorzhub Pro',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Pro',
+      handle: '@editorzhub_pro'
     },
-    views: '945K',
-    caption: 'Social media marketing campaign'
+    views: '1.2M',
+    caption: 'Professional video editing and marketing solutions'
   }
 ];
 

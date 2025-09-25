@@ -47,14 +47,15 @@ const videoData: VideoItem[] = [
   },
   {
     id: 3,
-    videoUrl: 'https://cdn.pixabay.com/video/2023/07/18/172114-846497611_large.mp4',
+    isWistia: true,
+    wistiaMediaId: 'bdd0g7pfqb',
     creator: {
-      name: 'Emily Davis',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emily',
-      handle: '@emilyd'
+      name: 'Editorzhub Studio',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Studio',
+      handle: '@editorzhub_studio'
     },
-    views: '3.1M',
-    caption: 'Mobile app UI/UX animation'
+    views: '4.7M',
+    caption: 'Transform your brand with innovative video content'
   },
   {
     id: 4,

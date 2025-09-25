@@ -3,10 +3,13 @@ import { motion } from 'framer-motion';
 import { Volume2, VolumeX, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import WistiaVideoCard from './WistiaVideoCard';
 
 interface VideoItem {
   id: number;
-  videoUrl: string;
+  videoUrl?: string;
+  wistiaMediaId?: string;
+  isWistia?: boolean;
   thumbnailUrl?: string;
   creator: {
     name: string;
@@ -20,14 +23,15 @@ interface VideoItem {
 const videoData: VideoItem[] = [
   {
     id: 1,
-    videoUrl: 'https://cdn.pixabay.com/video/2024/06/10/215667_large.mp4',
+    isWistia: true,
+    wistiaMediaId: 'fq75l8ixns',
     creator: {
-      name: 'Sarah Johnson',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
-      handle: '@sarahj'
+      name: 'Editorzhub Team',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Editorzhub',
+      handle: '@editorzhub'
     },
-    views: '2.3M',
-    caption: 'Brand transformation for modern startups'
+    views: '5.2M',
+    caption: 'Revolutionary marketing strategies that drive results'
   },
   {
     id: 2,
@@ -189,7 +193,11 @@ const VideoShowcase = () => {
         {/* Videos Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {videoData.map((video, index) => (
-            <VideoCard key={video.id} video={video} index={index} />
+            video.isWistia ? (
+              <WistiaVideoCard key={video.id} video={video as any} index={index} />
+            ) : (
+              <VideoCard key={video.id} video={video} index={index} />
+            )
           ))}
         </div>
       </div>

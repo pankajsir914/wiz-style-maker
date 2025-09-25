@@ -34,32 +34,6 @@ const WistiaVideoCard = ({ video, index }: { video: WistiaVideoItem; index: numb
 
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80 pointer-events-none" />
-
-        {/* Creator Info */}
-        <motion.div 
-          className="absolute bottom-0 left-0 right-0 p-4 text-white"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <div className="flex items-start gap-3">
-            <Avatar className="h-10 w-10 border-2 border-white/20">
-              <AvatarImage src={video.creator.avatar} alt={video.creator.name} />
-              <AvatarFallback>{video.creator.name[0]}</AvatarFallback>
-            </Avatar>
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <h3 className="font-semibold text-sm">{video.creator.name}</h3>
-                <span className="text-xs text-white/60">{video.creator.handle}</span>
-              </div>
-              <p className="text-xs text-white/80 mt-1 line-clamp-2">{video.caption}</p>
-              <div className="flex items-center gap-1 mt-2">
-                <Eye className="h-3 w-3 text-white/60" />
-                <span className="text-xs text-white/60">{video.views} views</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </motion.div>
   );

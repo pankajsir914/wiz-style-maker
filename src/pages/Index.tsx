@@ -27,9 +27,9 @@ const Index = () => {
         <VideoShowcase />
         <Services />
         <ServiceShowcase />
-        <DesignShowcase />
-        <AutomationShowcase />
-        <SEOShowcase />
+        {/* <DesignShowcase /> */}
+        {/* <AutomationShowcase /> */}
+        {/* <SEOShowcase /> */}
         <AICreators />
         <OurClients />
         <OnboardingProcess />

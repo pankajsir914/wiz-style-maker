@@ -270,7 +270,7 @@ const Testimonials = () => {
               </motion.div>
               
               {/* 3D Marquee Container */}
-              <div className="relative h-24 sm:h-32 overflow-hidden rounded-2xl bg-gradient-to-r from-purple-50/50 via-pink-50/30 to-blue-50/40 backdrop-blur-sm">
+              <div className="relative h-32 sm:h-40 overflow-hidden rounded-2xl bg-gradient-to-r from-purple-50/50 via-pink-50/30 to-blue-50/40 backdrop-blur-sm">
                 {/* Gradient Overlays */}
                 <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
@@ -300,7 +300,7 @@ const Testimonials = () => {
                       className="flex-shrink-0 group perspective-1000"
                       style={{ transformStyle: "preserve-3d" }}
                     >
-                      <div className="relative px-4 sm:px-6 py-3 sm:py-4 bg-white/80 backdrop-blur-md rounded-xl shadow-lg border border-white/50 transform transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white">
+                      <div className="relative px-6 sm:px-8 py-4 sm:py-6 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-white/50 transform transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white">
                         {/* Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         
@@ -308,7 +308,7 @@ const Testimonials = () => {
                         <img 
                           src={client.logo} 
                           alt={client.name}
-                          className="relative h-10 sm:h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                          className="relative h-16 sm:h-20 md:h-24 w-auto object-contain filter hover:grayscale-0 transition-all duration-300"
                         />
                         
                         {/* Floating Badge */}

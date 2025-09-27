@@ -37,7 +37,7 @@ const OnboardingProcess = () => {
                   <div className="space-y-2">
                     <h3 className="text-xl font-semibold">Upload Your Raw Footage</h3>
                     <p className="text-muted-foreground">
-                      Simple cloud-based upload system. Share your footage via Google Drive, Dropbox, or WeTransfer.
+                      Send us your unedited clips, podcast recordings, vlog footage — anything.
                     </p>
                   </div>
                 </div>
@@ -48,9 +48,9 @@ const OnboardingProcess = () => {
                     <span className="text-purple-600 font-semibold">2</span>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">We Edit Your Content</h3>
+                    <h3 className="text-xl font-semibold">We Craft Your Visual Identity</h3>
                     <p className="text-muted-foreground">
-                      Professional editing with your style guide. 24-48 hour turnaround with unlimited revisions.
+                      Our editors align each video to your brand tone, niche, and target audience.
                     </p>
                   </div>
                 </div>
@@ -61,9 +61,9 @@ const OnboardingProcess = () => {
                     <span className="text-purple-600 font-semibold">3</span>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">Receive & Publish</h3>
+                    <h3 className="text-xl font-semibold">Delivery & Revisions</h3>
                     <p className="text-muted-foreground">
-                      Get edited videos ready for all platforms. YouTube, Instagram, TikTok - optimized for each.
+                      You receive platform-optimized content, ready for Instagram, YouTube, Shorts & more. Revisions? Always included.
                     </p>
                   </div>
                 </div>

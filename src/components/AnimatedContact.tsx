@@ -116,17 +116,17 @@ const Contact = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div whileHover={{ scale: 1.02 }}>
-                  <Input placeholder="Your Name" className="bg-white/60 backdrop-blur-sm border-0" />
+                  <Input placeholder="Your Name" className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.02 }}>
-                  <Input type="email" placeholder="Your Email" className="bg-white/60 backdrop-blur-sm border-0" />
+                  <Input type="email" placeholder="Your Email" className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors" />
                 </motion.div>
               </div>
               <motion.div whileHover={{ scale: 1.02 }}>
-                <Input placeholder="Subject" className="bg-white/60 backdrop-blur-sm border-0" />
+                <Input placeholder="Subject" className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }}>
-                <Textarea placeholder="Your Message" rows={5} className="bg-white/60 backdrop-blur-sm border-0" />
+                <Textarea placeholder="Your Message" rows={5} className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors" />
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" className="w-full bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white">

@@ -8,7 +8,7 @@ import AutomationShowcase from "@/components/AutomationShowcase";
 import SEOShowcase from "@/components/SEOShowcase";
 import OurClients from "@/components/OurClients";
 import OnboardingProcess from "@/components/OnboardingProcess";
-
+import Comparison from "@/components/Comparison";
 import Testimonials from "@/components/AnimatedTestimonials";
 import FAQ from "@/components/AnimatedFAQ";
 import Contact from "@/components/AnimatedContact";
@@ -30,7 +30,7 @@ const Index = () => {
         <SEOShowcase />
         <OurClients />
         <OnboardingProcess />
-        
+        <Comparison />
         <Testimonials />
         <FAQ />
         <Contact />

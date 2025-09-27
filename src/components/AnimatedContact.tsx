@@ -75,13 +75,28 @@ const Contact = () => {
                   variants={cardVariants}
                   initial="hidden"
                   animate={controls}
-                  whileHover={{ y: -5, scale: 1.02 }}
+                  whileHover={{ 
+                    y: -10, 
+                    scale: 1.05,
+                    rotateY: 5,
+                    rotateX: -5,
+                    transition: { type: "spring", stiffness: 300 }
+                  }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  <Card className="p-6 text-center bg-white/60 backdrop-blur-sm border-0">
+                  <Card className="p-6 text-center bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-md border border-purple-100/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                      className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                      animate={{ 
+                        y: [0, -10, 0],
+                        rotate: [0, 5, -5, 0]
+                      }}
+                      transition={{ 
+                        duration: 4,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut"
+                      }}
+                      className="w-12 h-12 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
                     >
                       <item.icon className="h-6 w-6 text-primary" />
                     </motion.div>

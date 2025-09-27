@@ -29,21 +29,27 @@ const Contact = () => {
 
     // Format the message for WhatsApp
     const whatsappMessage = `
-*New Contact Form Submission*
+New Contact Form Submission
 ------------------------
-*Name:* ${formData.name}
-*Email:* ${formData.email}
-*Subject:* ${formData.subject}
-*Message:* ${formData.message}
-*Date:* ${new Date().toLocaleString()}
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+Message: ${formData.message}
+Date: ${new Date().toLocaleString()}
     `.trim();
 
-    // Create WhatsApp URL
+    // Create WhatsApp URL - using wa.me for web compatibility
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
     try {
-      // Open WhatsApp in new tab
-      window.open(whatsappURL, '_blank');
+      // Create a temporary anchor element and click it
+      const link = document.createElement('a');
+      link.href = whatsappURL;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
       toast({
         title: "Opening WhatsApp!",
@@ -62,10 +68,15 @@ const Contact = () => {
       }, 2000);
     } catch (error) {
       console.error("Error opening WhatsApp:", error);
+      
+      // Fallback: Show the WhatsApp link for manual copy
       toast({
-        title: "Error",
-        description: "Failed to open WhatsApp. Please try again.",
-        variant: "destructive",
+        title: "Click to open WhatsApp",
+        description: (
+          <a href={whatsappURL} target="_blank" rel="noopener noreferrer" className="underline">
+            Click here to send via WhatsApp
+          </a>
+        ) as any,
       });
       setIsSubmitting(false);
     }
@@ -224,7 +235,7 @@ const Contact = () => {
                   className="w-full bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Processing..." : "Send to WhatsApp"}
                   <Send className="ml-2 h-4 w-4" />
                 </Button>
               </motion.div>

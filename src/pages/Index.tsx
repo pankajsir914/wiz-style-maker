@@ -7,7 +7,6 @@ import DesignShowcase from "@/components/DesignShowcase";
 import AutomationShowcase from "@/components/AutomationShowcase";
 import SEOShowcase from "@/components/SEOShowcase";
 import OurClients from "@/components/OurClients";
-import UniqueResults from "@/components/UniqueResults";
 import OnboardingProcess from "@/components/OnboardingProcess";
 import Comparison from "@/components/Comparison";
 import Testimonials from "@/components/AnimatedTestimonials";
@@ -30,7 +29,6 @@ const Index = () => {
         <AutomationShowcase />
         <SEOShowcase />
         <OurClients />
-        <UniqueResults />
         <OnboardingProcess />
         <Comparison />
         <Testimonials />

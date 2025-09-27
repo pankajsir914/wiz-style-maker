@@ -10,6 +10,14 @@ import clientLogo2 from "@/assets/2.png";
 import clientLogo3 from "@/assets/3.png";
 import clientLogo4 from "@/assets/4.png";
 import clientLogo5 from "@/assets/5.png";
+import clientLogo6 from "@/assets/6.png";
+import clientLogo7 from "@/assets/7.png";
+import clientLogo8 from "@/assets/8.png";
+import clientLogo9 from "@/assets/9.png";
+import clientLogo10 from "@/assets/10.png";
+import clientLogo11 from "@/assets/11.png";
+import clientLogo12 from "@/assets/12.png";
+import clientLogo13 from "@/assets/13.png";
 
 const testimonials = [
   {

@@ -5,9 +5,74 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation, fadeInUp } from "@/hooks/useScrollAnimation";
+import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
   const { ref, controls } = useScrollAnimation();
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Zapier Webhook URL - User will need to add their own
+  const ZAPIER_WEBHOOK_URL = ""; // Add your Zapier webhook URL here
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!ZAPIER_WEBHOOK_URL) {
+      toast({
+        title: "Configuration Required",
+        description: "Please add your Zapier webhook URL to connect with Google Sheets. Contact support for setup instructions.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(ZAPIER_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors", // Handle CORS
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          source: "EditorzHub Contact Form"
+        }),
+      });
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Your message has been received. We'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -113,28 +178,80 @@ const Contact = () => {
               variants={fadeInUp}
               transition={{ delay: 0.6 }}
               className="mt-12 max-w-2xl mx-auto space-y-6"
+              onSubmit={handleSubmit}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div whileHover={{ scale: 1.02 }}>
-                  <Input placeholder="Your Name" className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors" />
+                  <Input 
+                    placeholder="Your Name" 
+                    className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors"
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    required
+                  />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.02 }}>
-                  <Input type="email" placeholder="Your Email" className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors" />
+                  <Input 
+                    type="email" 
+                    placeholder="Your Email" 
+                    className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    required
+                  />
                 </motion.div>
               </div>
               <motion.div whileHover={{ scale: 1.02 }}>
-                <Input placeholder="Subject" className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors" />
+                <Input 
+                  placeholder="Subject" 
+                  className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                  required
+                />
               </motion.div>
               <motion.div whileHover={{ scale: 1.02 }}>
-                <Textarea placeholder="Your Message" rows={5} className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors" />
+                <Textarea 
+                  placeholder="Your Message" 
+                  rows={5} 
+                  className="bg-white/80 backdrop-blur-sm border border-purple-300 focus:border-purple-500 transition-colors"
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  required
+                />
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="w-full bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white">
-                  Send Message
+              <motion.div className="text-center">
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-gradient-to-r from-purple-700 to-purple-900 hover:from-purple-800 hover:to-purple-950 text-white"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 h-4 w-4" />
                 </Button>
               </motion.div>
             </motion.form>
+            
+            {/* Zapier Setup Instructions */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={controls}
+              variants={fadeInUp}
+              transition={{ delay: 0.8 }}
+              className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg max-w-2xl mx-auto"
+            >
+              <p className="text-sm text-yellow-800">
+                <strong>Google Sheets Connection:</strong> To connect this form to Google Sheets:
+              </p>
+              <ol className="text-sm text-yellow-700 mt-2 list-decimal list-inside space-y-1">
+                <li>Go to Zapier.com and create a free account</li>
+                <li>Create a new Zap with "Webhooks by Zapier" as trigger</li>
+                <li>Add Google Sheets as the action (Create Spreadsheet Row)</li>
+                <li>Copy your webhook URL and add it in code (line 21)</li>
+                <li>Map the form fields to your Google Sheet columns</li>
+              </ol>
+            </motion.div>
           </Card>
         </motion.div>
       </div>

@@ -12,11 +12,9 @@ const OnboardingProcess = () => {
             {/* Badge */}
             <div className="flex justify-center mb-8">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-                <span>ONBOARDING</span>
+                <span>SIMPLE PROCESS</span>
                 <span className="opacity-60">•</span>
-                <span>ONBOARDING</span>
-                <span className="opacity-60">•</span>
-                <span>ONBOARDING</span>
+                <span>PREMIUM RESULTS</span>
               </div>
             </div>
 

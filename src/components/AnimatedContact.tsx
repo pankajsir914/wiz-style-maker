@@ -38,7 +38,10 @@ const Contact = () => {
           animate={controls}
           variants={fadeInUp}
         >
-          <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-8 lg:p-12">
+          <Card className="relative rounded-3xl bg-white/95 backdrop-blur-md shadow-2xl border border-purple-200/50 p-8 lg:p-12 overflow-hidden">
+            {/* Gradient border effect */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 opacity-20 blur-xl -z-10" />
+            <div className="absolute inset-[1px] rounded-3xl bg-white/95 -z-10" />
             <motion.div 
               initial={{ opacity: 0, y: -30 }}
               animate={controls}

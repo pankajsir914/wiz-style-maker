@@ -71,10 +71,16 @@ const WistiaVideo = ({
           if (autoPlay) {
             wistiaPlayer.setAttribute('autoplay', 'true');
             wistiaPlayer.setAttribute('playsinline', 'true');
+            wistiaPlayer.setAttribute('preload', 'auto');
           }
+          
+          // Set loop to restart video when it ends
           if (loop) {
             wistiaPlayer.setAttribute('endvideo-behavior', 'loop');
+            wistiaPlayer.setAttribute('loop', 'true');
+            wistiaPlayer.setAttribute('end-video-behavior', 'loop');
           }
+          
           if (muted) {
             wistiaPlayer.setAttribute('muted', 'true');
             wistiaPlayer.setAttribute('volume', '0');
@@ -84,6 +90,9 @@ const WistiaVideo = ({
           wistiaPlayer.setAttribute('silent-autoplay', 'true');
           wistiaPlayer.setAttribute('play-button', 'false');
           wistiaPlayer.setAttribute('controls', 'false');
+          wistiaPlayer.setAttribute('settings-control', 'false');
+          wistiaPlayer.setAttribute('playbar', 'false');
+          wistiaPlayer.setAttribute('fullscreen-button', 'false');
           
           containerRef.current.appendChild(wistiaPlayer);
           playerRef.current = wistiaPlayer;

@@ -43,7 +43,7 @@ const Header = () => {
             {/* Logo */}
             <a 
               href="#" 
-              className="flex items-center group"
+              className="flex items-center space-x-2 group"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
@@ -52,8 +52,22 @@ const Header = () => {
               <img 
                 src={logo} 
                 alt="Editorzhub" 
-                className="h-8 sm:h-10 w-auto transform transition-transform group-hover:scale-105"
+                className="h-7 sm:h-8 w-auto transform transition-transform group-hover:scale-105"
               />
+              <span className="text-lg sm:text-xl font-bold inline-flex">
+                {"Editorzhub.com".split("").map((letter, index) => (
+                  <span
+                    key={index}
+                    className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"
+                    style={{
+                      animation: `typewriter 3s infinite`,
+                      animationDelay: `${index * 0.15}s`
+                    }}
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </span>
             </a>
 
             {/* Desktop Navigation */}

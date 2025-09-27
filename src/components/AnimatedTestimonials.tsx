@@ -4,6 +4,13 @@ import { Play, Pause, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation, fadeInUp, staggerContainer, staggerItem } from "@/hooks/useScrollAnimation";
 
+// Import client logos
+import clientLogo1 from "@/assets/client-logo-1.png";
+import clientLogo2 from "@/assets/client-logo-2.png";
+import clientLogo3 from "@/assets/client-logo-3.png";
+import clientLogo4 from "@/assets/client-logo-4.png";
+import clientLogo5 from "@/assets/client-logo-5.png";
+
 const testimonials = [
   {
     name: "Sarah Johnson",
@@ -33,11 +40,11 @@ const testimonials = [
 ];
 
 const clientLogos = [
-  { name: "Meta", logo: "META" },
-  { name: "Google", logo: "GOOGLE" },
-  { name: "Shopify", logo: "SHOPIFY" },
-  { name: "Amazon", logo: "AMAZON" },
-  { name: "Microsoft", logo: "MICROSOFT" },
+  { name: "TechCorp", logo: clientLogo1 },
+  { name: "RetailPro", logo: clientLogo2 },
+  { name: "FinanceHub", logo: clientLogo3 },
+  { name: "HealthCare Plus", logo: clientLogo4 },
+  { name: "EduLearn", logo: clientLogo5 },
 ];
 
 const Testimonials = () => {
@@ -267,14 +274,16 @@ const Testimonials = () => {
                       className="flex-shrink-0 group perspective-1000"
                       style={{ transformStyle: "preserve-3d" }}
                     >
-                      <div className="relative px-6 sm:px-10 py-4 sm:py-6 bg-white/80 backdrop-blur-md rounded-xl shadow-lg border border-white/50 transform transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white">
+                      <div className="relative px-4 sm:px-6 py-3 sm:py-4 bg-white/80 backdrop-blur-md rounded-xl shadow-lg border border-white/50 transform transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white">
                         {/* Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         
-                        {/* Logo Text */}
-                        <span className="relative text-base sm:text-xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent group-hover:from-primary group-hover:to-purple-600 transition-all duration-300">
-                          {client.logo}
-                        </span>
+                        {/* Logo Image */}
+                        <img 
+                          src={client.logo} 
+                          alt={client.name}
+                          className="relative h-10 sm:h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                        />
                         
                         {/* Floating Badge */}
                         <motion.div

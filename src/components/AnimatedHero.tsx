@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 // Import partner logos
-import metaLogo from "@/assets/meta-logo.png";
+import metaLogo from "@/assets/meta-logo-transparent.png";
 import shopifyLogo from "@/assets/shopify-logo.svg";
-import googleLogo from "@/assets/google-logo.png";
+import googleLogo from "@/assets/google-logo-transparent.png";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import ContactModal from "./ContactModal";

@@ -19,57 +19,54 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Zapier Webhook URL - User will need to add their own
-  const ZAPIER_WEBHOOK_URL = ""; // Add your Zapier webhook URL here
+  // WhatsApp number - Replace with your WhatsApp number (with country code, without + or spaces)
+  const WHATSAPP_NUMBER = "919876543210"; // Example: 919876543210 for India
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!ZAPIER_WEBHOOK_URL) {
-      toast({
-        title: "Configuration Required",
-        description: "Please add your Zapier webhook URL to connect with Google Sheets. Contact support for setup instructions.",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsSubmitting(true);
 
+    // Format the message for WhatsApp
+    const whatsappMessage = `
+*New Contact Form Submission*
+------------------------
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Subject:* ${formData.subject}
+*Message:* ${formData.message}
+*Date:* ${new Date().toLocaleString()}
+    `.trim();
+
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+
     try {
-      const response = await fetch(ZAPIER_WEBHOOK_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors", // Handle CORS
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: "EditorzHub Contact Form"
-        }),
-      });
+      // Open WhatsApp in new tab
+      window.open(whatsappURL, '_blank');
 
       toast({
-        title: "Message Sent Successfully!",
-        description: "Your message has been received. We'll get back to you soon.",
+        title: "Opening WhatsApp!",
+        description: "Your message has been prepared. Please send it on WhatsApp.",
       });
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-      });
+      // Reset form after a delay
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+        setIsSubmitting(false);
+      }, 2000);
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error opening WhatsApp:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again or contact us directly.",
+        description: "Failed to open WhatsApp. Please try again.",
         variant: "destructive",
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -233,23 +230,23 @@ const Contact = () => {
               </motion.div>
             </motion.form>
             
-            {/* Zapier Setup Instructions */}
+            {/* WhatsApp Setup Instructions */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={controls}
               variants={fadeInUp}
               transition={{ delay: 0.8 }}
-              className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg max-w-2xl mx-auto"
+              className="mt-8 p-4 bg-green-50 border border-green-200 rounded-lg max-w-2xl mx-auto"
             >
-              <p className="text-sm text-yellow-800">
-                <strong>Google Sheets Connection:</strong> To connect this form to Google Sheets:
+              <p className="text-sm text-green-800">
+                <strong>WhatsApp Integration:</strong> Form submissions will open WhatsApp directly
               </p>
-              <ol className="text-sm text-yellow-700 mt-2 list-decimal list-inside space-y-1">
-                <li>Go to Zapier.com and create a free account</li>
-                <li>Create a new Zap with "Webhooks by Zapier" as trigger</li>
-                <li>Add Google Sheets as the action (Create Spreadsheet Row)</li>
-                <li>Copy your webhook URL and add it in code (line 21)</li>
-                <li>Map the form fields to your Google Sheet columns</li>
+              <ol className="text-sm text-green-700 mt-2 list-decimal list-inside space-y-1">
+                <li>Replace the WhatsApp number in code (line 23) with your number</li>
+                <li>Include country code (e.g., 91 for India)</li>
+                <li>Don't use + or spaces in the number</li>
+                <li>When user submits, WhatsApp will open with pre-filled message</li>
+                <li>This is completely FREE - no API or webhook needed!</li>
               </ol>
             </motion.div>
           </Card>

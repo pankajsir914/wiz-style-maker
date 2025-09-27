@@ -240,26 +240,6 @@ Date: ${new Date().toLocaleString()}
                 </Button>
               </motion.div>
             </motion.form>
-            
-            {/* WhatsApp Setup Instructions */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={controls}
-              variants={fadeInUp}
-              transition={{ delay: 0.8 }}
-              className="mt-8 p-4 bg-green-50 border border-green-200 rounded-lg max-w-2xl mx-auto"
-            >
-              <p className="text-sm text-green-800">
-                <strong>WhatsApp Integration:</strong> Form submissions will open WhatsApp directly
-              </p>
-              <ol className="text-sm text-green-700 mt-2 list-decimal list-inside space-y-1">
-                <li>Replace the WhatsApp number in code (line 23) with your number</li>
-                <li>Include country code (e.g., 91 for India)</li>
-                <li>Don't use + or spaces in the number</li>
-                <li>When user submits, WhatsApp will open with pre-filled message</li>
-                <li>This is completely FREE - no API or webhook needed!</li>
-              </ol>
-            </motion.div>
           </Card>
         </motion.div>
       </div>

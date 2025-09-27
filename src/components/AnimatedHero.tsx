@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 // Import partner logos
-import metaLogo from "@/assets/meta-logo-transparent.png";
+import metaLogo from "@/assets/meta-logo-clean.png";
 import shopifyLogo from "@/assets/shopify-logo.svg";
-import googleLogo from "@/assets/google-logo-transparent.png";
+import googleLogo from "@/assets/google-logo-clean.png";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import ContactModal from "./ContactModal";
@@ -173,7 +173,7 @@ const Hero = () => {
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
-                  className="h-12 sm:h-16 md:h-20 w-auto object-contain filter hover:filter-none transition-all duration-300"
+                  className="h-12 sm:h-16 md:h-20 w-auto object-contain drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
                 />
               </motion.div>
             ))}

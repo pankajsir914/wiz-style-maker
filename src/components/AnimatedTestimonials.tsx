@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import { useScrollAnimation, fadeInUp, staggerContainer, staggerItem } from "@/hooks/useScrollAnimation";
 
 // Import client logos
-import clientLogo1 from "@/assets/client-logo-1.png";
-import clientLogo2 from "@/assets/client-logo-2.png";
-import clientLogo3 from "@/assets/client-logo-3.png";
-import clientLogo4 from "@/assets/client-logo-4.png";
-import clientLogo5 from "@/assets/client-logo-5.png";
+import clientLogo1 from "@/assets/1.png";
+import clientLogo2 from "@/assets/2.png";
+import clientLogo3 from "@/assets/3.png";
+import clientLogo4 from "@/assets/4.png";
+import clientLogo5 from "@/assets/5.png";
 
 const testimonials = [
   {

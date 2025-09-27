@@ -11,28 +11,24 @@ import { HelpCircle } from "lucide-react";
 
 const faqs = [
   {
-    question: "What services does Editorzhub.com offer?",
-    answer: "We provide comprehensive digital marketing services including Meta ads, Google ads, social media management, SEO optimization, creative design, and automation services to help businesses grow their online presence and increase ROI.",
+    question: "What kind of videos do you edit?",
+    answer: "We specialize in both short-form (Reels, Shorts, TikTok) and long-form (YouTube videos, podcasts, vlogs). We also create thumbnails, captions, and motion graphics to make your content stand out.",
   },
   {
-    question: "How quickly can I see results from your marketing campaigns?",
-    answer: "While some improvements can be seen within the first few weeks, significant results typically appear within 1-3 months. We focus on sustainable growth strategies that deliver long-term value rather than quick fixes.",
+    question: "How does the process work if I want to get my videos edited?",
+    answer: "Super simple: 1. Share your raw footage with us. 2. Our editors craft a style that matches your brand and audience. 3. We deliver platform-ready edits within the promised timeline. 4. Revisions are always included so you're fully satisfied.",
   },
   {
-    question: "What makes Editorzhub.com different from other agencies?",
-    answer: "Our data-driven approach, combined with 5+ years of experience and 60+ crore ad spend managed, sets us apart. We're certified partners with Meta, Google, and Shopify, ensuring you get the best strategies and support.",
+    question: "How much time will it take to get my edited video?",
+    answer: "Our standard turnaround time is 48–72 hours depending on the project length. For urgent needs, we also offer express delivery at an additional cost.",
   },
   {
-    question: "How do you measure campaign success?",
-    answer: "We track multiple KPIs including ROI, conversion rates, engagement metrics, and revenue growth. You'll receive detailed monthly reports with transparent insights into your campaign performance.",
+    question: "Can you match my existing brand style or create a new one for me?",
+    answer: "Absolutely! We align each video with your brand theme, colors, fonts, and tone of voice. If you don't have a defined style yet, our creative team can help build one for you.",
   },
   {
-    question: "What is your pricing structure?",
-    answer: "We offer customized pricing based on your specific needs and budget. Our packages are designed to be flexible and scalable, ensuring you get maximum value for your investment. Contact us for a personalized quote.",
-  },
-  {
-    question: "Do you work with small businesses or only large corporations?",
-    answer: "We work with businesses of all sizes! From startups to established enterprises, we tailor our strategies to meet your specific goals and budget constraints.",
+    question: "What if I need changes after delivery?",
+    answer: "No worries! We provide free revisions in all plans. Your satisfaction is our priority, so we'll fine-tune the video until it feels perfect for you.",
   },
 ];
 
@@ -96,7 +92,7 @@ const FAQ = () => {
               </motion.div>
               <h2 className="text-[length:var(--font-h2)] font-display font-bold mb-4">
                 <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
-                  Frequently Asked Questions
+                  Frequently Asked Questions (EditorzHub)
                 </span>
               </h2>
               <p className="text-[length:var(--font-body)] text-muted-foreground max-w-2xl mx-auto">

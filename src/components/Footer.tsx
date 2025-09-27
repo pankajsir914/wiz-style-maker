@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Twitter } from "lucide-react";
+import logo from "@/assets/editorzhub-logo.png";
 
 const Footer = () => {
   return (
@@ -8,12 +9,11 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <span className="text-white text-lg">✓</span>
-              </div>
-              <span className="text-[length:var(--font-h3)] font-bold text-gray-800">Editorzhub.com</span>
-            </div>
+            <img 
+              src={logo} 
+              alt="Editorzhub" 
+              className="h-12 w-auto"
+            />
           </div>
           
           {/* Divider */}

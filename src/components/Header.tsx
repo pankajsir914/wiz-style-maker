@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ContactModal from "./ContactModal";
+import logo from "@/assets/editorzhub-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,29 +43,17 @@ const Header = () => {
             {/* Logo */}
             <a 
               href="#" 
-              className="flex items-center space-x-2 group"
+              className="flex items-center group"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center transform transition-transform group-hover:scale-105">
-                <span className="text-white text-base sm:text-lg font-bold">✓</span>
-              </div>
-          <span className="text-lg sm:text-xl font-bold inline-flex">
-            {"Editorzhub.com".split("").map((letter, index) => (
-              <span
-                key={index}
-                className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"
-                style={{
-                  animation: `typewriter 3s infinite`,
-                  animationDelay: `${index * 0.15}s`
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </span>
+              <img 
+                src={logo} 
+                alt="Editorzhub" 
+                className="h-8 sm:h-10 w-auto transform transition-transform group-hover:scale-105"
+              />
             </a>
 
             {/* Desktop Navigation */}

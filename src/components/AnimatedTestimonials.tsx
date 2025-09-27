@@ -53,11 +53,24 @@ const testimonials = [
 ];
 
 const clientLogos = [
-  { name: "TechCorp", logo: clientLogo1 },
-  { name: "RetailPro", logo: clientLogo2 },
-  { name: "FinanceHub", logo: clientLogo3 },
-  { name: "HealthCare Plus", logo: clientLogo4 },
-  { name: "EduLearn", logo: clientLogo5 },
+  { name: "Client 1", logo: clientLogo1 },
+  { name: "Client 2", logo: clientLogo2 },
+  { name: "Client 3", logo: clientLogo3 },
+  { name: "Client 4", logo: clientLogo4 },
+  { name: "Client 5", logo: clientLogo5 },
+  { name: "Client 6", logo: clientLogo6 },
+  { name: "Client 7", logo: clientLogo7 },
+  { name: "Client 8", logo: clientLogo8 },
+  { name: "Client 9", logo: clientLogo9 },
+  { name: "Client 10", logo: clientLogo10 },
+  { name: "Client 11", logo: clientLogo11 },
+  { name: "Client 12", logo: clientLogo12 },
+  { name: "Client 13", logo: clientLogo13 },
+  { name: "Client 14", logo: clientLogo14 },
+  { name: "Client 15", logo: clientLogo15 },
+  { name: "Client 16", logo: clientLogo16 },
+  { name: "Client 17", logo: clientLogo17 },
+  { name: "Client 18", logo: clientLogo18 },
 ];
 
 const Testimonials = () => {

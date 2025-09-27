@@ -1,4 +1,9 @@
 import { useState } from "react";
+
+// Import partner logos
+import metaLogo from "@/assets/14.png";
+import shopifyLogo from "@/assets/15.png";
+import googleLogo from "@/assets/16.png";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import ContactModal from "./ContactModal";
@@ -153,9 +158,9 @@ const Hero = () => {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 lg:gap-14">
             {[
-              { name: "Meta", type: "Business Partner" },
-              { name: "Shopify", type: "Partners" },
-              { name: "Google", type: "Partner" },
+              { name: "Meta", logo: metaLogo },
+              { name: "Shopify", logo: shopifyLogo },
+              { name: "Google", logo: googleLogo },
             ].map((partner, index) => (
               <motion.div
                 key={partner.name}
@@ -163,10 +168,13 @@ const Hero = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 2 + index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
-                className="flex items-center gap-2 text-muted-foreground"
+                className="flex items-center"
               >
-                <span className="text-[length:var(--font-body-lg)] font-bold">{partner.name}</span>
-                <span className="text-[length:var(--font-body)]">{partner.type}</span>
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="h-12 sm:h-16 md:h-20 w-auto object-contain filter hover:filter-none transition-all duration-300"
+                />
               </motion.div>
             ))}
           </div>

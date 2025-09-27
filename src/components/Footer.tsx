@@ -8,12 +8,15 @@ const Footer = () => {
       <div className="relative bg-gradient-to-r from-pink-100 via-purple-50 to-yellow-50 py-12">
         <div className="container mx-auto px-4">
           {/* Logo */}
-          <div className="flex justify-center mb-8">
+          <div className="flex flex-col items-center mb-8">
             <img 
               src={logo} 
               alt="Editorzhub" 
-              className="h-12 w-auto"
+              className="h-12 w-auto mb-4"
             />
+            <p className="text-center text-gray-600 max-w-md px-4">
+              Editing that understands your story. Built for creators, coaches, and growing brands.
+            </p>
           </div>
           
           {/* Divider */}

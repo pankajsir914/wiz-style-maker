@@ -6,6 +6,7 @@ import ServiceShowcase from "@/components/ServiceShowcase";
 import DesignShowcase from "@/components/DesignShowcase";
 import AutomationShowcase from "@/components/AutomationShowcase";
 import SEOShowcase from "@/components/SEOShowcase";
+import AICreators from "@/components/AICreators";
 import OurClients from "@/components/OurClients";
 import OnboardingProcess from "@/components/OnboardingProcess";
 import Comparison from "@/components/Comparison";
@@ -28,6 +29,7 @@ const Index = () => {
         <DesignShowcase />
         <AutomationShowcase />
         <SEOShowcase />
+        <AICreators />
         <OurClients />
         <OnboardingProcess />
         <Comparison />

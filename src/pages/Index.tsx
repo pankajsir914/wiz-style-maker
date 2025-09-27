@@ -12,6 +12,7 @@ import OnboardingProcess from "@/components/OnboardingProcess";
 import Comparison from "@/components/Comparison";
 import Testimonials from "@/components/AnimatedTestimonials";
 import FAQ from "@/components/AnimatedFAQ";
+import CTASection from "@/components/CTASection";
 import Contact from "@/components/AnimatedContact";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -35,6 +36,7 @@ const Index = () => {
         <Comparison />
         <Testimonials />
         <FAQ />
+        <CTASection />
         <Contact />
       </main>
       <Footer />

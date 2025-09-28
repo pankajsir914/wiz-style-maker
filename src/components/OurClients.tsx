@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { TrendingUp, Users, Target, Zap } from "lucide-react";
+import { TrendingUp, Users, Target, Zap, UserCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import fitnessReelImage from "@/assets/fitness-reel-case-study.png";
@@ -60,6 +60,24 @@ const clients = [
       { label: "Followers", value: "+50K" },
       { label: "Growth", value: "Viral" },
       { label: "Engagement", value: "Massive" }
+    ]
+  },
+  {
+    name: "Dr. Ajeet Pal Singh",
+    company: "Diabetologist",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DrAjeetPalSingh",
+    metric: "Quality",
+    metricLabel: "Content Excellence",
+    description: "Really impressed with the content Editorzhub has been creating lately. Consistently high-quality, well-thought-out, and engaging — a great example of what it means to build with purpose and creativity. Keep up the great work!",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80",
+    videoId: null,
+    gradient: "from-emerald-500 to-cyan-600",
+    icon: UserCircle,
+    tags: ["Content Creation", "Healthcare"],
+    stats: [
+      { label: "Quality", value: "Excellent" },
+      { label: "Consistency", value: "High" },
+      { label: "Engagement", value: "Strong" }
     ]
   },
 ];

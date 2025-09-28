@@ -23,32 +23,19 @@ import clientLogo15 from "@/assets/15.png";
 import clientLogo16 from "@/assets/16.png";
 import clientLogo17 from "@/assets/17.png";
 import clientLogo18 from "@/assets/18.png";
+import ashishArora from "@/assets/ashish-arora.png";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CEO @ TechStart",
-    image: "https://i.pravatar.cc/150?img=1",
-    quote: "Working with Editorzhub.com has been transformative! Our ROI increased by 250% in just 3 months.",
+    name: "Ashish Arora",
+    role: "Blogger, Digital Marketer, Web 3 Enthusiast",
+    image: ashishArora,
+    quote: "On numerous video projects over the course of a year, Ravish constantly produced excellent outcomes. He is a talented editor, but he also has a creative vision that makes each video come to life. I can wholeheartedly suggest Ravish to anyone in need of great video editing services because of their expertise, attention to detail, and capacity to fulfil deadlines.",
     rating: 5,
     bgColor: "from-purple-100 to-pink-100",
-    video: true,
-  },
-  {
-    name: "Michael Chen",
-    role: "Founder @ StyleHub",
-    image: "https://i.pravatar.cc/150?img=2",
-    quote: "The best marketing investment we've made. Their strategic approach delivered exceptional results.",
-    rating: 5,
-    bgColor: "from-blue-100 to-purple-100",
-  },
-  {
-    name: "Emma Wilson",
-    role: "Marketing Director @ FoodDelight",
-    image: "https://i.pravatar.cc/150?img=3",
-    quote: "Incredible team! They understood our vision and exceeded all expectations with their campaigns.",
-    rating: 5,
-    bgColor: "from-pink-100 to-orange-100",
+    service: "Short form and YouTube Video editing",
+    period: "Mar 11 2022 - Mar 11 2023",
+    video: false,
   },
 ];
 

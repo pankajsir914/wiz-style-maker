@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Play, Volume2 } from "lucide-react";
+import { Play, Volume2, UserCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const testimonials = [
@@ -22,6 +22,17 @@ const testimonials = [
     rating: "11 GENERATES",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
     bgColor: "from-blue-400 to-blue-500"
+  },
+  {
+    id: 3,
+    name: "Dr. Ajeet Pal Singh",
+    role: "Diabetologist",
+    company: "Healthcare Professional",
+    quote: "Really impressed with the content Editorzhub has been creating lately. Consistently high-quality, well-thought-out, and engaging — a great example of what it means to build with purpose and creativity. Keep up the great work!",
+    rating: "EXCELLENCE",
+    image: null,
+    icon: UserCircle,
+    bgColor: "from-emerald-400 to-cyan-500"
   },
 ];
 
@@ -113,13 +124,21 @@ const Testimonials = () => {
                 }`}>
                   {/* Top section with avatar and info */}
                   <div className="flex items-start gap-4 mb-6">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className={`w-24 h-32 rounded-2xl object-cover shadow-lg transition-all duration-300 ${
+                    {testimonial.image ? (
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className={`w-24 h-32 rounded-2xl object-cover shadow-lg transition-all duration-300 ${
+                          hoveredCard === testimonial.id ? 'shadow-2xl scale-105' : ''
+                        }`}
+                      />
+                    ) : testimonial.icon ? (
+                      <div className={`w-24 h-32 rounded-2xl bg-gradient-to-br ${testimonial.bgColor} shadow-lg flex items-center justify-center transition-all duration-300 ${
                         hoveredCard === testimonial.id ? 'shadow-2xl scale-105' : ''
-                      }`}
-                    />
+                      }`}>
+                        <testimonial.icon className="h-12 w-12 text-white" />
+                      </div>
+                    ) : null}
                     <div className="flex-1">
                       <div className={`text-[length:var(--font-body-sm)] text-gray-500 mb-2 font-semibold transition-all duration-300 ${
                         hoveredCard === testimonial.id ? 'text-purple-600' : ''

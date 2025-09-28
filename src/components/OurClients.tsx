@@ -16,7 +16,7 @@ const clients = [
     metricLabel: "Subscribers Gained",
     description: "Transformed her raw vlogs into cinematic content that boosted watch time by 350% and grew her channel from 50K to 2.3M subscribers in just 18 months.",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
-    videoId: "dQw4w9WgXcQ", // Changed to a working YouTube video ID
+    videoId: "LXb3EKWsInQ", // Costa Rica travel video - publicly available
     gradient: "from-red-500 to-pink-600",
     icon: TrendingUp,
     tags: ["Video Editing", "YouTube Growth"],
@@ -165,14 +165,12 @@ const OurClients = () => {
                 {client.videoId ? (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <iframe
-                      src={`https://www.youtube.com/embed/${client.videoId}`}
+                      src={`https://www.youtube.com/embed/${client.videoId}?enablejsapi=1&origin=${window.location.origin}`}
                       title={client.name}
                       className={`w-full h-full transition-all duration-700 ${
                         activeIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
                       }`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
                   </div>

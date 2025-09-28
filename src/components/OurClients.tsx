@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { TrendingUp, Users, Target, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import fitnessReelImage from "@/assets/fitness-reel-case-study.png";
 
 const clients = [
   {
@@ -25,21 +26,21 @@ const clients = [
     ]
   },
   {
-    name: "FitLife Coaching",
-    company: "Online Fitness Business",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=FitLife",
-    metric: "5x",
-    metricLabel: "Course Sales Increase",
-    description: "Professional video editing for their online courses led to 5x increase in sales and 90% course completion rates, establishing them as industry leaders.",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
+    name: "FITNESS MOTIVATION REEL",
+    company: "Instagram Creator",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=FitnessReel",
+    metric: "129K+",
+    metricLabel: "Views",
+    description: "One notable accomplishment involved editing a trending reel for a client seeking to make a splash in the digital realm. Drawing on my expertise and keen understanding of current trends, I crafted a dynamic and captivating reel that perfectly resonated with the audience. Upon its swift upload to the client's Instagram page, the reel went viral in a matter of minutes, amassing an unprecedented number of views and engagement. The client's satisfaction was evident, solidifying my reputation as a video editor capable of delivering exceptional results and exceeding expectations.",
+    image: fitnessReelImage,
     videoId: null,
     gradient: "from-purple-500 to-blue-600",
     icon: Users,
-    tags: ["Course Creation", "E-learning"],
+    tags: ["Instagram Reels", "Viral Content"],
     stats: [
-      { label: "Completion", value: "90%" },
-      { label: "Students", value: "10K+" },
-      { label: "Growth", value: "5x" }
+      { label: "Followers", value: "Increased" },
+      { label: "Growth", value: "Viral" },
+      { label: "Engagement", value: "Increased" }
     ]
   },
   {

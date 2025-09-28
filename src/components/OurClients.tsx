@@ -62,24 +62,6 @@ const clients = [
       { label: "Engagement", value: "Massive" }
     ]
   },
-  {
-    name: "MindfulLife Podcast",
-    company: "Podcast Production",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=MindfulPod",
-    metric: "Top 10",
-    metricLabel: "Podcast Rankings",
-    description: "Expert audio editing and video podcast production helped them reach Top 10 in their category with over 5 million downloads per month.",
-    image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80",
-    videoId: null,
-    gradient: "from-indigo-500 to-purple-600",
-    icon: Zap,
-    tags: ["Podcast", "Audio Production"],
-    stats: [
-      { label: "Downloads", value: "5M/mo" },
-      { label: "Ranking", value: "Top 10" },
-      { label: "Episodes", value: "200+" }
-    ]
-  },
 ];
 
 const OurClients = () => {

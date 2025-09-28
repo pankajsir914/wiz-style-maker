@@ -54,7 +54,7 @@ const Header = () => {
                 alt="Editorzhub" 
                 className="h-6 sm:h-8 w-auto transform transition-transform group-hover:scale-105"
               />
-              <span className="text-base sm:text-xl font-bold hidden sm:inline-flex">
+              <span className="text-sm sm:text-xl font-bold inline-flex">
                 {"Editorzhub.com".split("").map((letter, index) => (
                   <span
                     key={index}

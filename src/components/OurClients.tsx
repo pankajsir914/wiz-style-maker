@@ -5,6 +5,7 @@ import { TrendingUp, Users, Target, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import fitnessReelImage from "@/assets/fitness-reel-case-study.png";
+import challengeReelImage from "@/assets/challenge-reel-case-study.png";
 
 const clients = [
   {
@@ -44,21 +45,21 @@ const clients = [
     ]
   },
   {
-    name: "Digital Marketing Agency",
-    company: "Social Media Agency",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DigiAgency",
-    metric: "400%",
-    metricLabel: "Client Engagement Boost",
-    description: "Our short-form content editing helped their clients achieve 400% higher engagement rates across Instagram Reels, YouTube Shorts, and TikTok.",
-    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80",
+    name: "CHALLENGE REEL",
+    company: "Viral Content Creator",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ChallengeReel",
+    metric: "7.4M+",
+    metricLabel: "Views",
+    description: "During a much-needed vacation in Rishikesh, we decided to shoot a video near a waterfall with our drone. We expertly captured that breathtaking moment. Upon returning, we edited the footage, ensuring it conveyed the same message we wanted. When the video was shared on the client's Instagram account, it quickly became a sensation, garnering a staggering 7.4 million views. People started recreating the challenge. The engagement was extraordinary, drawing in an enthusiastic audience and boosting the account's followers by an impressive 50k+.",
+    image: challengeReelImage,
     videoId: null,
     gradient: "from-teal-500 to-green-600",
     icon: Target,
-    tags: ["Short-form", "Social Media"],
+    tags: ["Viral Challenge", "Drone Footage"],
     stats: [
-      { label: "Reach", value: "50M+" },
-      { label: "Engagement", value: "+400%" },
-      { label: "Conversions", value: "+250%" }
+      { label: "Followers", value: "+50K" },
+      { label: "Growth", value: "Viral" },
+      { label: "Engagement", value: "Massive" }
     ]
   },
   {

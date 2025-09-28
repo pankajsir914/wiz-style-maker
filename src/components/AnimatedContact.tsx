@@ -138,7 +138,7 @@ Date: ${new Date().toLocaleString()}
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {[
-                { icon: Phone, title: "Call Us", info: "+91 98765 43210", i: 0 },
+                { icon: Phone, title: "Call Us", info: "+91 7770995275", i: 0 },
                 { icon: Mail, title: "Email Us", info: "hello@editorzhub.com", i: 1 },
                 { icon: MapPin, title: "Visit Us", info: "Mumbai, India", i: 2 },
               ].map((item, index) => (

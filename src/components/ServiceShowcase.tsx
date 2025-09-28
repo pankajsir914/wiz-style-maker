@@ -24,7 +24,7 @@ const ServiceShowcase = () => {
               </Badge>
 
               {/* Main Heading */}
-              <h2 className="text-2xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6">
+              <h2 className="text-2xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 text-center">
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Video Editing
                 </span>

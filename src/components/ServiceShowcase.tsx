@@ -17,11 +17,13 @@ const ServiceShowcase = () => {
             {/* Left side - Content */}
             <div>
               {/* Badge */}
-              <Badge className="mb-3 sm:mb-6 px-2 sm:px-3 py-1 sm:py-1.5 bg-primary/10 text-primary border-primary/20 rounded-full">
-                <span className="text-[10px] sm:text-xs font-medium tracking-wider">
-                  EDITING • EDITING • EDITING
-                </span>
-              </Badge>
+              <div className="flex justify-center">
+                <Badge className="mb-3 sm:mb-6 px-2 sm:px-3 py-1 sm:py-1.5 bg-primary/10 text-primary border-primary/20 rounded-full">
+                  <span className="text-[10px] sm:text-xs font-medium tracking-wider">
+                    EDITING • EDITING • EDITING
+                  </span>
+                </Badge>
+              </div>
 
               {/* Main Heading */}
               <h2 className="text-2xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 text-center">

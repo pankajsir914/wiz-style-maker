@@ -20,7 +20,7 @@ const Header = () => {
   const navItems = [
     { label: "Services", href: "#services" },
     { label: "Clients", href: "#portfolio" },
-    { label: "Why Editorzhub?", href: "#about" },
+    { label: "Why Editorzhub?", href: "#why" },
     { label: "Reviews", href: "#testimonials" },
     { label: "FAQs", href: "#faq" },
   ];

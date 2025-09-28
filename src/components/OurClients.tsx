@@ -16,7 +16,7 @@ const clients = [
     metricLabel: "Subscribers Gained",
     description: "Transformed her raw vlogs into cinematic content that boosted watch time by 350% and grew her channel from 50K to 2.3M subscribers in just 18 months.",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
-    videoId: "HRITOj34S38",
+    videoId: "dQw4w9WgXcQ", // Changed to a working YouTube video ID
     gradient: "from-red-500 to-pink-600",
     icon: TrendingUp,
     tags: ["Video Editing", "YouTube Growth"],

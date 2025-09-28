@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import { Play, Pause, Star } from "lucide-react";
+import { Play, Pause, Star, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation, fadeInUp, staggerContainer, staggerItem } from "@/hooks/useScrollAnimation";
 
@@ -58,6 +58,17 @@ const testimonials = [
     bgColor: "from-pink-100 to-orange-100",
     service: "Yoga Content Creation",
     period: "",
+    video: false,
+  },
+  {
+    name: "Akshat Shrivastava",
+    role: "Public Speaking Coach for CXOs, Entrepreneurs & Leaders | LinkedIn Top Voice",
+    icon: Award,
+    quote: "I'm highly impressed by Ravish's video editing skills & service. Throughout our association, Ravish was very professional, helpful and collaborative. He edited my videos exactly the way I wanted. He infact, delivered more than what we asked for. I highly recommend Ravish for your next project.",
+    rating: 5,
+    bgColor: "from-green-100 to-blue-100",
+    service: "30 Minutes Long Course Edit",
+    period: "May 2024",
     video: false,
   },
 ];
@@ -189,24 +200,32 @@ const Testimonials = () => {
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         className="relative"
                       >
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
-                        />
-                        {testimonial.video && (
-                          <motion.button
-                            whileHover={{ scale: 1.2 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={() => setPlayingVideo(playingVideo === index ? null : index)}
-                            className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                          >
-                            {playingVideo === index ? (
-                              <Pause className="h-6 w-6 text-white" />
-                            ) : (
-                              <Play className="h-6 w-6 text-white" />
+                        {testimonial.icon ? (
+                          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center">
+                            <testimonial.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                          </div>
+                        ) : (
+                          <>
+                            <img
+                              src={testimonial.image}
+                              alt={testimonial.name}
+                              className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
+                            />
+                            {testimonial.video && (
+                              <motion.button
+                                whileHover={{ scale: 1.2 }}
+                                whileTap={{ scale: 0.9 }}
+                                onClick={() => setPlayingVideo(playingVideo === index ? null : index)}
+                                className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                              >
+                                {playingVideo === index ? (
+                                  <Pause className="h-6 w-6 text-white" />
+                                ) : (
+                                  <Play className="h-6 w-6 text-white" />
+                                )}
+                              </motion.button>
                             )}
-                          </motion.button>
+                          </>
                         )}
                       </motion.div>
                       <div>

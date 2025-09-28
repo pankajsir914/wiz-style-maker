@@ -7,13 +7,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const clients = [
   {
-    name: "Sarah Johnson",
+    name: "Ejaz - Content Creator",
     company: "YouTube Creator",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=SarahJ",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=EjazCreator",
     metric: "2.3M",
     metricLabel: "Subscribers Gained",
     description: "Transformed her raw vlogs into cinematic content that boosted watch time by 350% and grew her channel from 50K to 2.3M subscribers in just 18 months.",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+    videoId: "HRITOj34S38",
     gradient: "from-red-500 to-pink-600",
     icon: TrendingUp,
     tags: ["Video Editing", "YouTube Growth"],
@@ -31,6 +32,7 @@ const clients = [
     metricLabel: "Course Sales Increase",
     description: "Professional video editing for their online courses led to 5x increase in sales and 90% course completion rates, establishing them as industry leaders.",
     image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
+    videoId: null,
     gradient: "from-purple-500 to-blue-600",
     icon: Users,
     tags: ["Course Creation", "E-learning"],
@@ -48,6 +50,7 @@ const clients = [
     metricLabel: "Client Engagement Boost",
     description: "Our short-form content editing helped their clients achieve 400% higher engagement rates across Instagram Reels, YouTube Shorts, and TikTok.",
     image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80",
+    videoId: null,
     gradient: "from-teal-500 to-green-600",
     icon: Target,
     tags: ["Short-form", "Social Media"],
@@ -65,6 +68,7 @@ const clients = [
     metricLabel: "Podcast Rankings",
     description: "Expert audio editing and video podcast production helped them reach Top 10 in their category with over 5 million downloads per month.",
     image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80",
+    videoId: null,
     gradient: "from-indigo-500 to-purple-600",
     icon: Zap,
     tags: ["Podcast", "Audio Production"],
@@ -158,7 +162,7 @@ const OurClients = () => {
 
         {/* Main Content Area - Responsive Layout */}
         <div className="h-full pt-20 md:pt-24 flex flex-col md:flex-row">
-          {/* Left Side - Gradient Background with Images */}
+          {/* Left Side - Video/Image Showcase */}
           <div className="w-full md:w-1/2 h-[40vh] md:h-full relative overflow-hidden">
             {clients.map((client, index) => (
               <motion.div
@@ -172,36 +176,56 @@ const OurClients = () => {
                 transition={{ duration: 0.7 }}
               >
                 <div className="absolute inset-0 bg-black/20" />
-                <img
-                  src={client.image}
-                  alt={client.name}
-                  className={`absolute inset-0 w-full h-full object-cover mix-blend-overlay transition-all duration-700 ${
-                    activeIndex === index ? 'opacity-70 scale-100' : 'opacity-0 scale-110'
-                  }`}
-                />
                 
-                {/* Floating Elements */}
-                <div className="absolute inset-0 flex items-center justify-center p-4">
-                  <motion.div 
-                    initial={false}
-                    animate={{
-                      opacity: activeIndex === index ? 1 : 0,
-                      scale: activeIndex === index ? 1 : 0.9,
-                      y: activeIndex === index ? 0 : 20
-                    }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 lg:p-8 max-w-xs md:max-w-md border border-white/20">
-                      <client.icon className="h-8 md:h-10 lg:h-12 w-8 md:w-10 lg:w-12 text-white mb-3" />
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
-                        {client.metric}
-                      </h3>
-                      <p className="text-sm md:text-base lg:text-lg text-white/80">
-                        {client.metricLabel}
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
+                {/* Video or Image */}
+                {client.videoId ? (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${client.videoId}`}
+                      title={client.name}
+                      className={`w-full h-full transition-all duration-700 ${
+                        activeIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+                      }`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : (
+                  <img
+                    src={client.image}
+                    alt={client.name}
+                    className={`absolute inset-0 w-full h-full object-cover mix-blend-overlay transition-all duration-700 ${
+                      activeIndex === index ? 'opacity-70 scale-100' : 'opacity-0 scale-110'
+                    }`}
+                  />
+                )}
+                
+                {/* Floating Elements - Only show when not video */}
+                {!client.videoId && (
+                  <div className="absolute inset-0 flex items-center justify-center p-4">
+                    <motion.div 
+                      initial={false}
+                      animate={{
+                        opacity: activeIndex === index ? 1 : 0,
+                        scale: activeIndex === index ? 1 : 0.9,
+                        y: activeIndex === index ? 0 : 20
+                      }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 lg:p-8 max-w-xs md:max-w-md border border-white/20">
+                        <client.icon className="h-8 md:h-10 lg:h-12 w-8 md:w-10 lg:w-12 text-white mb-3" />
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
+                          {client.metric}
+                        </h3>
+                        <p className="text-sm md:text-base lg:text-lg text-white/80">
+                          {client.metricLabel}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </div>
+                )}
 
                 {/* Stats - Desktop Only */}
                 {!isMobile && (

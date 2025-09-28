@@ -165,7 +165,7 @@ const OurClients = () => {
                 {client.videoId ? (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <iframe
-                      src={`https://www.youtube.com/embed/${client.videoId}?enablejsapi=1&origin=${window.location.origin}`}
+                      src={`https://www.youtube.com/embed/${client.videoId}?autoplay=1&mute=1&loop=1&playlist=${client.videoId}&enablejsapi=1&origin=${window.location.origin}`}
                       title={client.name}
                       className={`w-full h-full transition-all duration-700 ${
                         activeIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-110'

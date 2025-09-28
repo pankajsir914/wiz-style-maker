@@ -45,7 +45,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
   const handleWhatsApp = () => {
     const message = "Hi, I would like to book a strategy call with Adymize.";
-    const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/917770995275?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 

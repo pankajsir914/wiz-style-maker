@@ -20,7 +20,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // WhatsApp number - Replace with your WhatsApp number (with country code, without + or spaces)
-  const WHATSAPP_NUMBER = "916267406719"; // Your WhatsApp number with India country code
+  const WHATSAPP_NUMBER = "917770995275"; // Your WhatsApp number with India country code
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -27,45 +27,54 @@ const Contact = () => {
     
     setIsSubmitting(true);
 
-    // Format the message for WhatsApp
-    const whatsappMessage = `
-New Contact Form Submission
-------------------------
+    // Format the message for WhatsApp - keeping it shorter to avoid URL length issues
+    const whatsappMessage = `*New Contact Form*
 Name: ${formData.name}
 Email: ${formData.email}
 Subject: ${formData.subject}
-Message: ${formData.message}
-Date: ${new Date().toLocaleString()}
-    `.trim();
+Message: ${formData.message}`;
 
-    // Create WhatsApp URL - using wa.me for web compatibility
+    // Use direct window.open to avoid popup blockers
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
     try {
-      // Create a temporary anchor element and click it
-      const link = document.createElement('a');
-      link.href = whatsappURL;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Use window.open directly instead of creating a link element
+      const newWindow = window.open(whatsappURL, '_blank');
+      
+      if (newWindow) {
+        toast({
+          title: "Opening WhatsApp!",
+          description: "Your message has been prepared. Please send it on WhatsApp.",
+        });
 
-      toast({
-        title: "Opening WhatsApp!",
-        description: "Your message has been prepared. Please send it on WhatsApp.",
-      });
-
-      // Reset form after a delay
-      setTimeout(() => {
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: ""
+        // Reset form after a delay
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: ""
+          });
+          setIsSubmitting(false);
+        }, 2000);
+      } else {
+        // If popup was blocked, provide a fallback link
+        toast({
+          title: "Popup blocked",
+          description: "Please allow popups or click the link below",
+          action: (
+            <a 
+              href={whatsappURL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline text-primary"
+            >
+              Open WhatsApp
+            </a>
+          ) as any,
         });
         setIsSubmitting(false);
-      }, 2000);
+      }
     } catch (error) {
       console.error("Error opening WhatsApp:", error);
       

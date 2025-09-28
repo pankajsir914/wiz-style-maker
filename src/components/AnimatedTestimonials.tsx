@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import { Play, Pause, Star, Award } from "lucide-react";
+import { Play, Pause, Star, Award, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation, fadeInUp, staggerContainer, staggerItem } from "@/hooks/useScrollAnimation";
 
@@ -52,7 +52,7 @@ const testimonials = [
   {
     name: "Karan Mathur",
     role: "Yoga Practitioner",
-    image: "https://i.pravatar.cc/150?img=8",
+    icon: Heart,
     quote: "My journey with video editing for my yoga content began when I realized the importance of creating visually appealing and engaging videos for my students and followers. I wanted my online presence to reflect the passion and dedication I have for yoga, and that's when I decided to enlist the services of a freelance video editor.",
     rating: 5,
     bgColor: "from-pink-100 to-orange-100",

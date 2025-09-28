@@ -209,26 +209,6 @@ const OurClients = () => {
                   </div>
                 )}
 
-                {/* Stats - Desktop Only */}
-                {!isMobile && (
-                  <div className="absolute top-8 right-8 flex flex-col gap-3">
-                    {client.stats.map((stat, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={false}
-                        animate={{
-                          x: activeIndex === index ? 0 : 50,
-                          opacity: activeIndex === index ? 1 : 0,
-                        }}
-                        transition={{ delay: 0.3 + idx * 0.1 }}
-                        className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20"
-                      >
-                        <div className="text-white/70 text-xs">{stat.label}</div>
-                        <div className="text-white font-bold">{stat.value}</div>
-                      </motion.div>
-                    ))}
-                  </div>
-                )}
               </motion.div>
             ))}
           </div>

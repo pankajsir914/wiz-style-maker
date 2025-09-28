@@ -329,7 +329,7 @@ const Testimonials = () => {
                       className="flex-shrink-0 group perspective-1000"
                       style={{ transformStyle: "preserve-3d" }}
                     >
-                      <div className="relative px-6 sm:px-8 py-4 sm:py-6 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-white/50 transform transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white">
+                      <div className="relative px-3 sm:px-4 py-2 sm:py-3 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-white/50 transform transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white">
                         {/* Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         

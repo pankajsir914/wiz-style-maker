@@ -83,9 +83,9 @@ const Comparison = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-xl sm:rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-white/90 backdrop-blur-sm border border-purple-200/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:scale-105 transition-transform duration-300">
+                <div className="relative bg-white/90 backdrop-blur-sm border border-purple-200/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:scale-105 transition-transform duration-300 text-center">
                   {/* Icon */}
-                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 mx-auto">
                     <stat.icon className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                   </div>
                   

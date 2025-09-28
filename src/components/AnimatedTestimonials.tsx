@@ -71,6 +71,17 @@ const testimonials = [
     period: "May 2024",
     video: false,
   },
+  {
+    name: "Dr. Ajeet Pal Singh",
+    role: "Diabetologist",
+    icon: Heart,
+    quote: "Really impressed with the content Editorzhub has been creating lately. Consistently high-quality, well-thought-out, and engaging — a great example of what it means to build with purpose and creativity. Keep up the great work!",
+    rating: 5,
+    bgColor: "from-teal-100 to-cyan-100",
+    service: "Healthcare Content Creation",
+    period: "",
+    video: false,
+  },
 ];
 
 const clientLogos = [

@@ -140,7 +140,7 @@ Date: ${new Date().toLocaleString()}
               {[
                 { icon: Phone, title: "Call Us", info: "+91 7770995275", i: 0 },
                 { icon: Mail, title: "Email Us", info: "ravishkumarofficial18091@gmail.com", i: 1 },
-                { icon: MapPin, title: "Visit Us", info: "Mumbai, India", i: 2 },
+                { icon: MapPin, title: "Visit Us", info: "Bhopal, MP, India", i: 2 },
               ].map((item, index) => (
                 <motion.div
                   key={index}

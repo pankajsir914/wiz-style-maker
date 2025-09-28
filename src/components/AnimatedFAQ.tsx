@@ -92,7 +92,7 @@ const FAQ = () => {
               </motion.div>
               <h2 className="text-[length:var(--font-h2)] font-display font-bold mb-4">
                 <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
-                  Frequently Asked Questions (EditorzHub)
+                  Frequently Asked Questions
                 </span>
               </h2>
               <p className="text-[length:var(--font-body)] text-muted-foreground max-w-2xl mx-auto">

@@ -39,7 +39,7 @@ const testimonials = [
     video: false,
   },
   {
-    name: "Ashish Arora",
+    name: "Ejaz Khan",
     role: "Blogger, Digital Marketer, Web 3 Enthusiast",
     image: ashishArora2,
     quote: "On numerous video projects over the course of a year, Ravish constantly produced excellent outcomes. He is a talented editor, but he also has a creative vision that makes each video come to life. I can wholeheartedly suggest Ravish to anyone in need of great video editing services because of their expertise, attention to detail, and capacity to fulfil deadlines.",

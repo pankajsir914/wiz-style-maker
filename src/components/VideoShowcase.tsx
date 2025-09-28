@@ -152,28 +152,28 @@ const VideoCard = ({ video, index }: { video: VideoItem; index: number }) => {
 
 const VideoShowcase = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-background">
+      <div className="container mx-auto px-3 sm:px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               Creative Excellence
             </span>{' '}
             in Motion
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
             Explore our latest video content showcasing innovative designs, marketing campaigns, and digital transformations
           </p>
         </motion.div>
 
         {/* Videos Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {videoData.map((video, index) => (
             video.isWistia ? (
               <WistiaVideoCard key={video.id} video={video as any} index={index} />

@@ -105,7 +105,7 @@ Message: ${formData.message}`;
   };
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -113,14 +113,14 @@ Message: ${formData.message}`;
         className="absolute inset-0 bg-gradient-to-br from-purple-50/40 via-pink-50/30 to-blue-50/40"
       />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
         >
-          <Card className="relative rounded-3xl bg-white/95 backdrop-blur-md shadow-2xl border border-purple-200/50 p-8 lg:p-12 overflow-hidden">
+          <Card className="relative rounded-2xl sm:rounded-3xl bg-white/95 backdrop-blur-md shadow-2xl border border-purple-200/50 p-4 sm:p-8 lg:p-12 overflow-hidden">
             {/* Gradient border effect */}
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 opacity-20 blur-xl -z-10" />
             <div className="absolute inset-[1px] rounded-3xl bg-white/95 -z-10" />
@@ -128,24 +128,24 @@ Message: ${formData.message}`;
               initial={{ opacity: 0, y: -30 }}
               animate={controls}
               variants={fadeInUp}
-              className="text-center mb-12"
+              className="text-center mb-8 sm:mb-12"
             >
               <motion.span 
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="inline-block text-sm font-medium text-primary tracking-wider uppercase bg-primary/10 px-3 py-1 rounded-full mb-4"
+                className="inline-block text-xs sm:text-sm font-medium text-primary tracking-wider uppercase bg-primary/10 px-3 py-1 rounded-full mb-3 sm:mb-4"
               >
                 GET IN TOUCH
               </motion.span>
-              <h2 className="text-[length:var(--font-h2)] font-display font-bold mb-4">
+              <h2 className="text-xl sm:text-[length:var(--font-h2)] font-display font-bold mb-3 sm:mb-4">
                 <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
                   Let's Start Growing Your Business
                 </span>
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
               {[
                 { icon: Phone, title: "Call Us", info: "+91 7770995275", i: 0 },
                 { icon: Mail, title: "Email Us", info: "ravishkumarofficial18091@gmail.com", i: 1 },
@@ -166,7 +166,7 @@ Message: ${formData.message}`;
                   }}
                   style={{ transformStyle: "preserve-3d" }}
                 >
-                  <Card className="p-6 text-center bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-md border border-purple-100/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <Card className="p-4 sm:p-6 text-center bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-md border border-purple-100/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <motion.div
                       animate={{ 
                         y: [0, -10, 0],
@@ -178,12 +178,12 @@ Message: ${formData.message}`;
                         repeatType: "loop",
                         ease: "easeInOut"
                       }}
-                      className="w-12 h-12 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                     >
-                      <item.icon className="h-6 w-6 text-primary" />
+                      <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                     </motion.div>
-                    <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.info}</p>
+                    <h3 className="text-sm sm:text-base font-semibold text-foreground mb-1 sm:mb-2">{item.title}</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{item.info}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -194,10 +194,10 @@ Message: ${formData.message}`;
               animate={controls}
               variants={fadeInUp}
               transition={{ delay: 0.6 }}
-              className="mt-12 max-w-2xl mx-auto space-y-6"
+              className="mt-8 sm:mt-12 max-w-2xl mx-auto space-y-4 sm:space-y-6"
               onSubmit={handleSubmit}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <motion.div whileHover={{ scale: 1.02 }}>
                   <Input 
                     placeholder="Your Name" 

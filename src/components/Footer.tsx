@@ -3,29 +3,29 @@ import logo from "@/assets/editorzhub-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-20">
+    <footer className="relative mt-12 sm:mt-16 lg:mt-20">
       {/* Gradient Background */}
-      <div className="relative bg-gradient-to-r from-pink-100 via-purple-50 to-yellow-50 py-12">
-        <div className="container mx-auto px-4">
+      <div className="relative bg-gradient-to-r from-pink-100 via-purple-50 to-yellow-50 py-8 sm:py-12">
+        <div className="container mx-auto px-3 sm:px-4">
           {/* Logo */}
-          <div className="flex flex-col items-center mb-8">
+          <div className="flex flex-col items-center mb-6 sm:mb-8">
             <img 
               src={logo} 
               alt="Editorzhub" 
-              className="h-12 w-auto mb-4"
+              className="h-10 sm:h-12 w-auto mb-3 sm:mb-4"
             />
-            <p className="text-center text-gray-600 max-w-md px-4">
+            <p className="text-center text-sm sm:text-base text-gray-600 max-w-md px-4">
               Editing that understands your story. Built for creators, coaches, and growing brands.
             </p>
           </div>
           
           {/* Divider */}
-          <div className="border-t border-gray-200 mb-8"></div>
+          <div className="border-t border-gray-200 mb-6 sm:mb-8"></div>
           
           {/* Bottom Section */}
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             {/* Copyright */}
-            <div className="text-[length:var(--font-body-sm)] text-gray-600 text-center md:text-left">
+            <div className="text-xs sm:text-[length:var(--font-body-sm)] text-gray-600 text-center md:text-left">
               © 2025 Editorzhub.com Private Limited | <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>
             </div>
             

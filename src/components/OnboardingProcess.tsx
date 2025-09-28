@@ -4,14 +4,14 @@ import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
 
 const OnboardingProcess = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-pink-50/30 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-pink-50/30 overflow-hidden">
+      <div className="container mx-auto px-3 sm:px-4">
         <div className="max-w-7xl mx-auto">
           {/* Large Card Container */}
-          <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-2xl rounded-3xl p-8 lg:p-12">
+          <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-2xl rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-12">
             {/* Badge */}
-            <div className="flex justify-center mb-8">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
+            <div className="flex justify-center mb-6 sm:mb-8">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm font-semibold">
                 <span>SIMPLE PROCESS</span>
                 <span className="opacity-60">•</span>
                 <span>PREMIUM RESULTS</span>
@@ -19,50 +19,50 @@ const OnboardingProcess = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="text-4xl lg:text-5xl font-bold text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-center mb-8 sm:mb-12">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 How it starts?
               </span>
             </h2>
 
             {/* Content Grid */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
               {/* Left Side - Steps */}
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 {/* Step 1 */}
-                <div className="flex gap-4 animate-fade-in">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                    <span className="text-purple-600 font-semibold">1</span>
+                <div className="flex gap-3 sm:gap-4 animate-fade-in">
+                  <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                    <span className="text-purple-600 font-semibold text-sm sm:text-base">1</span>
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">Upload Your Raw Footage</h3>
-                    <p className="text-muted-foreground">
+                  <div className="space-y-1 sm:space-y-2">
+                    <h3 className="text-base sm:text-xl font-semibold">Upload Your Raw Footage</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">
                       Send us your unedited clips, podcast recordings, vlog footage — anything.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 2 */}
-                <div className="flex gap-4 animate-fade-in animation-delay-200">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                    <span className="text-purple-600 font-semibold">2</span>
+                <div className="flex gap-3 sm:gap-4 animate-fade-in animation-delay-200">
+                  <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                    <span className="text-purple-600 font-semibold text-sm sm:text-base">2</span>
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">We Craft Your Visual Identity</h3>
-                    <p className="text-muted-foreground">
+                  <div className="space-y-1 sm:space-y-2">
+                    <h3 className="text-base sm:text-xl font-semibold">We Craft Your Visual Identity</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">
                       Our editors align each video to your brand tone, niche, and target audience.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 3 */}
-                <div className="flex gap-4 animate-fade-in animation-delay-400">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                    <span className="text-purple-600 font-semibold">3</span>
+                <div className="flex gap-3 sm:gap-4 animate-fade-in animation-delay-400">
+                  <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                    <span className="text-purple-600 font-semibold text-sm sm:text-base">3</span>
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold">Delivery & Revisions</h3>
-                    <p className="text-muted-foreground">
+                  <div className="space-y-1 sm:space-y-2">
+                    <h3 className="text-base sm:text-xl font-semibold">Delivery & Revisions</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">
                       You receive platform-optimized content, ready for Instagram, YouTube, Shorts & more. Revisions? Always included.
                     </p>
                   </div>

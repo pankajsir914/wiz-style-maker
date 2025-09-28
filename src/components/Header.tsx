@@ -35,8 +35,8 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[92%] max-w-6xl">
-        <nav className={`bg-white rounded-full px-4 sm:px-8 py-2.5 sm:py-3 transition-all duration-300 ${
+      <header className="fixed top-1 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[98%] sm:w-[92%] max-w-6xl">
+        <nav className={`bg-white rounded-full px-3 sm:px-8 py-2 sm:py-3 transition-all duration-300 ${
           isScrolled ? "shadow-xl" : "shadow-lg"
         }`}>
           <div className="flex items-center justify-between">
@@ -52,9 +52,9 @@ const Header = () => {
               <img 
                 src={logo} 
                 alt="Editorzhub" 
-                className="h-7 sm:h-8 w-auto transform transition-transform group-hover:scale-105"
+                className="h-6 sm:h-8 w-auto transform transition-transform group-hover:scale-105"
               />
-              <span className="text-lg sm:text-xl font-bold inline-flex">
+              <span className="text-base sm:text-xl font-bold hidden sm:inline-flex">
                 {"Editorzhub.com".split("").map((letter, index) => (
                   <span
                     key={index}
@@ -100,7 +100,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-700 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="md:hidden p-1.5 text-gray-700 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -109,7 +109,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-x-0 top-16 sm:top-20 mx-2 sm:mx-4 bg-white rounded-2xl shadow-xl p-4 sm:p-6 animate-fade-in max-h-[calc(100vh-5rem)] overflow-y-auto">
+          <div className="md:hidden fixed inset-x-0 top-14 sm:top-20 mx-2 sm:mx-4 bg-white rounded-2xl shadow-xl p-4 sm:p-6 animate-fade-in max-h-[calc(100vh-5rem)] overflow-y-auto">
             <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <a

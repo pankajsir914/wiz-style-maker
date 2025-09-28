@@ -136,16 +136,16 @@ const OurClients = () => {
       >
         {/* Dark Header */}
         <div className="absolute top-0 left-0 right-0 bg-background z-10 border-b border-border/20">
-          <div className="container mx-auto px-4 py-3 md:py-4">
-            <Badge variant="outline" className="mb-2 text-xs md:text-sm">Success Stories</Badge>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
+          <div className="container mx-auto px-3 sm:px-4 py-2.5 md:py-4">
+            <Badge variant="outline" className="mb-1.5 sm:mb-2 text-xs md:text-sm">Success Stories</Badge>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
               Our <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Clients</span>
             </h2>
           </div>
         </div>
 
         {/* Main Content Area - Responsive Layout */}
-        <div className="h-full pt-20 md:pt-24 flex flex-col md:flex-row">
+        <div className="h-full pt-16 sm:pt-20 md:pt-24 flex flex-col md:flex-row">
           {/* Left Side - Video/Image Showcase */}
           <div className="w-full md:w-1/2 h-[40vh] md:h-full relative overflow-hidden">
             {clients.map((client, index) => (
@@ -215,7 +215,7 @@ const OurClients = () => {
 
           {/* Right Side - Content */}
           <div ref={contentRef} className="w-full md:w-1/2 bg-card relative flex-1 md:flex-initial">
-            <div className="h-full flex items-center justify-center p-6 md:p-8 lg:p-12">
+            <div className="h-full flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12">
               <div className="w-full max-w-lg">
                 {clients.map((client, index) => (
                   <motion.div

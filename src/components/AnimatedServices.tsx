@@ -57,7 +57,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
       {/* Animated Gradient Background */}
       <motion.div 
         initial={{ opacity: 0 }}
@@ -66,7 +66,7 @@ const Services = () => {
         className="absolute inset-0 bg-gradient-to-br from-pink-100/40 via-purple-100/30 to-blue-100/40"
       />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -74,13 +74,13 @@ const Services = () => {
           variants={fadeInUp}
           transition={{ duration: 0.6 }}
         >
-          <Card className="rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-4 sm:p-6 lg:p-12">
+          <Card className="rounded-2xl sm:rounded-3xl bg-white/80 backdrop-blur-sm shadow-2xl border-0 p-3 sm:p-6 lg:p-12">
             {/* Section Header */}
             <motion.div 
               initial={{ opacity: 0, y: -30 }}
               animate={controls}
               variants={fadeInUp}
-              className="text-center mb-8 sm:mb-12 lg:mb-16"
+              className="text-center mb-6 sm:mb-12 lg:mb-16"
             >
               <motion.div 
                 initial={{ scale: 0 }}
@@ -92,7 +92,7 @@ const Services = () => {
                   NEW!
                 </span>
               </motion.div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent mb-4">
+              <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent mb-2 sm:mb-4">
                 Our Services
               </h2>
             </motion.div>
@@ -102,7 +102,7 @@ const Services = () => {
               variants={staggerContainer}
               initial="hidden"
               animate={controls}
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto mb-8 sm:mb-12 lg:mb-16"
+              className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 max-w-5xl mx-auto mb-6 sm:mb-12 lg:mb-16"
             >
               {services.map((service, index) => (
                 <motion.div
@@ -121,18 +121,18 @@ const Services = () => {
                       <motion.div 
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.5 }}
-                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center"
+                        className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm flex items-center justify-center"
                       >
-                        <service.icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
+                        <service.icon className="h-5 w-5 sm:h-7 sm:w-7 text-primary" />
                       </motion.div>
                     </div>
                     
                     {/* Content */}
                     <div className="flex-1">
-                      <h3 className="text-base sm:text-lg md:text-xl font-display font-semibold text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-sm sm:text-lg md:text-xl font-display font-semibold text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      <p className="text-xs sm:text-base text-muted-foreground leading-relaxed">
                         {service.description}
                       </p>
                     </div>

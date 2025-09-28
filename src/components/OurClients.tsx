@@ -186,7 +186,7 @@ const OurClients = () => {
                 
                 {/* Floating Elements - Only show when not video */}
                 {!client.videoId && (
-                  <div className="absolute inset-0 flex items-center justify-center p-4">
+                  <div className="absolute inset-0 flex items-center justify-center p-2 sm:p-4">
                     <motion.div 
                       initial={false}
                       animate={{
@@ -196,12 +196,12 @@ const OurClients = () => {
                       }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 lg:p-8 max-w-xs md:max-w-md border border-white/20">
-                        <client.icon className="h-8 md:h-10 lg:h-12 w-8 md:w-10 lg:w-12 text-white mb-3" />
-                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
+                      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-4 md:p-6 lg:p-8 max-w-sm sm:max-w-xs md:max-w-md border border-white/20">
+                        <client.icon className="h-10 sm:h-8 md:h-10 lg:h-12 w-10 sm:w-8 md:w-10 lg:w-12 text-white mb-3" />
+                        <h3 className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">
                           {client.metric}
                         </h3>
-                        <p className="text-sm md:text-base lg:text-lg text-white/80">
+                        <p className="text-base sm:text-sm md:text-base lg:text-lg text-white/80">
                           {client.metricLabel}
                         </p>
                       </div>

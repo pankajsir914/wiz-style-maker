@@ -24,7 +24,7 @@ const videoData: VideoItem[] = [
   {
     id: 1,
     isWistia: true,
-    wistiaMediaId: 'fq75l8ixns',
+    wistiaMediaId: '3lwp60b0qv',
     creator: {
       name: 'Editorzhub Team',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Editorzhub',

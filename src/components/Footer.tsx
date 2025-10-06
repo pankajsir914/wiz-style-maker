@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="relative bg-gradient-to-r from-pink-100 via-purple-50 to-yellow-50 py-8 sm:py-12">
         <div className="container mx-auto px-3 sm:px-4">
           {/* Logo */}
-          <div className="flex flex-col items-center mb-6 sm:mb-8">
+          <div className="flex flex-col items-center mb-2 sm:mb-3">
             <img 
               src={logo} 
               alt="Editorzhub" 

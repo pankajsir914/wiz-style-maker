@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Twitter } from "lucide-react";
-import logo from "@/assets/editorzhub-logo.png";
+import logo from "@/assets/editorzhub-logo-new.png";
 
 const Footer = () => {
   return (

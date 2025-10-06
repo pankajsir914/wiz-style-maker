@@ -214,32 +214,24 @@ const Testimonials = () => {
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         className="relative"
                       >
-                        {testimonial.icon ? (
-                          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center">
-                            <testimonial.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
-                          </div>
-                        ) : (
-                          <>
-                            <img
-                              src={testimonial.image}
-                              alt={testimonial.name}
-                              className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
-                            />
-                            {testimonial.video && (
-                              <motion.button
-                                whileHover={{ scale: 1.2 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={() => setPlayingVideo(playingVideo === index ? null : index)}
-                                className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                              >
-                                {playingVideo === index ? (
-                                  <Pause className="h-6 w-6 text-white" />
-                                ) : (
-                                  <Play className="h-6 w-6 text-white" />
-                                )}
-                              </motion.button>
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
+                        />
+                        {testimonial.video && (
+                          <motion.button
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() => setPlayingVideo(playingVideo === index ? null : index)}
+                            className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                          >
+                            {playingVideo === index ? (
+                              <Pause className="h-6 w-6 text-white" />
+                            ) : (
+                              <Play className="h-6 w-6 text-white" />
                             )}
-                          </>
+                          </motion.button>
                         )}
                       </motion.div>
                       <div>

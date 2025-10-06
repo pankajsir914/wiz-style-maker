@@ -145,7 +145,7 @@ Message: ${formData.message}`;
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12 lg:mb-16 overflow-visible">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mb-12 sm:mb-16 lg:mb-20 overflow-visible">
               {[
                 { icon: Phone, title: "Call Us", info: "+91 8120863745", i: 0 },
                 { icon: Mail, title: "Email Us", info: "ravishkumarofficial18091@gmail.com", i: 1 },

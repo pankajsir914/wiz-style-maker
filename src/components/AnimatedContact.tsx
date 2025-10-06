@@ -151,21 +151,7 @@ Message: ${formData.message}`;
                 { icon: Mail, title: "Email Us", info: "ravishkumarofficial18091@gmail.com", i: 1 },
                 { icon: MapPin, title: "Visit Us", info: "Bhopal, MP, India", i: 2 },
               ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  custom={item.i}
-                  variants={cardVariants}
-                  initial="hidden"
-                  animate={controls}
-                  whileHover={{ 
-                    y: -10, 
-                    scale: 1.05,
-                    rotateY: 5,
-                    rotateX: -5,
-                    transition: { type: "spring", stiffness: 300 }
-                  }}
-                  style={{ transformStyle: "preserve-3d" }}
-                >
+                <div key={index}>
                   <Card className="p-4 sm:p-6 text-center bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-md border border-purple-100/50 shadow-lg">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                       <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
@@ -173,7 +159,7 @@ Message: ${formData.message}`;
                     <h3 className="text-sm sm:text-base font-semibold text-foreground mb-1 sm:mb-2">{item.title}</h3>
                     <p className="text-xs sm:text-sm text-muted-foreground">{item.info}</p>
                   </Card>
-                </motion.div>
+                </div>
               ))}
             </div>
 

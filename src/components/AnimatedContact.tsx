@@ -145,7 +145,7 @@ Message: ${formData.message}`;
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12 lg:mb-16 overflow-visible">
               {[
                 { icon: Phone, title: "Call Us", info: "+91 7770995275", i: 0 },
                 { icon: Mail, title: "Email Us", info: "ravishkumarofficial18091@gmail.com", i: 1 },
@@ -194,7 +194,7 @@ Message: ${formData.message}`;
               animate={controls}
               variants={fadeInUp}
               transition={{ delay: 0.6 }}
-              className="mt-8 sm:mt-12 max-w-2xl mx-auto space-y-4 sm:space-y-6"
+              className="mt-12 sm:mt-16 lg:mt-20 max-w-2xl mx-auto space-y-4 sm:space-y-6"
               onSubmit={handleSubmit}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">

@@ -148,19 +148,20 @@ All colors MUST be HSL.
     }
   }
   
-  @keyframes typewriter {
-    0%, 10% {
-      opacity: 0;
-      transform: translateY(10px);
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
     }
-    20%, 80% {
-      opacity: 1;
-      transform: translateY(0);
+    50% {
+      background-position: 100% 50%;
     }
-    90%, 100% {
-      opacity: 0;
-      transform: translateY(-10px);
+    100% {
+      background-position: 0% 50%;
     }
+  }
+  
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
   }
   
   .animate-marquee-left {

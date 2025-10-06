@@ -54,19 +54,8 @@ const Header = () => {
                 alt="Editorzhub" 
                 className="h-6 sm:h-8 w-auto transform transition-transform group-hover:scale-105"
               />
-              <span className="text-sm sm:text-xl font-bold inline-flex">
-                {"Editorzhub.com".split("").map((letter, index) => (
-                  <span
-                    key={index}
-                    className="inline-block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"
-                    style={{
-                      animation: `typewriter 3s infinite`,
-                      animationDelay: `${index * 0.15}s`
-                    }}
-                  >
-                    {letter}
-                  </span>
-                ))}
+              <span className="text-sm sm:text-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto] hover:brightness-110 transition-all duration-300">
+                Editorzhub.com
               </span>
             </a>
 

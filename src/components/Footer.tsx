@@ -32,7 +32,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex gap-4">
               <a 
-                href="https://linkedin.com/company/adymize" 
+                href="https://www.linkedin.com/in/ravish-kumar-prajapati/ linkedin" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-800 transition-colors"
@@ -40,7 +40,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
-                href="https://instagram.com/adymize" 
+                href="https://www.instagram.com/ravishkumar6887/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-800 transition-colors"

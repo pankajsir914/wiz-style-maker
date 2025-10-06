@@ -158,8 +158,8 @@ const Hero = () => {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-10 lg:gap-14">
             {[
-              { name: "Meta", logo: metaLogo },
               { name: "Shopify", logo: shopifyLogo },
+              { name: "Meta", logo: metaLogo },
               { name: "Google", logo: googleLogo },
             ].map((partner, index) => (
               <motion.div

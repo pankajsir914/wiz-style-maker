@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // Import partner logos
-import metaLogo from "@/assets/meta-logo-clean.png";
+import metaLogo from "@/assets/meta-logo-official.png";
 import shopifyLogo from "@/assets/shopify-logo.svg";
 import googleLogo from "@/assets/google-logo-clean.png";
 import { Button } from "@/components/ui/button";
@@ -173,7 +173,7 @@ const Hero = () => {
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
-                  className="h-10 sm:h-16 md:h-20 w-auto object-contain drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
+                  className={`h-10 sm:h-16 md:h-20 w-auto object-contain drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300 ${partner.name === 'Meta' ? 'rounded-full bg-white p-2' : ''}`}
                 />
               </motion.div>
             ))}

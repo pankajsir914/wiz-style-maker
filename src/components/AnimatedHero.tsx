@@ -156,7 +156,7 @@ const Hero = () => {
           <p className="text-[10px] sm:text-[length:var(--font-body-sm)] text-muted-foreground uppercase tracking-wider px-2">
             Our Performance Marketing Services are Certified by
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-10 lg:gap-14">
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-12 lg:gap-16">
             {[
               { name: "Shopify", logo: shopifyLogo },
               { name: "Meta", logo: metaLogo },
@@ -168,12 +168,12 @@ const Hero = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 2 + index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
-                className="flex items-center"
+                className="flex items-center justify-center h-12 sm:h-20 md:h-24"
               >
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
-                  className="h-10 sm:h-16 md:h-20 w-auto object-contain drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
+                  className="h-full w-auto object-contain drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
                 />
               </motion.div>
             ))}

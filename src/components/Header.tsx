@@ -52,7 +52,7 @@ const Header = () => {
               <img 
                 src={logo} 
                 alt="Editorzhub" 
-                className="h-6 sm:h-8 w-auto transform transition-transform group-hover:scale-105"
+                className="h-10 sm:h-8 w-auto transform transition-transform group-hover:scale-105"
               />
               <span className="text-sm sm:text-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto] hover:brightness-110 transition-all duration-300">
                 Editorzhub.com

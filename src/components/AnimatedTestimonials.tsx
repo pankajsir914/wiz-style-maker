@@ -25,6 +25,9 @@ import clientLogo17 from "@/assets/17.png";
 import clientLogo18 from "@/assets/18.png";
 import ashishArora from "@/assets/ashish-arora.png";
 import ashishArora2 from "@/assets/ashish-arora-2.png";
+import karan2 from "@/assets/karan2.png";
+import ajit2 from "@/assets/ajit2.png";
+import akshat2 from "@/assets/akshat2.png";
 
 const testimonials = [
   {
@@ -52,7 +55,7 @@ const testimonials = [
   {
     name: "Karan Mathur",
     role: "Yoga Practitioner",
-    icon: Heart,
+    image: karan2,
     quote: "My journey with video editing for my yoga content began when I realized the importance of creating visually appealing and engaging videos for my students and followers. I wanted my online presence to reflect the passion and dedication I have for yoga, and that's when I decided to enlist the services of a freelance video editor.",
     rating: 5,
     bgColor: "from-pink-100 to-orange-100",
@@ -63,7 +66,7 @@ const testimonials = [
   {
     name: "Akshat Shrivastava",
     role: "Public Speaking Coach for CXOs, Entrepreneurs & Leaders | LinkedIn Top Voice",
-    icon: Award,
+    image: akshat2,
     quote: "I'm highly impressed by Ravish's video editing skills & service. Throughout our association, Ravish was very professional, helpful and collaborative. He edited my videos exactly the way I wanted. He infact, delivered more than what we asked for. I highly recommend Ravish for your next project.",
     rating: 5,
     bgColor: "from-green-100 to-blue-100",
@@ -74,7 +77,7 @@ const testimonials = [
   {
     name: "Dr. Ajeet Pal Singh",
     role: "Diabetologist",
-    icon: Heart,
+    image: ajit2,
     quote: "Really impressed with the content Editorzhub has been creating lately. Consistently high-quality, well-thought-out, and engaging — a great example of what it means to build with purpose and creativity. Keep up the great work!",
     rating: 5,
     bgColor: "from-teal-100 to-cyan-100",

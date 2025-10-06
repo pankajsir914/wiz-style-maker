@@ -166,7 +166,7 @@ Message: ${formData.message}`;
                   }}
                   style={{ transformStyle: "preserve-3d" }}
                 >
-                  <Card className="p-4 sm:p-6 text-center bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-md border border-purple-100/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <Card className="p-4 sm:p-6 text-center bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-md border border-purple-100/50 shadow-lg">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                       <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                     </div>

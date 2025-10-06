@@ -167,21 +167,9 @@ Message: ${formData.message}`;
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   <Card className="p-4 sm:p-6 text-center bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-md border border-purple-100/50 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <motion.div
-                      animate={{ 
-                        y: [0, -10, 0],
-                        rotate: [0, 5, -5, 0]
-                      }}
-                      transition={{ 
-                        duration: 4,
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        ease: "easeInOut"
-                      }}
-                      className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
-                    >
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                       <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                    </motion.div>
+                    </div>
                     <h3 className="text-sm sm:text-base font-semibold text-foreground mb-1 sm:mb-2">{item.title}</h3>
                     <p className="text-xs sm:text-sm text-muted-foreground">{item.info}</p>
                   </Card>

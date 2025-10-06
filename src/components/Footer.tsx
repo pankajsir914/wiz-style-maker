@@ -12,7 +12,7 @@ const Footer = () => {
             <img 
               src={logo} 
               alt="Editorzhub" 
-              className="h-20 sm:h-20 w-auto mb-3 sm:mb-4"
+              className="h-[200px] sm:h-20 w-auto mb-3 sm:mb-4"
             />
             <p className="text-center text-sm sm:text-base text-gray-600 max-w-md px-4">
               Editing that understands your story. Built for creators, coaches, and growing brands.

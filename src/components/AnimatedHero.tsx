@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // Import partner logos
 import metaLogo from "@/assets/meta-removebg-preview.png";
-import shopifyLogo from "@/assets/shopify-logo.svg";
+import shopifyLogo from "@/assets/shopify-removebg-preview.png";
 import googleLogo from "@/assets/google-removebg-preview.png";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";

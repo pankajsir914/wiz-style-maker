@@ -57,19 +57,6 @@ const ServiceShowcase = () => {
             <div className="relative">
               {/* Video Player frame */}
               <div className="bg-gray-900 rounded-2xl p-3 shadow-xl">
-                {/* Player header */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <Film className="h-4 w-4 text-gray-400" />
-                    <span className="text-xs text-gray-400">project_final_v3.mp4</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                </div>
-
                 {/* Wistia Video */}
                 <div className="rounded-lg overflow-hidden">
                   <WistiaVideo

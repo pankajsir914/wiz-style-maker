@@ -54,7 +54,7 @@ const ServiceShowcase = () => {
               </div>
             </div>
 
-            {/* Right side - Video Player mockup */}
+            {/* Right side - Video Player */}
             <div className="relative">
               {/* Video Player frame */}
               <div className="bg-gray-900 rounded-2xl p-3 shadow-xl">
@@ -71,67 +71,21 @@ const ServiceShowcase = () => {
                   </div>
                 </div>
 
-                {/* Video content */}
-                <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg aspect-video relative overflow-hidden">
-                  {/* Timeline visualization */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <button className="text-white hover:text-gray-300">
-                        <Play className="h-6 w-6 fill-current" />
-                      </button>
-                      <div className="flex-1 bg-gray-700 rounded-full h-2 relative">
-                        <div className="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                      </div>
-                      <span className="text-xs text-gray-300">02:45 / 08:20</span>
-                    </div>
-                    {/* Multi-track timeline */}
-                    <div className="space-y-1">
-                      <div className="h-6 bg-purple-500/30 rounded flex items-center px-2">
-                        <Video className="h-3 w-3 text-white mr-2" />
-                        <span className="text-[10px] text-white">Video Track</span>
-                      </div>
-                      <div className="h-6 bg-blue-500/30 rounded flex items-center px-2">
-                        <span className="text-[10px] text-white">Audio Track</span>
-                      </div>
-                      <div className="h-6 bg-green-500/30 rounded flex items-center px-2">
-                        <span className="text-[10px] text-white">Effects</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Animated video editing interface */}
-                  <motion.div 
-                    className="absolute inset-0 flex items-center justify-center"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    <motion.img 
-                      src={videoEditingInterface}
-                      alt="Professional video editing interface"
-                      className="w-full h-full object-cover rounded-lg"
-                      animate={{ 
-                        scale: [1, 1.02, 1],
-                      }}
-                      transition={{ 
-                        duration: 4,
-                        repeat: Infinity,
-                        repeatType: "reverse"
-                      }}
-                    />
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
-                      animate={{ 
-                        opacity: [0.5, 0.7, 0.5]
-                      }}
-                      transition={{ 
-                        duration: 3,
-                        repeat: Infinity,
-                        repeatType: "reverse"
-                      }}
-                    />
-                  </motion.div>
-                </div>
+                {/* Video element */}
+                <motion.video
+                  className="w-full aspect-video rounded-lg object-cover"
+                  controls
+                  loop
+                  muted
+                  autoPlay
+                  playsInline
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </motion.video>
               </div>
             </div>
           </div>

@@ -1,9 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Play, Film, Video } from "lucide-react";
-import { motion } from "framer-motion";
-import videoEditingInterface from "@/assets/video-editing-interface.jpg";
+import { Film } from "lucide-react";
+import WistiaVideo from "@/components/WistiaVideo";
 
 const ServiceShowcase = () => {
   return (
@@ -71,21 +70,13 @@ const ServiceShowcase = () => {
                   </div>
                 </div>
 
-                {/* Video element */}
-                <motion.video
-                  className="w-full aspect-video rounded-lg object-cover"
-                  controls
-                  loop
-                  muted
-                  autoPlay
-                  playsInline
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </motion.video>
+                {/* Wistia Video */}
+                <div className="rounded-lg overflow-hidden">
+                  <WistiaVideo
+                    mediaId="wbys5vweyt"
+                    aspectRatio="1.7777777777777777"
+                  />
+                </div>
               </div>
             </div>
           </div>
